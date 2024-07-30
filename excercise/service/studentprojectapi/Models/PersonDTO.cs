@@ -3,7 +3,7 @@
     public class PersonDTO
     {
         // don't need to to have a get set since we won't access it
-        public int PersonId;
+        public Guid PersonId;
 
         public string FirstName { get; set; } = null!;
         /// <summary>
@@ -13,15 +13,26 @@
         /// <summary>
         /// 
         /// </summary>
-        public string email { get; set; }
-        /*
-         * 
-         */
-        public string Phone { get; set; }
+        public string Email { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PhoneNumber { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public DateOnly StartDate { get; set; }
 
+        public DateOnly EndDate { get; set; }
 
+        public bool Active { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public DateOnly CreatedDate { get; set; }
+
+        public string ModifiedBy  { get; set; }
+
+        public DateOnly ModifiedDate { get; set; } 
+ 
 
     }
 }
