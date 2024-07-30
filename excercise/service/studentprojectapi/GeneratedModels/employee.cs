@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace studentprojectapi.Models;
+namespace studentprojectapi.GeneratedModels;
 
 [Table("employee")]
 [Index("email", Name = "UQ__employee__AB6E616415A727A9", IsUnique = true)]

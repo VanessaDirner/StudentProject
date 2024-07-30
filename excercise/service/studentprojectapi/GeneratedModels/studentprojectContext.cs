@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace studentprojectapi.Models;
+namespace studentprojectapi.GeneratedModels;
 
 public partial class studentprojectContext : DbContext
 {
@@ -12,11 +12,11 @@ public partial class studentprojectContext : DbContext
         : base(options)
     {
     }
-
+    //tables
     public virtual DbSet<assignment> assignments { get; set; }
 
     public virtual DbSet<department> departments { get; set; }
-
+    // get employee table
     public virtual DbSet<employee> employees { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
