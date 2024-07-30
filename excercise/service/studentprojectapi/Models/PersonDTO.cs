@@ -3,19 +3,21 @@
     public class PersonDTO
     {
         // don't need to to have a get set since we won't access it
+        // add = null! for fields that should not be null
         public Guid PersonId;
         /// <summary>
         /// first name of employee
         /// </summary>
+
         public string FirstName { get; set; } = null!;
         /// <summary>
         /// last name of employee
         /// </summary>
-        public string LastName { get; set; }
+        public string LastName { get; set; } = null!;
         /// <summary>
         /// email on record for employee
         /// </summary>
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
         /// <summary>
         /// phone on record
         /// </summary>
