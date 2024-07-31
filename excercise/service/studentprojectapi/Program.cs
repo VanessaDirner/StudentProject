@@ -11,6 +11,7 @@ builder.Services.AddDbContext<studentprojectContext>(options =>
     options.EnableSensitiveDataLogging();
 });
 builder.Services.AddTransient<PersonService>();
+builder.Services.AddTransient<DepartmentService>();
 
 
 builder.Services.AddCors(options =>

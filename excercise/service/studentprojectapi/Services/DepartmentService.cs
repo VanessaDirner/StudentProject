@@ -5,15 +5,16 @@ namespace studentprojectapi.Services
 {
     public class DepartmentService
     {
-        private readonly studentprojectContext _database_context;
+        private readonly studentprojectContext _db_context;
 
-        public DepartmentService(studentprojectContext context) { _database_context = context; }
+        public DepartmentService(studentprojectContext context) { _db_context = context; }
 
         public async Task<List<department>> GetDepartmentsAsync()
         {
-            List<employee> ListofDepartments = await (from row in _database_context.departments select row).ToListAsync();
-
+            List<department> ListofDepartments = await (from row in _db_context.departments select row).ToListAsync();
+            Console.WriteLine(_db_context.departments);
             return ListofDepartments;
         }
+
     }
 }

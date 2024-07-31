@@ -10,18 +10,21 @@ namespace studentprojectapi.Controllers
     [Route("api/[Controller]")]
     public class DepartmentController : ControllerBase
     {
-        private readonly DepartmentService _departmentService;
+        // 
+        private readonly DepartmentService _objectdepartmentService;
 
-        public DepartmentController(DepartmentService departmentService)
+        // constructor
+        public DepartmentController(DepartmentService deptservice)
         {
-            _departmentService = departmentService;
+            _objectdepartmentService = deptservice;
         }
+
 
 
         [HttpGet]
         public async Task<ActionResult<List<DepartmentDTO>>> GetDepartments()
         {
-            List<department> returndepartments = await _departmentService.GetDepartmentsAsync();
+            List<department> returndepartments = await _objectdepartmentService.GetDepartmentsAsync();
 
             return Ok(returndepartments);
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
+using studentprojectapi.Models;
 
 // this whole thing is how to create a personservice object that we can use to query database
 namespace studentprojectapi.Services
@@ -19,6 +20,40 @@ namespace studentprojectapi.Services
             return ListofEmployees;
          }
 
-      
+        // write function to add a person
+
+        public async Task AddEmployeeAsync(PersonDTO person)
+        {
+            // map personDTO to employee from generated model so it can be added to database
+            employee employeeobject = new employee();
+
+            employeeobject.personID = Guid.NewGuid();
+            employeeobject.firstname = person.FirstName;
+            employeeobject.lastname = person.LastName;
+            employeeobject.email = person.Email;
+            employeeobject.phonenumber = person.PhoneNumber;
+            employeeobject.startdate = person.StartDate;
+            employeeobject.enddate = person.EndDate;
+            employeeobject.active = person.Active;
+            employeeobject.createdby = person.CreatedBy;
+            employeeobject.createdate = DateTime.Now;
+            employeeobject.modifiedby = person.ModifiedBy;
+            employeeobject.modifieddate = DateTime.Now;
+
+                        // then add to database
+            _database_context.employees.Add(employeeobject);
+
+            // save changes to database
+            await _database_context.SaveChangesAsync();
+
+        }
+
+        // write function to remove a person
+
+        //write function to modify a person
+
+
+
+
     }
 }

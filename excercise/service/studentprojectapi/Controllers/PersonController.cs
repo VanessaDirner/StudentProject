@@ -13,6 +13,7 @@ namespace studentprojectapi.Controllers
         // object of person service class
         private readonly PersonService _personService;
 
+
         // this is a constructor
         public PersonController(PersonService service) { 
             _personService = service;
@@ -33,6 +34,20 @@ namespace studentprojectapi.Controllers
 
             // can add a try catch later to have a 400/500 etc error
             // then add httpget 400, 200 etc specified for right above api endpoint 
+        }
+
+        [HttpPost("Add")]
+        
+        public async Task<ActionResult> AddEmployee([FromBody] PersonDTO personDTO) 
+       {
+            await _personService.AddEmployeeAsync(personDTO);
+            
+            // how do I add a person?
+            // get details from input on user
+            // check for existing user in db
+            // add the user and return details or would the be no return/void?
+
+            return Ok();
         }
     }
 }

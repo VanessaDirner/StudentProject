@@ -25,11 +25,11 @@
         /// <summary>
         /// start date 
         /// </summary>
-        public DateOnly StartDate { get; set; }
+        public DateTime StartDate { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public DateOnly EndDate { get; set; }
+        public DateTime EndDate { get; set; }
         /// <summary>
         /// whether employee account is active
         /// </summary>
@@ -41,7 +41,7 @@
         /// <summary>
         /// date that user account was created
         /// </summary>
-        public DateOnly CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         /// <summary>
         /// account that modified the user account
         /// </summary>
@@ -49,7 +49,7 @@
         /// <summary>
         /// Date user was modified
         /// </summary>
-        public DateOnly ModifiedDate { get; set; } 
+        public DateTime  ModifiedDate { get; set; } 
         
 
     }
