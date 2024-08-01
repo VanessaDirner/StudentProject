@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using studentprojectapi.GeneratedModels;
+using studentprojectapi.Models;
+using studentprojectapi.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,20 +12,32 @@ namespace studentprojectapi.Controllers
     public class AssignmentController : ControllerBase
     {
 
-        /*
-        // GET: api/<ValuesController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // object of assignment controller class
+        private readonly AssignmentServices _assignmentServices;
+
+        public AssignmentController(AssignmentServices assignmentServices)
         {
-            return new string[] { "value1", "value2" };
+            _assignmentServices = assignmentServices;
         }
 
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // handle a get assignments request
+        [HttpGet]
+        public async Task<ActionResult<List<AssignmentDTO>>> GetAsssignments()
         {
-            return "value";
+            List<assignment> returnassignments = await _assignmentServices.GetAssignmentsAsync();
+
+            return Ok(returnassignments);
         }
+
+        [HttpPost("Add")]
+        public async Task<ActionResult> AddAssignment([FromBody] AssignmentDTO assignmentDTO)
+        {
+            await _assignmentServices.AddAssignmentsAsync(assignmentDTO);
+
+            return Ok();
+        }
+
+/*
 
         // POST api/<ValuesController>
         [HttpPost]

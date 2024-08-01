@@ -1,10 +1,13 @@
 ﻿namespace studentprojectapi.Models
 {
+   
     public class PersonDTO
     {
         // don't need to to have a get set since we won't access it
-        // add = null! for fields that should not be null
-        public Guid PersonId;
+        // TODO update database tables, rerun power tools reverse engineer, update DTOS
+        // TODO add = null! for fields that should not be null
+
+        public Guid PersonId { get; }
         /// <summary>
         /// first name of employee
         /// </summary>

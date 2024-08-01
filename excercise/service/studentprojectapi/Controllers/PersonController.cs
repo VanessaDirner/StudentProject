@@ -15,10 +15,10 @@ namespace studentprojectapi.Controllers
 
 
         // this is a constructor
+        // we're using this to be able to use the person service methods below
         public PersonController(PersonService service) { 
             _personService = service;
          }
-
 
 
         // this is an api endpoint
@@ -36,18 +36,53 @@ namespace studentprojectapi.Controllers
             // then add httpget 400, 200 etc specified for right above api endpoint 
         }
 
+
+
+        // this is an api endpoint
+        // get an employee by ID
+        [HttpGet("{PersonId}")]
+        public async Task<ActionResult<PersonDTO>> GetEmployeeByID([FromRoute] Guid PersonId)
+        {
+            // list of employee objects
+            // calling the get employees async method that is part of the object _personService created above
+            List<employee> returnemployees = await _personService.GetEmployeeByIDAsync(PersonId);
+            // this is the result of my actionresult
+            // this is returning 200/OK
+            return Ok(returnemployees);
+
+            // can add a try catch later to have a 400/500 etc error
+            // then add httpget 400, 200 etc specified for right above api endpoint 
+        }
+
         [HttpPost("Add")]
-        
-        public async Task<ActionResult> AddEmployee([FromBody] PersonDTO personDTO) 
+        public async Task<ActionResult> AddEmployee([FromBody] PersonDTO personDTO ) 
        {
+            // get add details from body of get request
+            // personDTO is the format in which the body of the request arrives
+            // it's specified on the swagger page 
+            // we'll send this to the service that will translate this to the model of the database
+
             await _personService.AddEmployeeAsync(personDTO);
             
-            // how do I add a person?
-            // get details from input on user
-            // check for existing user in db
-            // add the user and return details or would the be no return/void?
+            
+            return Ok();
+        }
+
+        [HttpPatch("Modify")]
+        // I don't want to accept a new GUID
+        // I don't want createddate and createdby to be updated either
+        // I need to match details with a GUID in table
+        public async Task<ActionResult> ModifyEmployee([FromBody] PersonDTO personDTO)
+        {
+            await _personService.ModifyEmployee(personDTO);
 
             return Ok();
         }
+
+
+       // [HttpDelete("Delete")]
+       //
+
+
     }
 }
