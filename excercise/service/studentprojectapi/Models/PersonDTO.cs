@@ -7,8 +7,8 @@
         // TODO update database tables, rerun power tools reverse engineer, update DTOS
         // TODO add = null! for fields that should not be null
 
-        public Guid PersonId { get; }
-        /// <summary>
+        public Guid PersonId;
+            /// <summary>
         /// first name of employee
         /// </summary>
 
@@ -56,4 +56,18 @@
         
 
     }
+
+    public class updatePersonDTO : PersonDTO
+    {
+        public Guid UpdateID { get; set; }
+    }
+
+    public class deletepersonDTO : PersonDTO
+    {
+        public Guid deleteID { get; set; }
+
+    }
+
 }
+
+

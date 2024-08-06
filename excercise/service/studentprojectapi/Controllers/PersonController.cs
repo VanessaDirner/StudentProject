@@ -38,21 +38,6 @@ namespace studentprojectapi.Controllers
 
 
 
-        // this is an api endpoint
-        // get an employee by ID
-        [HttpGet("{PersonId}")]
-        public async Task<ActionResult<PersonDTO>> GetEmployeeByID([FromRoute] Guid PersonId)
-        {
-            // list of employee objects
-            // calling the get employees async method that is part of the object _personService created above
-            List<employee> returnemployees = await _personService.GetEmployeeByIDAsync(PersonId);
-            // this is the result of my actionresult
-            // this is returning 200/OK
-            return Ok(returnemployees);
-
-            // can add a try catch later to have a 400/500 etc error
-            // then add httpget 400, 200 etc specified for right above api endpoint 
-        }
 
         [HttpPost("Add")]
         public async Task<ActionResult> AddEmployee([FromBody] PersonDTO personDTO ) 
@@ -68,20 +53,25 @@ namespace studentprojectapi.Controllers
             return Ok();
         }
 
-        [HttpPatch("Modify")]
+        [HttpPut("Modify")]
         // I don't want to accept a new GUID
         // I don't want createddate and createdby to be updated either
         // I need to match details with a GUID in table
-        public async Task<ActionResult> ModifyEmployee([FromBody] PersonDTO personDTO)
+        public async Task<ActionResult> ModifyEmployee([FromBody] updatePersonDTO updatepersonDTO)
         {
-            await _personService.ModifyEmployee(personDTO);
+            await _personService.ModifyEmployeeService(updatepersonDTO);
 
             return Ok();
         }
 
 
-       // [HttpDelete("Delete")]
-       //
+        [HttpDelete("Delete")]
+       public async Task<ActionResult> DeleteEmployee([FromBody] deletepersonDTO deletepersonDTO)
+        {
+            await _personService.DeleteEmployeeService(deletepersonDTO);
+
+            return Ok();
+        }
 
 
     }

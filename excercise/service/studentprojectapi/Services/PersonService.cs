@@ -21,15 +21,7 @@ namespace studentprojectapi.Services
          }
 
         // write function to person by ID
-        public async Task<List<employee>> GetEmployeeByIDAsync(Guid personID)
-        {
-           
-           // select * from employee where personID = '00000000-0000-0000-0000-000000000000'
-         //   var employee = await _database_context.employees.FindAsync(personID); 
-            var employee2 = await (from row in _database_context.employees where row.personID == personID select row ).ToListAsync();
-
-            return employee2;
-        }
+        // 
 
         // write function to add a person
 
@@ -69,21 +61,54 @@ namespace studentprojectapi.Services
     
 
         //write function to modify a person
-       public async Task ModifyEmployee (PersonDTO person)
+       public async Task ModifyEmployeeService(updatePersonDTO updateperson)
         {
-            employee employeeobject = new employee();
-            
 
-            // what to do for ID?
-            employeeobject.modifieddate= DateTime.Now;
-            employeeobject.modifiedby= person.ModifiedBy;
-            employeeobject.active= person.Active;
+            employee? employee = await _database_context.employees.FindAsync(updateperson.UpdateID);
+            // throw exception so that ID can't be invalid so that return employee can't be null
+            if (employee == null)
+            {
+                throw new Exception("invalid person ID");
+            }
+
+            employee.firstname = updateperson.FirstName;
+            employee.lastname = updateperson.LastName;
+            employee.email = updateperson.Email;
+            employee.phonenumber= updateperson.PhoneNumber;
+            employee.startdate = updateperson.StartDate;
+            employee.enddate = updateperson.EndDate;
+            employee.active = updateperson.Active;
+            employee.modifieddate = DateTime.Now;
+            employee.modifiedby = updateperson.ModifiedBy;
+
+            _database_context.Entry(employee).State = EntityState.Modified;
+
+            await _database_context.SaveChangesAsync();
 
 
 
         }
 
-        // write function to remove a person
 
+        // write function to remove a person
+        // get details by ID?
+        // delete row
+        public async Task DeleteEmployeeService(deletepersonDTO deleteperson)
+        {
+            employee? employee = await _database_context.employees.FindAsync(deleteperson.deleteID);
+
+            if (deleteperson == null)
+            {
+                throw new Exception("invalid person ID");
+            }
+
+          //  var deleteemployee = from employee in _database_context.employees where employee.personID == deleteperson.deleteID select employee;
+
+            _database_context.employees.Remove(employee);
+
+
+            await _database_context.SaveChangesAsync();
+
+        }
     }
 }
