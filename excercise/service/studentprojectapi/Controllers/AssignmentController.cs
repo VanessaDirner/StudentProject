@@ -2,6 +2,7 @@
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
 using studentprojectapi.Services;
+using System.Reflection.Metadata.Ecma335;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -38,14 +39,22 @@ namespace studentprojectapi.Controllers
         }
 
         [HttpPut("Modify")]
-        //
+        public async Task<ActionResult> ModifyAssignment([FromBody] AssignmentDTO assignmentDTO)
+            {
+                await _assignmentServices.ModifyAssignmentAsync(assignmentDTO);
+
+                return Ok();
+            }
+
 
         [HttpDelete("Delete")]
-     /*   public async Task<ActionResult> DeleteAssignment([FromBody]) AssignmentDeleteDTO assignmentdeleteDTO)
-            {
+           public async Task<ActionResult> DeleteAssignment([FromBody] DeleteAssignmentDTO deleteassignmentDTO)
+               {
+                    await _assignmentServices.DeleteAssignmentAsync(deleteassignmentDTO);
 
-            }
-     */
+                    return Ok();
+               }
+        
 
     }
 }

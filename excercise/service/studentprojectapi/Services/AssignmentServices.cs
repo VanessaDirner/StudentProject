@@ -22,23 +22,40 @@ namespace studentprojectapi.Services
         }
 
         // write function to add people to departments
-        public async Task AddAssignmentsAsync(AssignmentDTO assignment)
+        public async Task AddAssignmentsAsync(CreateAssignmentDTO createassignmentDTO)
         {
             assignment assignmentobject = new assignment();
 
             // map assignment DTO from generated model
             assignmentobject.assignmentID = Guid.NewGuid();
-            assignmentobject.createdby = assignment.CreatedBy;
+            assignmentobject.createdby = createassignmentDTO.CreatedBy;
             assignmentobject.createdate = DateTime.Now;
-            assignmentobject.modifiedby = assignment.ModifiedBy;
-            assignmentobject.modifieddate = DateTime.Now;
-            
 
-            // we would need to have a existing employee ID
-            // and department ID passed in from the body of the get request
-            // need to define it earlier? in order to have it sent in body
-            // also need to make sure that the employee and deparment is available to map to?
-            // got to find examples
+            _database_context.assignments.Add(assignmentobject);
+
+            // save changes to database
+            await _database_context.SaveChangesAsync();
+
+        }
+
+        public async Task ModifyAssignmentAsync(ModifyAssignmentDTO modifyassignmentDTO)
+        {
+            assignment? assignment = await _database_context.assignments.FindAsync(modifyassignmentDTO.AssignmentID);
+
+            if (assignment == null)
+            {
+                throw new Exception("invalid assignment ID");
+            }
+
+            assignment.assignmentID = modifyassignmentDTO.AssignmentID;
+            assignment.modifieddate = DateTime.Now;
+            assignment.modifiedby = modifyassignmentDTO.ModifiedBy;
+            assignment.personID = modifyassignmentDTO.PersonID;
+            assignment.deptID = modifyassignmentDTO.DeptID;
+
+            _database_context.Entry(assignment).State = EntityState.Modified;
+
+            await _database_context.SaveChangesAsync();
 
         }
 
@@ -46,7 +63,19 @@ namespace studentprojectapi.Services
 
         // write function to remove people from departments
 
-        // do I need a modify?
+        public async Task DeleteAssignmentAsync(DeleteAssignmentDTO deleteassignmentDTO)
+        {
+            assignment? assignment = await _database_context.assignments.FindAsync(deleteassignmentDTO.AssignmentID);
+            if (assignment == null)
+            {
+                throw new Exception("invalid assignment ID");
+            }
+
+            _database_context.assignments.Remove(assignment);
+
+            await _database_context.SaveChangesAsync(); 
+        }
+
 
 
     }

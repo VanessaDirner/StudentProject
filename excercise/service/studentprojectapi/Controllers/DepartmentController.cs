@@ -19,8 +19,6 @@ namespace studentprojectapi.Controllers
             _objectdepartmentService = deptservice;
         }
 
-
-
         [HttpGet]
         public async Task<ActionResult<List<DepartmentDTO>>> GetDepartments()
         {
@@ -28,6 +26,33 @@ namespace studentprojectapi.Controllers
 
             return Ok(returndepartments);
         }
+
+        [HttpPost("Add")]
+        public async Task<ActionResult<CreateDepartmentDTO>> AddDepartmentAsync(CreateDepartmentDTO createDepartmentDTO)
+        {
+            await _objectdepartmentService.AddDepartmentAsync(createDepartmentDTO);
+
+            return Ok();
+        }
+            
+
+        [HttpPut("Modify")]
+        public async Task<ActionResult> ModifyDepartments(ModifyDepartmentDTO modifydepartmentDTO)
+        {
+            await _objectdepartmentService.ModifyDepartmentsService(modifydepartmentDTO);
+
+            return Ok();
+        }
+
+
+        [HttpDelete("Delete")]
+        public async Task<ActionResult> DeleteDepartmentService(DeleteDepartmentDTO deletedepartmentdto)
+        {
+            await _objectdepartmentService.DeleteDepartmentService(deletedepartmentdto);
+
+            return Ok();    
+        }
+
     }
 
 }
