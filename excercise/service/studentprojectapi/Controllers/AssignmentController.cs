@@ -31,7 +31,7 @@ namespace studentprojectapi.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult> AddAssignment([FromBody] AssignmentDTO assignmentDTO)
+        public async Task<ActionResult> AddAssignment([FromBody] CreateAssignmentDTO assignmentDTO)
         {
             await _assignmentServices.AddAssignmentsAsync(assignmentDTO);
 
@@ -39,7 +39,7 @@ namespace studentprojectapi.Controllers
         }
 
         [HttpPut("Modify")]
-        public async Task<ActionResult> ModifyAssignment([FromBody] AssignmentDTO assignmentDTO)
+        public async Task<ActionResult> ModifyAssignment([FromBody] ModifyAssignmentDTO assignmentDTO)
             {
                 await _assignmentServices.ModifyAssignmentAsync(assignmentDTO);
 

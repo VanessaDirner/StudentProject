@@ -28,6 +28,8 @@ namespace studentprojectapi.Services
             departmentobject.abbreviation = createdepartmentDTO.Abbreviation;
             departmentobject.createdate = DateTime.Now;
             departmentobject.createdby = createdepartmentDTO.CreatedBy;
+            departmentobject.modifiedby = createdepartmentDTO.ModifiedBy;
+            departmentobject.modifieddate = DateTime.Now;
 
 
             await _db_context.SaveChangesAsync();

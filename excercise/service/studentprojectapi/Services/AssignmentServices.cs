@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
+using System.Collections.Generic;
 
 namespace studentprojectapi.Services
 {
@@ -30,6 +32,15 @@ namespace studentprojectapi.Services
             assignmentobject.assignmentID = Guid.NewGuid();
             assignmentobject.createdby = createassignmentDTO.CreatedBy;
             assignmentobject.createdate = DateTime.Now;
+            assignmentobject.modifieddate = DateTime.Now;
+            assignmentobject.modifiedby = createassignmentDTO.ModifiedBy;
+
+            // get values for person and department id foreign key from tables
+            // assignmentobject.personID = 
+            //
+          //  insert into assignment(assignmentID, personID, deptID, createdate, createdby, modifiedby, modifieddate)
+//values(newid(), (select employee.personID from employee where email = 'string'), (select department.deptID from department where department.deptname = 'math'),  getdate() , 'a', 'b', getdate())
+
 
             _database_context.assignments.Add(assignmentobject);
 
