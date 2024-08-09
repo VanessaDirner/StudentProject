@@ -24,9 +24,9 @@
 
         public DateOnly CreatedDate { get; set; }
 
-        public string DeptName { get; } = null!;
+        public string DeptName { get; set; } = null!;
 
-        public string Email { get; } = null!;
+        public string Email { get; set; } = null!;
 
     }
 

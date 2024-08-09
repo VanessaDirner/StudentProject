@@ -28,6 +28,12 @@ namespace studentprojectapi.Services
         {
             assignment assignmentobject = new assignment();
 
+            // get department info, get employee info
+
+            // check that department and employee exist 
+
+            // check whether they already exist in assignment table
+
             // map assignment DTO from generated model
             assignmentobject.assignmentID = Guid.NewGuid();
             assignmentobject.createdby = createassignmentDTO.CreatedBy;
@@ -36,7 +42,7 @@ namespace studentprojectapi.Services
             assignmentobject.modifiedby = createassignmentDTO.ModifiedBy;
 
             // get values for person and department id foreign key from tables
-            // assignmentobject.personID = 
+          //  assignmentobject.DeptID = createassignmentDTO.DeptName
             //
           //  insert into assignment(assignmentID, personID, deptID, createdate, createdby, modifiedby, modifieddate)
 //values(newid(), (select employee.personID from employee where email = 'string'), (select department.deptID from department where department.deptname = 'math'),  getdate() , 'a', 'b', getdate())
@@ -49,6 +55,7 @@ namespace studentprojectapi.Services
 
         }
 
+        // probably don't need to modify an existing assignment
         public async Task ModifyAssignmentAsync(ModifyAssignmentDTO modifyassignmentDTO)
         {
             assignment? assignment = await _database_context.assignments.FindAsync(modifyassignmentDTO.AssignmentID);
