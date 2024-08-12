@@ -26,55 +26,49 @@ namespace studentprojectapi.Services
         // write function to add people to departments
         public async Task AddAssignmentsAsync(CreateAssignmentDTO createassignmentDTO)
         {
+            // this will hold the details we'll send to the database
             assignment assignmentobject = new assignment();
 
-            // get department info, get employee info
-
-            // check that department and employee exist 
-
-            // check whether they already exist in assignment table
-
-            // map assignment DTO from generated model
-            assignmentobject.assignmentID = Guid.NewGuid();
-            assignmentobject.createdby = createassignmentDTO.CreatedBy;
-            assignmentobject.createdate = DateTime.Now;
-            assignmentobject.modifieddate = DateTime.Now;
-            assignmentobject.modifiedby = createassignmentDTO.ModifiedBy;
-
-            // get values for person and department id foreign key from tables
-          //  assignmentobject.DeptID = createassignmentDTO.DeptName
-            //
-          //  insert into assignment(assignmentID, personID, deptID, createdate, createdby, modifiedby, modifieddate)
-//values(newid(), (select employee.personID from employee where email = 'string'), (select department.deptID from department where department.deptname = 'math'),  getdate() , 'a', 'b', getdate())
-
-
-            _database_context.assignments.Add(assignmentobject);
-
-            // save changes to database
-            await _database_context.SaveChangesAsync();
-
-        }
-
-        // probably don't need to modify an existing assignment
-        public async Task ModifyAssignmentAsync(ModifyAssignmentDTO modifyassignmentDTO)
-        {
-            assignment? assignment = await _database_context.assignments.FindAsync(modifyassignmentDTO.AssignmentID);
-
-            if (assignment == null)
+            // check that department exists and get ID
+            department? departmentobject = await _database_context.departments.FindAsync(createassignmentDTO.DeptID);
+            // throw exception so that ID can't be invalid so that return employee can't be null
+            if (departmentobject == null)
             {
-                throw new Exception("invalid assignment ID");
+                throw new Exception("invalid department to assign to");
+                
             }
 
-            assignment.assignmentID = modifyassignmentDTO.AssignmentID;
-            assignment.modifieddate = DateTime.Now;
-            assignment.modifiedby = modifyassignmentDTO.ModifiedBy;
-            assignment.personID = modifyassignmentDTO.PersonID;
-            assignment.deptID = modifyassignmentDTO.DeptID;
+            // check that employee exists and get ID
+            employee? employee = await _database_context.employees.FindAsync(createassignmentDTO.PersonID);
+            // throw exception so that ID can't be invalid so that return employee can't be null
+            if (employee == null)
+            {
+                throw new Exception("invalid person to assign");
+            }
 
-            _database_context.Entry(assignment).State = EntityState.Modified;
+            // if the deptID and personID already exist in a row, then this would be a duplicate request
+            if ((assignmentobject.deptID == departmentobject.deptID) && (assignmentobject.personID == employee.personID))
+            {
+                throw new Exception("Employee is already assigned to this department");
+            }
+            else // create the assignment object in database
+            {
 
-            await _database_context.SaveChangesAsync();
+                // map assignment DTO from generated model
+                assignmentobject.assignmentID = Guid.NewGuid();
+                assignmentobject.deptID = createassignmentDTO.DeptID;
+                assignmentobject.personID = createassignmentDTO.PersonID;
+                assignmentobject.createdby = createassignmentDTO.CreatedBy;
+                assignmentobject.createdate = DateTime.Now;
+                assignmentobject.modifieddate = DateTime.Now;
+                assignmentobject.modifiedby = createassignmentDTO.ModifiedBy;
 
+                _database_context.assignments.Add(assignmentobject);
+
+                // save changes to database
+                await _database_context.SaveChangesAsync();
+
+}
         }
 
 

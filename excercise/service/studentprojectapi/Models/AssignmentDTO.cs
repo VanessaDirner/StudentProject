@@ -2,19 +2,19 @@
 {
     public class AssignmentDTO
     {
-        public Guid AssignmentID { get; set; }
+        public Guid AssignmentID { get; }
 
-        public Guid PersonID { get ; set; }
+        public Guid PersonID { get; set; }
 
         public Guid DeptID { get; set; }
 
         public string CreatedBy { get; set; }
 
-        public DateOnly CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         public string ModifiedBy { get; set; }
 
-        public DateOnly ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
     }
 
@@ -22,11 +22,8 @@
     {
         public string CreatedBy { get; set; }
 
-        public DateOnly CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public string DeptName { get; set; } = null!;
-
-        public string Email { get; set; } = null!;
 
     }
 
@@ -34,10 +31,10 @@
     {
         public string ModifiedBy { get; set; }
 
-        public DateOnly ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 
-    public class DeleteAssignmentDTO : AssignmentDTO
+    public class DeleteAssignmentDTO
     {
         public Guid AssignmentID {  get; set; }
 

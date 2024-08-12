@@ -37,7 +37,7 @@ namespace studentprojectapi.Controllers
 
             return Ok();
         }
-
+        /*
         [HttpPut("Modify")]
         public async Task<ActionResult> ModifyAssignment([FromBody] ModifyAssignmentDTO assignmentDTO)
             {
@@ -46,7 +46,7 @@ namespace studentprojectapi.Controllers
                 return Ok();
             }
 
-
+        */
         [HttpDelete("Delete")]
            public async Task<ActionResult> DeleteAssignment([FromBody] DeleteAssignmentDTO deleteassignmentDTO)
                {
