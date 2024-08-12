@@ -29,6 +29,8 @@ namespace studentprojectapi.Services
             // this will hold the details we'll send to the database
             assignment assignmentobject = new assignment();
 
+
+
             // check that department exists and get ID
             department? departmentobject = await _database_context.departments.FindAsync(createassignmentDTO.DeptID);
             // throw exception so that ID can't be invalid so that return employee can't be null
@@ -44,6 +46,10 @@ namespace studentprojectapi.Services
             if (employee == null)
             {
                 throw new Exception("invalid person to assign");
+            }
+           else if (employee.active == false) // inactive people should not be available for selection
+            {
+                throw new Exception("Cannot assign and inactive employee to department");
             }
 
             // if the deptID and personID already exist in a row, then this would be a duplicate request

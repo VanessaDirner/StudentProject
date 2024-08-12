@@ -65,6 +65,7 @@ namespace studentprojectapi.Services
             {
                 throw new Exception("invalid department ID");
             }
+            // if person is assigned to department, cannot delete department
 
             _db_context.departments.Remove(department);
 
