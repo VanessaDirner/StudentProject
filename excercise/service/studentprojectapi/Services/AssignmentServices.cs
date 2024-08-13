@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace studentprojectapi.Services
 {
@@ -37,7 +38,7 @@ namespace studentprojectapi.Services
             if (departmentobject == null)
             {
                 throw new Exception("invalid department to assign to");
-                
+
             }
 
             // check that employee exists and get ID
@@ -47,20 +48,42 @@ namespace studentprojectapi.Services
             {
                 throw new Exception("invalid person to assign");
             }
-           else if (employee.active == false) // inactive people should not be available for selection
+            else if (employee.active == false) // inactive people should not be available for selection
             {
                 throw new Exception("Cannot assign and inactive employee to department");
             }
 
-            // if the deptID and personID already exist in a row, then this would be a duplicate request
-            if ((assignmentobject.deptID == departmentobject.deptID) && (assignmentobject.personID == employee.personID))
-            {
-                throw new Exception("Employee is already assigned to this department");
-            }
-            else // create the assignment object in database
-            {
 
-                // map assignment DTO from generated model
+
+            // if the deptID and personID already exist in an assignment row, then this would be a duplicate request
+
+
+            Guid personID = createassignmentDTO.PersonID;
+            Guid deptID = createassignmentDTO.DeptID;
+           
+            /*
+            List<Guid> existingassignment = await (from assignment in _database_context.assignments
+                                                  where assignment.personID.Equals(personID)
+                                                  where assignment.deptID.Equals(deptID)
+                                                  select assignment).ToList();
+            */
+
+            // check for dept and person ID
+
+            // if we get a column back then there's already an assignment
+
+            List<assignment> b = await  (from row in _database_context.assignments
+                                         where row.personID.Equals(personID)
+                                         && row.deptID == deptID
+                                         select row).ToListAsync();
+
+
+
+            bool isempty = !b.Any();
+            if ((isempty))
+            {
+                Console.WriteLine($"{b}is null ");
+
                 assignmentobject.assignmentID = Guid.NewGuid();
                 assignmentobject.deptID = createassignmentDTO.DeptID;
                 assignmentobject.personID = createassignmentDTO.PersonID;
@@ -74,10 +97,26 @@ namespace studentprojectapi.Services
                 // save changes to database
                 await _database_context.SaveChangesAsync();
 
-}
+            }
+            else
+                throw new Exception($"Employee {b} is already assigned to this department");
+
+            /*
+                       // Guid adeptID = (Guid)a.GetValue(1);
+                      //  Guid apersonID = (Guid)a.GetValue(0);
+
+
+                        // if the deptID and personID already exist in an assignment row, then this would be a duplicate request
+                        if ((createassignmentDTO.DeptID == adeptID) && (createassignmentDTO.PersonID == apersonID))
+                        {
+                            throw new Exception("Employee is already assigned to this department");
+                        }
+                        else // create the assignment object in database
+                        {
+            */
+            // map assignment DTO from generated model
+
         }
-
-
 
         // write function to remove people from departments
 
