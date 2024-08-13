@@ -27,11 +27,6 @@ namespace studentprojectapi.Services
 
         public async Task AddEmployeeAsync(PersonDTO person)
         {
-            // how do I add a person?
-            // get details from input on user
-            // check for existing user in db
-            // add the user and return details or would the be no return/void?
-
             // map personDTO to employee from generated model so it can be added to database
             employee employeeobject = new employee();
 
@@ -55,7 +50,6 @@ namespace studentprojectapi.Services
             await _database_context.SaveChangesAsync();
 
            // return employee.personID?
-
         }
 
     

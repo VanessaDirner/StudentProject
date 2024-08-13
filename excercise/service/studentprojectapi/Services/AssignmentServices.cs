@@ -53,20 +53,11 @@ namespace studentprojectapi.Services
                 throw new Exception("Cannot assign and inactive employee to department");
             }
 
-
-
             // if the deptID and personID already exist in an assignment row, then this would be a duplicate request
-
 
             Guid personID = createassignmentDTO.PersonID;
             Guid deptID = createassignmentDTO.DeptID;
            
-            /*
-            List<Guid> existingassignment = await (from assignment in _database_context.assignments
-                                                  where assignment.personID.Equals(personID)
-                                                  where assignment.deptID.Equals(deptID)
-                                                  select assignment).ToList();
-            */
 
             // check for dept and person ID
 
@@ -76,7 +67,6 @@ namespace studentprojectapi.Services
                                          where row.personID.Equals(personID)
                                          && row.deptID == deptID
                                          select row).ToListAsync();
-
 
 
             bool isempty = !b.Any();
@@ -100,22 +90,6 @@ namespace studentprojectapi.Services
             }
             else
                 throw new Exception($"Employee {b} is already assigned to this department");
-
-            /*
-                       // Guid adeptID = (Guid)a.GetValue(1);
-                      //  Guid apersonID = (Guid)a.GetValue(0);
-
-
-                        // if the deptID and personID already exist in an assignment row, then this would be a duplicate request
-                        if ((createassignmentDTO.DeptID == adeptID) && (createassignmentDTO.PersonID == apersonID))
-                        {
-                            throw new Exception("Employee is already assigned to this department");
-                        }
-                        else // create the assignment object in database
-                        {
-            */
-            // map assignment DTO from generated model
-
         }
 
         // write function to remove people from departments
