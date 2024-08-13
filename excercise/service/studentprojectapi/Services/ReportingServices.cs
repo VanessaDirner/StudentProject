@@ -10,6 +10,7 @@ namespace studentprojectapi.Services
 
         public ReportingServices(studentprojectContext databaseContext) { _database_context = databaseContext; }
 
+        // generate a report of employees assigned to departments
         public async Task<Array> GetReportAsync() 
             {
             //  Array assignments = await (from row in _database_context.assignments select row);
@@ -17,29 +18,34 @@ namespace studentprojectapi.Services
             /*   employee employees = new employee();
                department departments = new department();   
                assignment assignment = new assignment();
-            */
-
-            var list = new List<string> { };
-
-            var 
-
-            List<employee> Listofemployees = await (from assignments in _database_context.assignments
+            */             
+            /*
+            Array listofemployees = await (from assignments in _database_context.assignments
                                  join employees in _database_context.employees on assignments.personID equals employees.personID
                                  join departments in _database_context.departments on assignments.deptID equals departments.deptID
-                                 select  assignments).ToListAsync;
+                                 select employees ).ToArrayAsync();
+
+            var query = from assignments in _database_context.assignments
+                        join employees in _database_context.employees on assignments.personID equals employees.personID
+                        join departments in _database_context.departments on assignments.deptID equals departments.deptID
+                        select new {Department = $"{departments.deptname}", departments.abbreviation, employees.active, EmployeeName = $"{employees.firstname} {employees.lastname}" , employees.phonenumber, employees.email };
+            */
+
+            Array result = await (from assignments in _database_context.assignments
+                        join employees in _database_context.employees on assignments.personID equals employees.personID
+                        join departments in _database_context.departments on assignments.deptID equals departments.deptID
+                        select new 
+                        { 
+                            department = $"{departments.deptname}",
+                            departments.abbreviation,
+                            employees.active,
+                            employeename = $"{employees.firstname} {employees.lastname}",
+                            employees.phonenumber,
+                            employees.email }
+                        ).ToArrayAsync();
 
 
-                               /*
-                               select new array
-                               {
-                                   Name = $"{employees.firstname} {employees.lastname}",
-                                   Phone = employees.phonenumber,
-                                   DepartmentName = departments.deptname,
-                                   DepartmentAbbreviation = departments.abbreviation
-                               }       */                                
-
-
-            return (0);
+            return (result);
             /*
              * select employee.firstname, employee.lastname, employee.phonenumber, employee.email, department.deptname, department.abbreviation
                 FROM assignment

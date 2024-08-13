@@ -20,7 +20,7 @@ namespace studentprojectapi.Controllers
         // // show all departments and people that belong to departments
 
         // GET: ReportingController
-        [HttpGet("View Report")]
+        [HttpGet("View")]
         public async Task<ActionResult<Array>> GetReport()
         {
             Array returnreport = await _reportingServices.GetReportAsync();

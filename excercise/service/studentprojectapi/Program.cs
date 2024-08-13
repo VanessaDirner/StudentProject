@@ -13,6 +13,7 @@ builder.Services.AddDbContext<studentprojectContext>(options =>
 builder.Services.AddTransient<PersonService>();
 builder.Services.AddTransient<DepartmentService>();
 builder.Services.AddTransient<AssignmentServices>();
+builder.Services.AddTransient<ReportingServices>();
 
 builder.Services.AddCors(options =>
 {
