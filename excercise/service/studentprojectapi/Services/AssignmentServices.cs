@@ -61,18 +61,19 @@ namespace studentprojectapi.Services
 
             // check for dept and person ID
 
-            // if we get a column back then there's already an assignment
 
-            List<assignment> b = await  (from row in _database_context.assignments
+            List<assignment> doesassignmentexist = await  (from row in _database_context.assignments
                                          where row.personID.Equals(personID)
                                          && row.deptID == deptID
                                          select row).ToListAsync();
 
 
-            bool isempty = !b.Any();
+            // if we get a column back then there's already an assignment
+            bool isempty = !doesassignmentexist.Any();
+
             if ((isempty))
             {
-                Console.WriteLine($"{b}is null ");
+                Console.WriteLine($"{doesassignmentexist} is null ");
 
                 assignmentobject.assignmentID = Guid.NewGuid();
                 assignmentobject.deptID = createassignmentDTO.DeptID;
@@ -89,7 +90,7 @@ namespace studentprojectapi.Services
 
             }
             else
-                throw new Exception($"Employee {b} is already assigned to this department");
+                throw new Exception($"Employee is already assigned to this department, check for assignment {doesassignmentexist}");
         }
 
         // write function to remove people from departments

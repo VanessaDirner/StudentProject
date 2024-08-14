@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 // this whole thing is how to create a personservice object that we can use to query database
 namespace studentprojectapi.Services
@@ -20,12 +22,9 @@ namespace studentprojectapi.Services
             return ListofEmployees;
          }
 
-        // write function to person by ID
-        // 
-
+ 
         // write function to add a person
-
-        public async Task AddEmployeeAsync(PersonDTO person)
+        public async Task<employee> AddEmployeeAsync(addPersonDTO person)
         {
             // map personDTO to employee from generated model so it can be added to database
             employee employeeobject = new employee();
@@ -40,8 +39,6 @@ namespace studentprojectapi.Services
             employeeobject.active = person.Active;
             employeeobject.createdby = person.CreatedBy;
             employeeobject.createdate = DateTime.Now;
-            employeeobject.modifiedby = person.ModifiedBy;
-            employeeobject.modifieddate = DateTime.Now;
 
                         // then add to database
             _database_context.employees.Add(employeeobject);
@@ -49,37 +46,41 @@ namespace studentprojectapi.Services
             // save changes to database
             await _database_context.SaveChangesAsync();
 
-           // return employee.personID?
+            return employeeobject;
         }
 
     
 
         //write function to modify a person
-       public async Task ModifyEmployeeService(updatePersonDTO updateperson)
+       public async Task<employee> ModifyEmployeeService(updatePersonDTO updateperson)
         {
 
-            employee? employee = await _database_context.employees.FindAsync(updateperson.UpdateID);
+            //     employee? employee = await _database_context.employees.FindAsync(updateperson.ModifyByEmail);
+
+
+            var employeeobject = await _database_context.employees.SingleOrDefaultAsync(emp => emp.email == updateperson.Email);
+
             // throw exception so that ID can't be invalid so that return employee can't be null
-            if (employee == null)
+            if (employeeobject == null)
             {
-                throw new Exception("invalid person ID");
+                throw new Exception("Invalid employee email address. Please supply the email address of the account to modify.");
             }
 
-            employee.firstname = updateperson.FirstName;
-            employee.lastname = updateperson.LastName;
-            employee.email = updateperson.Email;
-            employee.phonenumber= updateperson.PhoneNumber;
-            employee.startdate = updateperson.StartDate;
-            employee.enddate = updateperson.EndDate;
-            employee.active = updateperson.Active;
-            employee.modifieddate = DateTime.Now;
-            employee.modifiedby = updateperson.ModifiedBy;
+            employeeobject.firstname = updateperson.FirstName;
+            employeeobject.lastname = updateperson.LastName;
+            employeeobject.email = updateperson.Email;
+            employeeobject.phonenumber= updateperson.PhoneNumber;
+            employeeobject.startdate = updateperson.StartDate;
+            employeeobject.enddate = updateperson.EndDate;
+            employeeobject.active = updateperson.Active;
+            employeeobject.modifieddate = DateTime.Now;
+            employeeobject.modifiedby = updateperson.ModifiedBy;
 
-            _database_context.Entry(employee).State = EntityState.Modified;
+            _database_context.Entry(employeeobject).State = EntityState.Modified;
 
             await _database_context.SaveChangesAsync();
 
-
+            return employeeobject;
 
         }
 
@@ -89,11 +90,11 @@ namespace studentprojectapi.Services
         // delete row
         public async Task DeleteEmployeeService(deletepersonDTO deleteperson)
         {
-            employee? employee = await _database_context.employees.FindAsync(deleteperson.deleteID);
+            employee? employee = await _database_context.employees.FindAsync(deleteperson.DeleteByEmail);
 
-            if (deleteperson == null)
+            if (employee == null)
             {
-                throw new Exception("invalid person ID");
+                throw new Exception("Please provide a valid employee email so that the account can be found and deleted.");
             }
 
           //  var deleteemployee = from employee in _database_context.employees where employee.personID == deleteperson.deleteID select employee;

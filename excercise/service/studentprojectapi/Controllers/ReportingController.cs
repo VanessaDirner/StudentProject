@@ -21,9 +21,9 @@ namespace studentprojectapi.Controllers
 
         // GET: ReportingController
         [HttpGet("View")]
-        public async Task<ActionResult<Array>> GetReport()
+        public async Task<ActionResult<List<ReportingDTO>>> GetReport()
         {
-            Array returnreport = await _reportingServices.GetReportAsync();
+            List<ReportingDTO> returnreport = await _reportingServices.GetReportAsync();
 
             return Ok(returnreport);
 

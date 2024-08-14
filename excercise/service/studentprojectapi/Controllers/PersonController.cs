@@ -23,7 +23,7 @@ namespace studentprojectapi.Controllers
 
         // this is an api endpoint
         [HttpGet]
-        public async Task<ActionResult<List<PersonDTO>>> GetEmployees()
+        public async Task<ActionResult<PersonDTO>> GetEmployees()
         {
             // list of employee objects
             // calling the get employees async method that is part of the object _personService created above
@@ -36,32 +36,28 @@ namespace studentprojectapi.Controllers
             // then add httpget 400, 200 etc specified for right above api endpoint 
         }
 
-
-
-
         [HttpPost("Add")]
-        public async Task<ActionResult> AddEmployee([FromBody] PersonDTO personDTO ) 
+        public async Task<ActionResult<PersonDTO>> AddEmployee([FromBody] addPersonDTO personDTO ) 
        {
             // get add details from body of get request
             // personDTO is the format in which the body of the request arrives
             // it's specified on the swagger page 
             // we'll send this to the service that will translate this to the model of the database
 
-            await _personService.AddEmployeeAsync(personDTO);
-            
-            
-            return Ok();
+            employee returnemployee = await _personService.AddEmployeeAsync(personDTO);
+                        
+            return Ok(returnemployee);
         }
 
         [HttpPut("Modify")]
         // I don't want to accept a new GUID
         // I don't want createddate and createdby to be updated either
         // I need to match details with a GUID in table
-        public async Task<ActionResult> ModifyEmployee([FromBody] updatePersonDTO updatepersonDTO)
+        public async Task<ActionResult<PersonDTO>> ModifyEmployee([FromBody] updatePersonDTO updatepersonDTO)
         {
-            await _personService.ModifyEmployeeService(updatepersonDTO);
+            employee returnemployee = await _personService.ModifyEmployeeService(updatepersonDTO);
 
-            return Ok();
+            return Ok(returnemployee);
         }
 
 
@@ -71,6 +67,7 @@ namespace studentprojectapi.Controllers
             await _personService.DeleteEmployeeService(deletepersonDTO);
 
             return Ok();
+            // later, do I want to return something?
         }
 
 

@@ -26,13 +26,12 @@ public partial class assignment
     [Column(TypeName = "date")]
     public DateTime createdate { get; set; }
 
-    [Required]
     [StringLength(25)]
     [Unicode(false)]
     public string modifiedby { get; set; }
 
     [Column(TypeName = "date")]
-    public DateTime modifieddate { get; set; }
+    public DateTime? modifieddate { get; set; }
 
     [ForeignKey("deptID")]
     [InverseProperty("assignments")]
