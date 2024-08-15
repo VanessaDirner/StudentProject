@@ -19,6 +19,12 @@ namespace studentprojectapi.Services
 
         public async Task AddDepartmentAsync(CreateDepartmentDTO createdepartmentDTO)
         {
+            // throw exception so that ID can't be invalid so that return employee can't be null
+            if ((createdepartmentDTO.DeptName == null) || (createdepartmentDTO.Abbreviation == null))
+            {
+                throw new Exception("Please provide a department name and abbreviation ");
+            }
+
             department departmentobject = new department();
 
             _db_context.departments.Add(departmentobject);
@@ -41,9 +47,9 @@ namespace studentprojectapi.Services
         {
             department? departmentobject = await _db_context.departments.FindAsync(modifydepartmentDTO.modifyDeptID);
             // throw exception so that ID can't be invalid so that return employee can't be null
-            if (departmentobject == null)
+            if (modifydepartmentDTO.modifyDeptID == null)
             {
-                throw new Exception("invalid department ID");
+                throw new Exception("invalid department ID, please check that the department exists.");
             }
 
             departmentobject.deptID = modifydepartmentDTO.modifyDeptID;
@@ -51,6 +57,7 @@ namespace studentprojectapi.Services
             departmentobject.abbreviation = modifydepartmentDTO.Abbreviation;
             departmentobject.modifieddate = DateTime.Now;
             departmentobject.modifiedby = modifydepartmentDTO.ModifiedBy;
+
 
             _db_context.Entry(departmentobject).State = EntityState.Modified;
 

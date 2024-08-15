@@ -3,9 +3,8 @@
    
     public class PersonDTO
     {
-        // don't need to to have a get set since we won't access it
-        // TODO update database tables, rerun power tools reverse engineer, update DTOS
         // TODO add = null! for fields that should not be null
+        public Guid personID;
 
         public string FirstName { get; set; } = null!;
 
@@ -19,30 +18,29 @@
     
         public DateTime EndDate { get; set; }
 
-        public bool Active { get; set; } 
-     
-        public string CreatedBy { get; }
-  
-        public DateTime CreatedDate { get; }
-    
-        public string ModifiedDate { get; }
+        public bool Active { get; set; }
 
-        public string ModifiedBy { get; }
+        //have an init instead of set since 'create' audit fields shouldn't be updated once set
+        public string CreatedBy { get; init; } = null!;
+
+        public DateTime CreatedDate { get; init; }
+
+        public string ModifiedDate { get; set; }
+
+        public string ModifiedBy { get; set; }
     }
 
     public class getPersonDTO : PersonDTO
     {
         public Guid PersonId;
  
-        public string Email { get; set; }
+        public string getEmail { get; set; }
 
     }
 
     public class addPersonDTO : PersonDTO
     {
-        public string CreatedBy { get; set;  } = null!;
-
-        public DateTime CreatedDate { get; set;  }
+        public string addEmail { get; set; }
 
     }
 
@@ -50,14 +48,11 @@
     {
         public string ModifyByEmail { get; set; } = null!;
 
-        public string ModifiedBy { get; set; } = null!;
-
-        public DateTime ModifiedDate { get; set; }
     }
 
     public class deletepersonDTO
     {
-        public Guid DeleteByEmail { get; set; }
+        public string DeleteByEmail { get; set; } = null!;
 
     }
 

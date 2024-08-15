@@ -31,9 +31,8 @@ namespace studentprojectapi.Services
             assignment assignmentobject = new assignment();
 
 
-
             // check that department exists and get ID
-            department? departmentobject = await _database_context.departments.FindAsync(createassignmentDTO.DeptID);
+            department? departmentobject = await _database_context.departments.SingleOrDefaultAsync(dept => dept.deptname == createassignmentDTO.DepartmentName);
             // throw exception so that ID can't be invalid so that return employee can't be null
             if (departmentobject == null)
             {
@@ -42,7 +41,7 @@ namespace studentprojectapi.Services
             }
 
             // check that employee exists and get ID
-            employee? employee = await _database_context.employees.FindAsync(createassignmentDTO.PersonID);
+            employee? employee = await _database_context.employees.SingleOrDefaultAsync(emp => emp.email == createassignmentDTO.EmployeeEmail);
             // throw exception so that ID can't be invalid so that return employee can't be null
             if (employee == null)
             {
@@ -50,14 +49,14 @@ namespace studentprojectapi.Services
             }
             else if (employee.active == false) // inactive people should not be available for selection
             {
-                throw new Exception("Cannot assign and inactive employee to department");
+                throw new Exception("Cannot assign an inactive employee to department");
             }
 
             // if the deptID and personID already exist in an assignment row, then this would be a duplicate request
 
-            Guid personID = createassignmentDTO.PersonID;
-            Guid deptID = createassignmentDTO.DeptID;
-           
+            Guid deptID = departmentobject.deptID;
+            Guid personID = employee.personID;
+
 
             // check for dept and person ID
 
@@ -76,8 +75,8 @@ namespace studentprojectapi.Services
                 Console.WriteLine($"{doesassignmentexist} is null ");
 
                 assignmentobject.assignmentID = Guid.NewGuid();
-                assignmentobject.deptID = createassignmentDTO.DeptID;
-                assignmentobject.personID = createassignmentDTO.PersonID;
+                assignmentobject.deptID = deptID;
+                assignmentobject.personID = personID;
                 assignmentobject.createdby = createassignmentDTO.CreatedBy;
                 assignmentobject.createdate = DateTime.Now;
                 assignmentobject.modifieddate = DateTime.Now;
@@ -90,7 +89,7 @@ namespace studentprojectapi.Services
 
             }
             else
-                throw new Exception($"Employee is already assigned to this department, check for assignment {doesassignmentexist}");
+                throw new Exception($"Employee is already assigned to this department, check for assignment ");
         }
 
         // write function to remove people from departments

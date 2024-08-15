@@ -18,12 +18,13 @@
 
     }
 
+
+
     public class CreateDepartmentDTO : DepartmentDTO
     {
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; init; }
 
-        public DateTime CreatedDate { get; set; }
-
+        public DateTime CreatedDate { get; init; }
     }
 
     public class ModifyDepartmentDTO : DepartmentDTO
