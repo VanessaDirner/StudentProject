@@ -19,11 +19,13 @@ namespace studentprojectapi.Services
 
         public async Task AddDepartmentAsync(CreateDepartmentDTO createdepartmentDTO)
         {
-            // throw exception so that ID can't be invalid so that return employee can't be null
+            // check if department is empty
             if ((createdepartmentDTO.DeptName == null) || (createdepartmentDTO.Abbreviation == null))
             {
                 throw new Exception("Please provide a department name and abbreviation ");
             }
+            // check if department already exists in table
+            department? doesdeptexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.deptname == createdepartmentDTO.DeptName);
 
             department departmentobject = new department();
 
@@ -68,7 +70,11 @@ namespace studentprojectapi.Services
         {
             department? department = await _db_context.departments.FindAsync(deletedepartmentDTO.DeptID);
 
-            if (deletedepartmentDTO == null)
+            employee? employeeobject = await _db_context.employees.SingleOrDefaultAsync(delemp => delemp.email == department.DeleteByEmail);
+
+            
+
+            if (department == null)
             {
                 throw new Exception("invalid department ID");
             }
