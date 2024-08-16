@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\excercise",
+    "\\excercise\\service",
+    "\\excercise\\service\\studentprojectapi",
+    "\\excercise\\service\\studentprojectapi\\Controllers",
+    "\\excercise\\service\\studentprojectapi\\GeneratedModels",
+    "\\excercise\\service\\studentprojectapi\\Models",
+    "\\excercise\\service\\studentprojectapi\\Services"
+  ],
+  "SelectedNode": "\\excercise\\service\\studentprojectapi\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -18,8 +18,6 @@
 
     }
 
-
-
     public class CreateDepartmentDTO : DepartmentDTO
     {
         public string CreatedBy { get; init; }

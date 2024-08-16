@@ -2,6 +2,9 @@ using studentprojectapi.GeneratedModels;
 using studentprojectapi.Services;
 using Microsoft.EntityFrameworkCore;
 
+// auto mapper https://docs.automapper.org/en/stable/Getting-started.html
+var config = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDto>());
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
