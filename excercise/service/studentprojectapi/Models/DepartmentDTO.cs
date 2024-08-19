@@ -36,7 +36,9 @@
 
     public class DeleteDepartmentDTO : DepartmentDTO
     {
-        public Guid DeptID { get; set; }
+        public string deletebyEmail { get; set; }
+
+
 
     }
 }

@@ -26,6 +26,7 @@ namespace studentprojectapi.Services
             }
             // check if department already exists in table
             department? doesdeptexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.deptname == createdepartmentDTO.DeptName);
+
             if (doesdeptexist != null)
             {
                 throw new Exception("Existing department was found. Please make sure the department name and abbreviation are unique.");
@@ -33,18 +34,18 @@ namespace studentprojectapi.Services
 
 
             // create auto mapper object
-            var mapper = config.CreateMapper();
+        //    var mapper = config.CreateMapper();
 
             // setup auto mapper for add
 
 
-            department departmentobject = mapper.Map<departmentobject>(createdepartmentDTO);
+         //   department departmentobject = mapper.Map<departmentobject>(createdepartmentDTO);
 
-            /*
-            OrderDto dto = mapper.Map<OrderDto>(order);
+            
+           // OrderDto dto = mapper.Map<OrderDto>(order);
 
             department departmentobject = new department();
-
+            /*
             departmentobject.deptID = Guid.NewGuid();
             departmentobject.deptname = createdepartmentDTO.DeptName;
             departmentobject.abbreviation = createdepartmentDTO.Abbreviation;
@@ -71,12 +72,12 @@ namespace studentprojectapi.Services
             }
             // check if the department name and abbreviation name already exists
             department? doesdeptnameexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.deptname == modifydepartmentDTO.DeptName);
-            if (modifydepartmentDTO.DeptName == doesdeptnameexist)
+            if (modifydepartmentDTO.DeptName == doesdeptnameexist.deptname)
             {
                 throw new Exception("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
             }
-            department? doesdeptabbrexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.deptabbr == modifydepartmentDTO.Abbreviation);
-            if (modifydepartmentDTO.Abbreviation == doesdeptabbrexist)
+            department? doesdeptabbrexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.abbreviation == modifydepartmentDTO.Abbreviation);
+            if (modifydepartmentDTO.Abbreviation == doesdeptabbrexist.abbreviation)
             {
                 throw new Exception("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
             }
@@ -98,10 +99,9 @@ namespace studentprojectapi.Services
         {
             department? department = await _db_context.departments.FindAsync(deletedepartmentDTO.DeptID);
 
-            employee? employeeobject = await _db_context.employees.SingleOrDefaultAsync(delemp => delemp.email == department.DeleteByEmail);
+            employee? employeeobject = await _db_context.employees.SingleOrDefaultAsync(delemp => delemp.email == deletedepartmentDTO.deletebyEmail);
 
-            
-
+         
             if (department == null)
             {
                 throw new Exception("invalid department ID");
