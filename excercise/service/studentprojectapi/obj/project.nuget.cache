@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dxDF1bs967s=",
+  "dgSpecHash": "C2/XQH4KtGA=",
   "success": true,
   "projectFilePath": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\studentprojectapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vdirner\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\vdirner\\.nuget\\packages\\automapper.collection\\10.0.0\\automapper.collection.10.0.0.nupkg.sha512",
     "C:\\Users\\vdirner\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\vdirner\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\vdirner\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.7\\microsoft.aspnetcore.jsonpatch.8.0.7.nupkg.sha512",

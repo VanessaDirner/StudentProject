@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
 using System.ComponentModel.DataAnnotations;
@@ -11,9 +12,12 @@ namespace studentprojectapi.Services
     {   // CONTEXT IS DATABASE
         // this is an object of studentprojectcontext class
         private readonly studentprojectContext _database_context;
+        private readonly IMapper _mapper;
 
         // we're using this to work with our database
-        public PersonService(studentprojectContext context) { _database_context = context; }
+        //  this is a constructor
+        // we specify that we need to parameters here - mapper and database context
+        public PersonService(studentprojectContext context, IMapper mapper) { _database_context = context; _mapper = mapper; }
 
         // write function to get list of people
          public async Task<List<employee>> GetEmployeesAsync() {
@@ -24,7 +28,7 @@ namespace studentprojectapi.Services
 
  
         // write function to add a person
-        public async Task<employee> AddEmployeeAsync(addPersonDTO addperson)
+        public async Task<employee> AddEmployeeAsync(PersonDTO addperson)
         {
 
             // add check to see whether person already exists with a temp object
@@ -37,20 +41,16 @@ namespace studentprojectapi.Services
             }
 
             // map personDTO to employee from generated model so it can be added to database
-            employee newemployeeobject = new employee();
+            //   employee newemployeeobject = new employee();
 
-            newemployeeobject.personID = Guid.NewGuid();
-            newemployeeobject.firstname = addperson.FirstName;
-            newemployeeobject.lastname = addperson.LastName;
-            newemployeeobject.email = addperson.Email;
-            newemployeeobject.phonenumber = addperson.PhoneNumber;
-            newemployeeobject.startdate = addperson.StartDate;
-            newemployeeobject.enddate = addperson.EndDate;
-            newemployeeobject.active = addperson.Active;
-            newemployeeobject.createdby = addperson.CreatedBy;
+
+            employee newemployeeobject = _mapper.Map<employee>(addperson);
+
             newemployeeobject.createdate = DateTime.Now;
             newemployeeobject.modifieddate = DateTime.Now;
-            newemployeeobject.modifiedby = addperson.ModifiedBy;
+ 
+
+            
             // then add to database
             _database_context.employees.Add(newemployeeobject);
 
@@ -63,10 +63,10 @@ namespace studentprojectapi.Services
     
 
         //write function to modify a person
-       public async Task<employee> ModifyEmployeeService(updatePersonDTO updateperson)
+       public async Task<employee> ModifyEmployeeService(PersonDTO updateperson)
         {
 
-            employee? employeeobject = await _database_context.employees.SingleOrDefaultAsync(emp => emp.email == updateperson.ModifyByEmail);
+            employee? employeeobject = await _database_context.employees.SingleOrDefaultAsync(emp => emp.email == updateperson.Email);
 
             // throw exception so that ID can't be invalid so that return employee can't be null
             if (updateperson == null)

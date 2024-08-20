@@ -25,30 +25,11 @@
 
         public DateTime CreatedDate { get; init; }
 
-        public string ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
         public string ModifiedBy { get; set; }
     }
 
-    public class getPersonDTO : PersonDTO
-    {
-        public Guid PersonId;
- 
-        public string getEmail { get; set; }
-
-    }
-
-    public class addPersonDTO : PersonDTO
-    {
-        public string addEmail { get; set; }
-
-    }
-
-    public class updatePersonDTO : PersonDTO
-    {
-        public string ModifyByEmail { get; set; } = null!;
-
-    }
 
     public class deletepersonDTO
     {

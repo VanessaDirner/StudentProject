@@ -37,7 +37,7 @@ namespace studentprojectapi.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult<PersonDTO>> AddEmployee([FromBody] addPersonDTO personDTO ) 
+        public async Task<ActionResult<PersonDTO>> AddEmployee([FromBody] PersonDTO personDTO ) 
        {
             // get add details from body of get request
             // personDTO is the format in which the body of the request arrives
@@ -53,7 +53,7 @@ namespace studentprojectapi.Controllers
         // I don't want to accept a new GUID
         // I don't want createddate and createdby to be updated either
         // I need to match details with a GUID in table
-        public async Task<ActionResult<PersonDTO>> ModifyEmployee([FromBody] updatePersonDTO updatepersonDTO)
+        public async Task<ActionResult<PersonDTO>> ModifyEmployee([FromBody] PersonDTO updatepersonDTO)
         {
             employee returnemployee = await _personService.ModifyEmployeeService(updatepersonDTO);
 

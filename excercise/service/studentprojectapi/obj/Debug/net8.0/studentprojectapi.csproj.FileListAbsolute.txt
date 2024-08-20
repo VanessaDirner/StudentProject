@@ -109,3 +109,5 @@ C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\Ne
 C:\Users\Vanessa\Source\Repos\VanessaDirner\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\studentprojectapi.dll
 C:\Users\Vanessa\Source\Repos\VanessaDirner\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\refint\studentprojectapi.dll
 C:\Users\Vanessa\Source\Repos\VanessaDirner\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\studentprojectapi.pdb
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\AutoMapper.dll
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\AutoMapper.Collection.dll

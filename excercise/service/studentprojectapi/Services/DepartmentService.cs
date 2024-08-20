@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
+
 
 namespace studentprojectapi.Services
 {
@@ -9,6 +11,8 @@ namespace studentprojectapi.Services
         private readonly studentprojectContext _db_context;
 
         public DepartmentService(studentprojectContext context) { _db_context = context; }
+
+
 
         public async Task<List<department>> GetDepartmentsAsync()
         {
@@ -19,6 +23,9 @@ namespace studentprojectapi.Services
 
         public async Task AddDepartmentAsync(CreateDepartmentDTO createdepartmentDTO)
         {
+            // create automapper objet of name mapDepartment
+            MapperConfiguration mapAddDepartment = new MapperConfiguration(cfg => cfg.CreateMap<department, CreateDepartmentDTO>());
+
             // check if department is empty
             if ((createdepartmentDTO.DeptName == null) || (createdepartmentDTO.Abbreviation == null))
             {
@@ -34,17 +41,13 @@ namespace studentprojectapi.Services
 
 
             // create auto mapper object
-        //    var mapper = config.CreateMapper();
-
-            // setup auto mapper for add
-
-
-         //   department departmentobject = mapper.Map<departmentobject>(createdepartmentDTO);
-
-            
-           // OrderDto dto = mapper.Map<OrderDto>(order);
-
+            var mapper = mapAddDepartment.CreateMapper();
+                   
             department departmentobject = new department();
+
+            // check mapping
+
+
             /*
             departmentobject.deptID = Guid.NewGuid();
             departmentobject.deptname = createdepartmentDTO.DeptName;

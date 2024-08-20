@@ -23,6 +23,8 @@ public partial class studentprojectContext : DbContext
 
     public virtual DbSet<employee> employees { get; set; }
 
+   // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//       => optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS03;Initial Catalog=studentproject;Integrated Security=fal;Encrypt=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -30,7 +32,7 @@ public partial class studentprojectContext : DbContext
         {
             entity.HasKey(e => e.assignmentID).HasName("PK__assignme__52C218C05C24AB07");
 
-            entity.Property(e => e.assignmentID).ValueGeneratedNever();
+            entity.Property(e => e.assignmentID).HasDefaultValueSql("(newid())");
 
             entity.HasOne(d => d.dept).WithMany(p => p.assignments)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -45,14 +47,14 @@ public partial class studentprojectContext : DbContext
         {
             entity.HasKey(e => e.deptID).HasName("PK__departme__BE2D26D6B5480060");
 
-            entity.Property(e => e.deptID).ValueGeneratedNever();
+            entity.Property(e => e.deptID).HasDefaultValueSql("(newid())");
         });
 
         modelBuilder.Entity<employee>(entity =>
         {
             entity.HasKey(e => e.personID).HasName("PK__employee__EC7D7D6DEE5B734C");
 
-            entity.Property(e => e.personID).ValueGeneratedNever();
+            entity.Property(e => e.personID).HasDefaultValueSql("(newid())");
             entity.Property(e => e.active).HasDefaultValueSql("((1))");
         });
 
