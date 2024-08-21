@@ -18,22 +18,6 @@
 
     }
 
-    public class CreateDepartmentDTO : DepartmentDTO
-    {
-        public string CreatedBy { get; init; }
-
-        public DateTime CreatedDate { get; init; }
-    }
-
-    public class ModifyDepartmentDTO : DepartmentDTO
-    {
-        public Guid modifyDeptID { get; set; }
-
-        public string ModifiedBy { get; set; }
-
-        public DateTime ModifiedDate { get; set; }
-    }
-
     public class DeleteDepartmentDTO : DepartmentDTO
     {
         public string deletebyEmail { get; set; }

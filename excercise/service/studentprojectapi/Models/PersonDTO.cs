@@ -22,7 +22,7 @@
 
         //have an init instead of set since 'create' audit fields shouldn't be updated once set
         public string CreatedBy { get; init; } = null!;
-
+            
         public DateTime CreatedDate { get; init; }
 
         public DateTime ModifiedDate { get; set; }

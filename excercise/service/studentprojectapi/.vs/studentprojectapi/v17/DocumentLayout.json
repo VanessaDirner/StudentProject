@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\studentprojectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\studentprojectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\services\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:services\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\models\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:models\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\services\\assignmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:services\\assignmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\models\\assignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:models\\assignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\services\\personservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,28 +27,28 @@
       "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:models\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\services\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:services\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\studentprojectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\studentprojectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\generatedmodels\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:generatedmodels\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\studentprojectapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:studentprojectapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\services\\assignmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:services\\assignmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|c:\\pcldev\\studentproject\\excercise\\service\\studentprojectapi\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944C6C5B-0EC3-4B93-8CE8-CF85D50F36E9}|studentprojectapi.csproj|solutionrelative:controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,109 +57,92 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 126,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 128,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T19:24:26.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "department.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\department.cs",
-              "RelativeDocumentMoniker": "GeneratedModels\\department.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\department.cs",
-              "RelativeToolTip": "GeneratedModels\\department.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:54:47.615Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DepartmentController.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Controllers\\DepartmentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DepartmentController.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Controllers\\DepartmentController.cs",
-              "RelativeToolTip": "Controllers\\DepartmentController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T15:44:47.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "PersonService.cs",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\PersonService.cs",
               "RelativeDocumentMoniker": "Services\\PersonService.cs",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\PersonService.cs",
               "RelativeToolTip": "Services\\PersonService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T20:10:21.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-14T20:10:21.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "AssignmentServices.cs",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\AssignmentServices.cs",
               "RelativeDocumentMoniker": "Services\\AssignmentServices.cs",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\AssignmentServices.cs",
               "RelativeToolTip": "Services\\AssignmentServices.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAgwCQAAAApAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAgwFkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T17:31:55.331Z",
+              "WhenOpened": "2024-08-15T17:31:55.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DepartmentDTO.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\DepartmentDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DepartmentDTO.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\DepartmentDTO.cs",
+              "RelativeToolTip": "Models\\DepartmentDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:34:41.668Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 155,
+          "DockedWidth": 153,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "studentprojectContext.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\studentprojectContext.cs",
-              "RelativeDocumentMoniker": "GeneratedModels\\studentprojectContext.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\studentprojectContext.cs",
-              "RelativeToolTip": "GeneratedModels\\studentprojectContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA2AAAA",
+              "Title": "DepartmentService.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\DepartmentService.cs",
+              "RelativeDocumentMoniker": "Services\\DepartmentService.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\DepartmentService.cs",
+              "RelativeToolTip": "Services\\DepartmentService.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwEIAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:54:18.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "employee.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\employee.cs",
-              "RelativeDocumentMoniker": "GeneratedModels\\employee.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\employee.cs",
-              "RelativeToolTip": "GeneratedModels\\employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:55:18.499Z",
+              "WhenOpened": "2024-08-20T15:44:53.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AssignmentDTO.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\AssignmentDTO.cs",
+              "RelativeDocumentMoniker": "Models\\AssignmentDTO.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\AssignmentDTO.cs",
+              "RelativeToolTip": "Models\\AssignmentDTO.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAgwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:34:06.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PersonDTO.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\PersonDTO.cs",
+              "RelativeDocumentMoniker": "Models\\PersonDTO.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\PersonDTO.cs",
+              "RelativeToolTip": "Models\\PersonDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T16:45:20.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "assignment.cs",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\assignment.cs",
               "RelativeDocumentMoniker": "GeneratedModels\\assignment.cs",
@@ -171,51 +150,47 @@
               "RelativeToolTip": "GeneratedModels\\assignment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:54:29.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T17:54:29.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PersonDTO.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\PersonDTO.cs",
-              "RelativeDocumentMoniker": "Models\\PersonDTO.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Models\\PersonDTO.cs",
-              "RelativeToolTip": "Models\\PersonDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAA3AAAA",
+              "DocumentIndex": 8,
+              "Title": "studentprojectContext.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\studentprojectContext.cs",
+              "RelativeDocumentMoniker": "GeneratedModels\\studentprojectContext.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\studentprojectContext.cs",
+              "RelativeToolTip": "GeneratedModels\\studentprojectContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T16:45:20.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T17:54:18.791Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "employee.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\employee.cs",
+              "RelativeDocumentMoniker": "GeneratedModels\\employee.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\GeneratedModels\\employee.cs",
+              "RelativeToolTip": "GeneratedModels\\employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T17:55:18.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Mappings\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Mappings\\MappingProfile.cs",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Mappings\\MappingProfile.cs",
               "RelativeToolTip": "Mappings\\MappingProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T16:38:01.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T16:38:01.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DepartmentService.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\DepartmentService.cs",
-              "RelativeDocumentMoniker": "Services\\DepartmentService.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\DepartmentService.cs",
-              "RelativeToolTip": "Services\\DepartmentService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwDMAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T15:44:53.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "PersonController.cs",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\Controllers\\PersonController.cs",
               "RelativeDocumentMoniker": "Controllers\\PersonController.cs",
@@ -223,21 +198,19 @@
               "RelativeToolTip": "Controllers\\PersonController.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAQwDcAAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:20:42.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T17:20:42.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "studentprojectapi",
+              "DocumentIndex": 11,
+              "Title": "studentprojectapi.csproj",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\studentprojectapi.csproj",
               "RelativeDocumentMoniker": "studentprojectapi.csproj",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\service\\studentprojectapi\\studentprojectapi.csproj",
               "RelativeToolTip": "studentprojectapi.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-20T16:37:36.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T16:37:36.236Z"
             }
           ]
         }

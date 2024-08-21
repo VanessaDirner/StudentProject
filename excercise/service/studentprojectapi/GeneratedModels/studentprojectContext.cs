@@ -23,9 +23,6 @@ public partial class studentprojectContext : DbContext
 
     public virtual DbSet<employee> employees { get; set; }
 
-   // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//       => optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS03;Initial Catalog=studentproject;Integrated Security=fal;Encrypt=True");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<assignment>(entity =>

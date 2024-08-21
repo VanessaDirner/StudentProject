@@ -28,7 +28,7 @@ namespace studentprojectapi.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult<CreateDepartmentDTO>> AddDepartmentAsync(CreateDepartmentDTO createDepartmentDTO)
+        public async Task<ActionResult<DepartmentDTO>> AddDepartmentAsync(DepartmentDTO createDepartmentDTO)
         {
             await _objectdepartmentService.AddDepartmentAsync(createDepartmentDTO);
 
@@ -37,7 +37,7 @@ namespace studentprojectapi.Controllers
             
 
         [HttpPut("Modify")]
-        public async Task<ActionResult> ModifyDepartments(ModifyDepartmentDTO modifydepartmentDTO)
+        public async Task<ActionResult> ModifyDepartments(DepartmentDTO modifydepartmentDTO)
         {
             await _objectdepartmentService.ModifyDepartmentsService(modifydepartmentDTO);
 

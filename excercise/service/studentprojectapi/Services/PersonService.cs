@@ -77,16 +77,10 @@ namespace studentprojectapi.Services
             {
                 throw new Exception("Email address is not associated with an account. Please supply the email address of the account to modify.");
             }
+                       
+            employee updateemployeeobject = _mapper.Map<employee>(updateperson);
 
-            employeeobject.firstname = updateperson.FirstName;
-            employeeobject.lastname = updateperson.LastName;
-            employeeobject.email = updateperson.Email;
-            employeeobject.phonenumber= updateperson.PhoneNumber;
-            employeeobject.startdate = updateperson.StartDate;
-            employeeobject.enddate = updateperson.EndDate;
-            employeeobject.active = updateperson.Active;
             employeeobject.modifieddate = DateTime.Now;
-            employeeobject.modifiedby = updateperson.ModifiedBy;
 
             _database_context.Entry(employeeobject).State = EntityState.Modified;
 

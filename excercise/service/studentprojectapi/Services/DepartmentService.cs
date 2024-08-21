@@ -9,8 +9,9 @@ namespace studentprojectapi.Services
     public class DepartmentService
     {
         private readonly studentprojectContext _db_context;
+        private readonly IMapper _mapper;
 
-        public DepartmentService(studentprojectContext context) { _db_context = context; }
+        public DepartmentService(studentprojectContext context, IMapper mapper) { _db_context = context; _mapper = mapper; }
 
 
 
@@ -21,10 +22,10 @@ namespace studentprojectapi.Services
             return ListofDepartments;
         }
 
-        public async Task AddDepartmentAsync(CreateDepartmentDTO createdepartmentDTO)
+        public async Task AddDepartmentAsync(DepartmentDTO createdepartmentDTO)
         {
             // create automapper objet of name mapDepartment
-            MapperConfiguration mapAddDepartment = new MapperConfiguration(cfg => cfg.CreateMap<department, CreateDepartmentDTO>());
+            MapperConfiguration mapAddDepartment = new MapperConfiguration(cfg => cfg.CreateMap<department, DepartmentDTO>());
 
             // check if department is empty
             if ((createdepartmentDTO.DeptName == null) || (createdepartmentDTO.Abbreviation == null))
@@ -40,36 +41,24 @@ namespace studentprojectapi.Services
             }
 
 
-            // create auto mapper object
-            var mapper = mapAddDepartment.CreateMapper();
-                   
-            department departmentobject = new department();
+            department adddepartmentobject = _mapper.Map<department>(createdepartmentDTO);
 
-            // check mapping
+            adddepartmentobject.createdate = DateTime.Now;
 
-
-            /*
-            departmentobject.deptID = Guid.NewGuid();
-            departmentobject.deptname = createdepartmentDTO.DeptName;
-            departmentobject.abbreviation = createdepartmentDTO.Abbreviation;
-            departmentobject.createdate = DateTime.Now;
-            departmentobject.createdby = createdepartmentDTO.CreatedBy;
-            departmentobject.modifiedby = createdepartmentDTO.ModifiedBy;
-            departmentobject.modifieddate = DateTime.Now;
-            */
-
-            _db_context.departments.Add(departmentobject);
+            adddepartmentobject.modifieddate = DateTime.Now;
+            
+            _db_context.departments.Add(adddepartmentobject);
 
             await _db_context.SaveChangesAsync();
 
             
         }
 
-        public async Task ModifyDepartmentsService(ModifyDepartmentDTO modifydepartmentDTO)
+        public async Task ModifyDepartmentsService(DepartmentDTO modifydepartmentDTO)
         {
-            department? departmentobject = await _db_context.departments.FindAsync(modifydepartmentDTO.modifyDeptID);
+            department? departmentobject = await _db_context.departments.FindAsync(modifydepartmentDTO.DeptID);
             // throw exception so that ID can't be invalid so that return employee can't be null
-            if (modifydepartmentDTO.modifyDeptID == null)
+            if (modifydepartmentDTO.DeptID == null)
             {
                 throw new Exception("invalid department ID, please check that the department exists.");
             }
@@ -85,15 +74,11 @@ namespace studentprojectapi.Services
                 throw new Exception("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
             }
 
+            department modifydepartmentobject = _mapper.Map<department>(modifydepartmentDTO);
 
-            departmentobject.deptID = modifydepartmentDTO.modifyDeptID;
-            departmentobject.deptname = modifydepartmentDTO.DeptName;
-            departmentobject.abbreviation = modifydepartmentDTO.Abbreviation;
-            departmentobject.modifieddate = DateTime.Now;
-            departmentobject.modifiedby = modifydepartmentDTO.ModifiedBy;
+            modifydepartmentDTO.ModifiedDate = DateTime.Now;
 
-
-            _db_context.Entry(departmentobject).State = EntityState.Modified;
+            _db_context.Entry(modifydepartmentobject).State = EntityState.Modified;
 
             await _db_context.SaveChangesAsync();
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using studentprojectapi.GeneratedModels;
 using studentprojectapi.Models;
@@ -11,10 +12,11 @@ namespace studentprojectapi.Services
     {
 
         private readonly studentprojectContext _database_context;
+        private readonly IMapper _mapper;
+        
+        public AssignmentServices(studentprojectContext studenttablecontext, IMapper mapper) { _database_context = studenttablecontext; _mapper = mapper; }
 
-
-        public AssignmentServices(studentprojectContext studenttablecontext) { _database_context = studenttablecontext; }
-
+        
 
         // get users assigned to departments from assignments table
         public async Task<List<assignment>> GetAssignmentsAsync()
@@ -74,22 +76,20 @@ namespace studentprojectapi.Services
             {
                 Console.WriteLine($"{doesassignmentexist} is null ");
 
-                assignmentobject.assignmentID = Guid.NewGuid();
-                assignmentobject.deptID = deptID;
-                assignmentobject.personID = personID;
-                assignmentobject.createdby = createassignmentDTO.CreatedBy;
-                assignmentobject.createdate = DateTime.Now;
-                assignmentobject.modifieddate = DateTime.Now;
-                assignmentobject.modifiedby = createassignmentDTO.ModifiedBy;
+                assignment createassignmentobject = _mapper.Map<assignment>(createassignmentDTO);
 
-                _database_context.assignments.Add(assignmentobject);
+
+                createassignmentobject.createdate = DateTime.Now;
+                createassignmentobject.modifieddate = DateTime.Now;
+
+                _database_context.assignments.Add(createassignmentobject);
 
                 // save changes to database
                 await _database_context.SaveChangesAsync();
 
             }
             else
-                throw new Exception($"Employee is already assigned to this department, check for assignment ");
+                throw new Exception("Employee is already assigned to this department, check for assignment ");
         }
 
         // write function to remove people from departments
