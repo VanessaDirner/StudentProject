@@ -31,22 +31,13 @@ namespace studentprojectapi.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult> AddAssignment([FromBody] CreateAssignmentDTO assignmentDTO)
+        public async Task<ActionResult> AddAssignment([FromBody] AssignmentDTO assignmentDTO)
         {
             await _assignmentServices.AddAssignmentsAsync(assignmentDTO);
 
             return Ok();
         }
-        /*
-        [HttpPut("Modify")]
-        public async Task<ActionResult> ModifyAssignment([FromBody] ModifyAssignmentDTO assignmentDTO)
-            {
-                await _assignmentServices.ModifyAssignmentAsync(assignmentDTO);
-
-                return Ok();
-            }
-
-        */
+        
         [HttpDelete("Delete")]
            public async Task<ActionResult> DeleteAssignment([FromBody] DeleteAssignmentDTO deleteassignmentDTO)
                {

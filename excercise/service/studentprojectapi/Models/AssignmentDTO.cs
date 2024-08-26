@@ -8,28 +8,6 @@
         //why init for email and department?
         //no point in changing assigned department, just delete assignment and create another
 
-        public Guid PersonID { get;  }
-
-        public Guid DeptID { get;  }
-
-        // this is our unique key to get an account
-
-        public string CreatedBy { get; }
-
-        public DateTime CreatedDate { get; }
-
-        public string ModifiedBy { get; }
-
-        public DateTime ModifiedDate { get; }
-    }
-
-    public class CreateAssignmentDTO
-    {
-        public Guid AssignmentID { get; }
-
-        //why init for email and department?
-        //no point in changing assigned department, just delete assignment and create another
-
         // this is our unique key to get an account
 
         public Guid PersonID { get; init; }
@@ -48,9 +26,7 @@
         public string ModifiedBy { get; set; }
 
         public DateTime ModifiedDate { get; set; }
-
     }
-
  
    
     public class DeleteAssignmentDTO

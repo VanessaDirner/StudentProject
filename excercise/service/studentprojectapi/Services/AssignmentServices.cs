@@ -15,7 +15,7 @@ namespace studentprojectapi.Services
         private readonly IMapper _mapper;
         
         public AssignmentServices(studentprojectContext studenttablecontext, IMapper mapper) { _database_context = studenttablecontext; _mapper = mapper; }
-
+        
         
 
         // get users assigned to departments from assignments table
@@ -27,7 +27,7 @@ namespace studentprojectapi.Services
         }
 
         // write function to add people to departments
-        public async Task AddAssignmentsAsync(CreateAssignmentDTO createassignmentDTO)
+        public async Task AddAssignmentsAsync(AssignmentDTO createassignmentDTO)
         {
             // this will hold the details we'll send to the database
             assignment assignmentobject = new assignment();
@@ -76,9 +76,13 @@ namespace studentprojectapi.Services
             {
                 Console.WriteLine($"{doesassignmentexist} is null ");
 
-                assignment createassignmentobject = _mapper.Map<assignment>(createassignmentDTO);
+                assignment createassignmentobject = new assignment();
 
-
+                
+                createassignmentobject.personID = personID;
+                createassignmentobject.deptID = deptID;
+                createassignmentobject.createdby = createassignmentDTO.CreatedBy;
+                createassignmentobject.modifiedby = createassignmentDTO.ModifiedBy;
                 createassignmentobject.createdate = DateTime.Now;
                 createassignmentobject.modifieddate = DateTime.Now;
 
