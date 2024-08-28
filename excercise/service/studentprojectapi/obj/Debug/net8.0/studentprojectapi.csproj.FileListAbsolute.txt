@@ -102,3 +102,12 @@ C:\PCLDev\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\re
 C:\PCLDev\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\studentprojectapi.pdb
 C:\PCLDev\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\studentprojectapi.genruntimeconfig.cache
 C:\PCLDev\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\ref\studentprojectapi.dll
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Vanessa\Source\Repos\VanessaDirner\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\studentprojectapi.dll
+C:\Users\Vanessa\Source\Repos\VanessaDirner\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\refint\studentprojectapi.dll
+C:\Users\Vanessa\Source\Repos\VanessaDirner\StudentProject\excercise\service\studentprojectapi\obj\Debug\net8.0\studentprojectapi.pdb
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\AutoMapper.dll
+C:\PCLDev\StudentProject\excercise\service\studentprojectapi\bin\Debug\net8.0\AutoMapper.Collection.dll

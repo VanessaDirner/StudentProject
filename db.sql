@@ -2,32 +2,29 @@ create database project;
 
 use project;
 CREATE TABLE employee (
-    personID UNIQUEIDENTIFIER NOT NULL,
-    firstname varchar(25) NOT NULL,
-    lastname varchar(25) NOT NULL,
+    personID UNIQUEIDENTIFIER NOT NULL, 
+    firstname varchar(25) NOT NULL, --- required field per tech requirements
+    lastname varchar(25) NOT NULL,--- required field per tech requirements
     phonenumber INT,
-    email varchar(30) NOT NULL UNIQUE,
+    email varchar(30) NOT NULL UNIQUE, --- must be unique and is a required field per tech requirements
     startdate date,
     enddate date,
-    active bit, --set default to active
-    createdby char(25) NOT NULL,
+    active bit DEFAULT 1, --set default to active pert tech requirements
+    createdby varchar(25) NOT NULL,
     createdate DATE NOT NULL,
-    modifiedby varchar(25) NOT NULL,
-    modifieddate date NOT NULL
+    modifiedby varchar(25) ,
+    modifieddate date 
     PRIMARY KEY (personID)
 );
 
-insert into employee (firstname, lastname, phonenumber, email, startdate, enddate, active)
-values ('Joe', 'Smith', 4440942039, 'jsmith@project.ca', 7/22/2024, 8/1/2024, 1)
-
 CREATE TABLE department (
     deptID UNIQUEIDENTIFIER NOT NULL,
-    deptname varchar(25) NOT NULL,
-    abbreviation varchar(5) NOT NULL UNIQUE,
-    createdby char(25) NOT NULL,
+    deptname varchar(25) NOT NULL UNIQUE,  --  COMMENT must have unique dept name per technical requirements
+    abbreviation varchar(10) NOT NULL UNIQUE,  --  COMMENT must have unique abbreviation per technical requirements
+    createdby varchar(25) NOT NULL,
     createdate DATE NOT NULL,
-    modifiedby varchar(25) NOT NULL,
-    modifieddate date NOT NULL
+    modifiedby varchar(25),
+    modifieddate date 
     PRIMARY KEY (deptID)
 );
 
@@ -35,13 +32,10 @@ CREATE TABLE assignment (
     assignmentID UNIQUEIDENTIFIER NOT NULL,
     personID UNIQUEIDENTIFIER NOT NULL FOREIGN KEY REFERENCES employee(personID),
     deptID UNIQUEIDENTIFIER NOT NULL FOREIGN KEY REFERENCES department(deptID),
-    createdby char(25) NOT NULL,
+    createdby varchar(25) NOT NULL,
     createdate DATE NOT NULL,
-    modifiedby varchar(25) NOT NULL,
-    modifieddate date NOT NULL,
+    modifiedby varchar(25),
+    modifieddate date,
     PRIMARY KEY (assignmentID)
 );
-
--- drop table employee;
--- drop table department;
 

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace studentprojectapi.Models;
+namespace studentprojectapi.GeneratedModels;
 
 [Table("assignment")]
 public partial class assignment
@@ -26,13 +26,12 @@ public partial class assignment
     [Column(TypeName = "date")]
     public DateTime createdate { get; set; }
 
-    [Required]
     [StringLength(25)]
     [Unicode(false)]
     public string modifiedby { get; set; }
 
     [Column(TypeName = "date")]
-    public DateTime modifieddate { get; set; }
+    public DateTime? modifieddate { get; set; }
 
     [ForeignKey("deptID")]
     [InverseProperty("assignments")]

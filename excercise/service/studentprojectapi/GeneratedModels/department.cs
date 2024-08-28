@@ -6,10 +6,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace studentprojectapi.Models;
+namespace studentprojectapi.GeneratedModels;
 
 [Table("department")]
-[Index("abbreviation", Name = "UQ__departme__496A0484055A74EC", IsUnique = true)]
+[Index("abbreviation", Name = "UQ__departme__496A048406D6DDE6", IsUnique = true)]
+[Index("deptname", Name = "UQ__departme__61393B76516C4499", IsUnique = true)]
 public partial class department
 {
     [Key]
@@ -21,7 +22,7 @@ public partial class department
     public string deptname { get; set; }
 
     [Required]
-    [StringLength(5)]
+    [StringLength(10)]
     [Unicode(false)]
     public string abbreviation { get; set; }
 
@@ -33,13 +34,12 @@ public partial class department
     [Column(TypeName = "date")]
     public DateTime createdate { get; set; }
 
-    [Required]
     [StringLength(25)]
     [Unicode(false)]
     public string modifiedby { get; set; }
 
     [Column(TypeName = "date")]
-    public DateTime modifieddate { get; set; }
+    public DateTime? modifieddate { get; set; }
 
     [InverseProperty("dept")]
     public virtual ICollection<assignment> assignments { get; set; } = new List<assignment>();

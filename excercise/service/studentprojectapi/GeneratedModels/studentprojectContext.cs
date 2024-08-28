@@ -4,10 +4,14 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace studentprojectapi.Models;
+namespace studentprojectapi.GeneratedModels;
 
 public partial class studentprojectContext : DbContext
 {
+    public studentprojectContext()
+    {
+    }
+
     public studentprojectContext(DbContextOptions<studentprojectContext> options)
         : base(options)
     {
@@ -23,34 +27,32 @@ public partial class studentprojectContext : DbContext
     {
         modelBuilder.Entity<assignment>(entity =>
         {
-            entity.HasKey(e => e.assignmentID).HasName("PK__assignme__52C218C0CCAA6769");
+            entity.HasKey(e => e.assignmentID).HasName("PK__assignme__52C218C05C24AB07");
 
-            entity.Property(e => e.assignmentID).ValueGeneratedNever();
-            entity.Property(e => e.createdby).IsFixedLength();
+            entity.Property(e => e.assignmentID).HasDefaultValueSql("(newid())");
 
             entity.HasOne(d => d.dept).WithMany(p => p.assignments)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__assignmen__deptI__2D27B809");
+                .HasConstraintName("FK__assignmen__deptI__4316F928");
 
             entity.HasOne(d => d.person).WithMany(p => p.assignments)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__assignmen__perso__2C3393D0");
+                .HasConstraintName("FK__assignmen__perso__4222D4EF");
         });
 
         modelBuilder.Entity<department>(entity =>
         {
-            entity.HasKey(e => e.deptID).HasName("PK__departme__BE2D26D6B04FCD99");
+            entity.HasKey(e => e.deptID).HasName("PK__departme__BE2D26D6B5480060");
 
-            entity.Property(e => e.deptID).ValueGeneratedNever();
-            entity.Property(e => e.createdby).IsFixedLength();
+            entity.Property(e => e.deptID).HasDefaultValueSql("(newid())");
         });
 
         modelBuilder.Entity<employee>(entity =>
         {
-            entity.HasKey(e => e.personID).HasName("PK__employee__EC7D7D6DDD1BBB37");
+            entity.HasKey(e => e.personID).HasName("PK__employee__EC7D7D6DEE5B734C");
 
-            entity.Property(e => e.personID).ValueGeneratedNever();
-            entity.Property(e => e.createdby).IsFixedLength();
+            entity.Property(e => e.personID).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.active).HasDefaultValueSql("((1))");
         });
 
         OnModelCreatingPartial(modelBuilder);

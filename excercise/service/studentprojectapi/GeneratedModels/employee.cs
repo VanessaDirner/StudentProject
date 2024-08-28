@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace studentprojectapi.Models;
+namespace studentprojectapi.GeneratedModels;
 
 [Table("employee")]
-[Index("email", Name = "UQ__employee__AB6E616415A727A9", IsUnique = true)]
+[Index("email", Name = "UQ__employee__AB6E61641EA914FD", IsUnique = true)]
 public partial class employee
 {
     [Key]
@@ -48,13 +48,12 @@ public partial class employee
     [Column(TypeName = "date")]
     public DateTime createdate { get; set; }
 
-    [Required]
     [StringLength(25)]
     [Unicode(false)]
     public string modifiedby { get; set; }
 
     [Column(TypeName = "date")]
-    public DateTime modifieddate { get; set; }
+    public DateTime? modifieddate { get; set; }
 
     [InverseProperty("person")]
     public virtual ICollection<assignment> assignments { get; set; } = new List<assignment>();
