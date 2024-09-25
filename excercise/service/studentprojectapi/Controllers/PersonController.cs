@@ -36,7 +36,7 @@ namespace studentprojectapi.Controllers
             // then add httpget 400, 200 etc specified for right above api endpoint 
         }
 
-        [HttpPost("Add")]
+        [HttpPost]
         public async Task<ActionResult<PersonDTO>> AddEmployee([FromBody] PersonDTO personDTO ) 
        {
             // get add details from body of get request
@@ -49,7 +49,7 @@ namespace studentprojectapi.Controllers
             return Ok(returnemployee);
         }
 
-        [HttpPut("Modify")]
+        [HttpPut]
         // I don't want to accept a new GUID
         // I don't want createddate and createdby to be updated either
         // I need to match details with a GUID in table
@@ -61,7 +61,7 @@ namespace studentprojectapi.Controllers
         }
 
 
-        [HttpDelete("Delete")]
+        [HttpDelete]
        public async Task<ActionResult> DeleteEmployee([FromBody] deletepersonDTO deletepersonDTO)
         {
             await _personService.DeleteEmployeeService(deletepersonDTO);
