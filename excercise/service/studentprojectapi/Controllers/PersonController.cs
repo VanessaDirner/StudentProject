@@ -62,11 +62,29 @@ namespace studentprojectapi.Controllers
 
 
         [HttpDelete]
+        // this is documenting what kind of return types are possible (shows in swagger)
+        [ProducesResponseType(200)]
        public async Task<ActionResult> DeleteEmployee([FromBody] deletepersonDTO deletepersonDTO)
         {
-            await _personService.DeleteEmployeeService(deletepersonDTO);
+            try
+            {
+                await _personService.DeleteEmployeeService(deletepersonDTO);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                if(e.Message == "No account with that email address was found. Please double check and resubmit request.")
+                {
+                    return StatusCode(404, "this is the not found error");
+                }
+                else
+                {
+                    return StatusCode(500, "uknown server error");
+                }
+            }
+          
 
-            return Ok();
+           
             // later, do I want to return something?
         }
 

@@ -96,24 +96,21 @@ namespace studentprojectapi.Services
         // delete row
         public async Task DeleteEmployeeService(deletepersonDTO deleteperson)
         {
-
+     
             // find employee by email
             employee? employeeobject = await _database_context.employees.SingleOrDefaultAsync(delemp => delemp.email == deleteperson.DeleteByEmail);
+
+
+            // empty result when searching for account
+            if (employeeobject == null)
+            {
+                throw new Exception("No account with that email address was found. Please double check and resubmit request.");
+            }
 
             // check if employee is assigned to a department
             assignment? existingassignment = await _database_context.assignments.SingleOrDefaultAsync(assign => assign.personID == employeeobject.personID);
 
-            //empty body
-            if (deleteperson.DeleteByEmail == null)
-            {
-                throw new Exception("Please provide a valid employee email so that the account can be found and deleted.");
-            }
-            // empty result when searching for account
-            else if (employeeobject == null)
-            {
-                throw new Exception("No account with that email address was found. Please double check and resubmit request.");
-            }
-            else if (existingassignment != null)
+            if (existingassignment != null)
             {
                 throw new Exception("Employee is assigned to a department. Please remove the assignment before deleting employee.");
             }
