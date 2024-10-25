@@ -1,0 +1,662 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IBS.Infrastructure.Client</name>
+    </assembly>
+    <members>
+        <member name="T:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager">
+            <summary>
+            IBS Manager class assisting with creation and disposal of Channel Factories
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.Instance">
+            Get an instance of ChannelFactoryManager class.
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.LastConnectedEndpoint">
+            <summary>
+            Last endpoint connected to
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.DiscoveryType">
+            <summary>
+            Method used to create endpoint
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.UseWindowsAuthentication">
+            <summary>
+            Make service calls using Windows Authentication
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.GetChannelFactory``1(System.Func{System.ServiceModel.ChannelFactory{``0}})">
+            <summary>
+            Create channel Factory
+            </summary>
+            <typeparam name="TChannel"></typeparam>
+            <param name="getFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.GetChannelFactory``1(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            Provides a ChannelFactory instance.
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.GetChannelFactory``1(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+            Provides a ChannelFactory instance.
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.GetChannelFactory``1(System.String,System.ServiceModel.EndpointAddress)">
+            Provides a ChannelFactory instance.
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.TryGetChannelFactory``1">
+            <summary>
+            Attempt to get the associated Channel Factory
+            </summary>
+            <typeparam name="TChannel"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.GetEndPointNameAddressPair(System.Type)">
+            Returns a KeyValuePair which contains the name and address of the first endpoint of the service contract specified in the type argument.
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.ChannelFaulted(System.Object,System.EventArgs)">
+            Event handler for the Faulted event of the IClientChannel.
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.FactoryFaulted(System.Object,System.EventArgs)">
+            Event handler for the Faulted event of the ChannelFactory.
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.TryRemoveFactoryByType``1">
+            <summary>
+            Attempt to remove (shutdown) a channel factory of TChannel
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactories.ChannelFactoryManager.Dispose">
+            Closes or aborts the channel factories.
+        </member>
+        <member name="T:IBS.Infrastructure.Client.Model.ServiceExceptionResult">
+            <summary>
+            Service Exception Result return value
+            </summary>
+        </member>
+        <member name="T:IBS.Infrastructure.Client.Model.ServiceExceptionResult.ExceptionType">
+            <summary>
+            type of service exception caught
+            </summary>        
+        </member>
+        <member name="P:IBS.Infrastructure.Client.Model.ServiceExceptionResult.Message">
+            <summary>
+            exception message 
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.Model.ServiceExceptionResult.CallingMethod">
+            <summary>
+            method call pattern
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.Model.ServiceExceptionResult.ExType">
+            <summary>
+            Type of exception
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.Model.ServiceExceptionResult.ResultException">
+            <summary>
+            Exception caught
+            </summary>
+        </member>
+        <member name="T:IBS.Infrastructure.Client.ServiceClientBase`1">
+            <summary>
+            Service client base class to invoke contract functions
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.#ctor(System.Action{IBS.Infrastructure.Client.Model.ServiceExceptionResult})">
+            <summary>
+            Constructor with ErrorHandler assignment
+            </summary>
+            <param name="_ErrorHandler"></param>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClientBase`1.ThrowExceptions">
+            <summary>
+            CallServiceWithExceptionHandling will throw the exception to calling client
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClientBase`1.OnErrorHandler">
+            <summary>
+            Handler for return exception results
+            IF handler exists, exception results will be passed to handler regardless of ThrowExceptions setting = false
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Client.ServiceClientBase`1.InternalProxy">
+            <summary>
+            Proxy that is generated by CallServiceWithExceptionHandling
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.OnCreateProxy">
+            <summary>
+            Creates the InternalProxy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.ExecuteWithHandling``1(System.Func{``0},System.String)">
+            <summary>
+            Makes a service Function call with fault/exception handling
+            To Handle errors, either enable ThrowExceptions or provide an OnErrorHandler implementation
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="codeToExecute"></param>
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.ExecuteWithHandling``1(System.Func{``0},IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String)">
+            <summary>
+            Makes a service Function call with fault/exception handling
+            To Handle errors, either enable ThrowExceptions or provide an OnErrorHandler implementation
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="codeToExecute"></param>
+            <param name="serviceHostEnvironment">Host server to use, defaults to ServiceClientSettings.CurrentIBSHeaderContextInfo.ReleaseEnvironment</param>        
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.ExecuteWithHandlingAsync``1(System.Func{``0},System.String)">
+            <summary>
+            Makes a service Function call with fault/exception handling (Async)
+            To Handle errors, either enable ThrowExceptions or provide an OnErrorHandler implementation
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="codeToExecute"></param>
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.ExecuteWithHandlingAsync``1(System.Func{``0},IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String)">
+            <summary>
+            Makes a service Function call with fault/exception handling (Async)
+            To Handle errors, either enable ThrowExceptions or provide an OnErrorHandler implementation
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="codeToExecute"></param>
+            <param name="serviceHostEnvironment">Host server to use, defaults to ServiceClientSettings.CurrentIBSHeaderContextInfo.ReleaseEnvironment</param>        
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.ExecuteWithHandling(System.Action,System.String)">
+            <summary>
+            Makes a service Function call with fault/exception handling
+            To Handle errors, either enable ThrowExceptions or provide an OnErrorHandler implementation
+            </summary>        
+            <param name="codeToExecute"></param>
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.ExecuteWithHandling(System.Action,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String)">
+            <summary>
+            Makes a service Function call with fault/exception handling
+            To Handle errors, either enable ThrowExceptions or provide an OnErrorHandler implementation
+            </summary>        
+            <param name="codeToExecute"></param>
+            <param name="serviceHostEnvironment">Host server to use, defaults to ServiceClientSettings.CurrentIBSHeaderContextInfo.ReleaseEnvironment</param>        
+            <param name="memberName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientBase`1.OnError(IBS.Infrastructure.Client.Model.ServiceExceptionResult)">
+            <summary>
+            [Overridable] Invoked on error
+            </summary>
+            <param name="_exResult"></param>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClientSettings.CurrentIBSHeaderContextInfo">
+            <summary>
+            Global Service Context IBSHeader Info
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClientSettings.ResetIBSHeaderContext">
+            <summary>
+            Resets the Current Header Context to default values
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClientSettings.DiscoveryType">
+            <summary>
+            Global Service Endpoint Discovery Type
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClientSettings.UseWindowsAuthentication">
+            <summary>
+            Global Service Enable Windows Authentication
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ChannelFactoryExtensions.SetFactoryCredentials(System.ServiceModel.ChannelFactory,System.String,System.String)">
+            <summary>
+            Set a channel factories credentials
+            </summary>
+            <typeparam name="TChannel"></typeparam>
+            <param name="factory"></param>
+            <param name="userName"></param>
+            <param name="password"></param>
+        </member>
+        <member name="T:IBS.Infrastructure.Client.HostServerExentions">
+            <summary>
+            Extensions methods assisting with discovery of Host Server
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.HostServerExentions.ToCurrentServer(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            If server is null or empty, attempt to check for the current (local) services server.
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.HostServerExentions.ToLocalOrDefaultServer(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            If server is null or empty, attempt to check for the current (local) services server.
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.HostServerExentions.ToFallbackOrDefaultServer(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            If server is null or empty, attempt to check for the current (fallback) services server.
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.HostServerExentions.ToCurrentDiscoveryType(IBS.Infrastructure.Shared.ENUMs.EndpointDiscoveryType)">
+            <summary>
+            Check for current discovery type
+            </summary>
+            <param name="_currentType"></param>        
+            <returns></returns>
+        </member>
+        <member name="T:IBS.Infrastructure.Client.RestApiExtensions">
+            <summary>
+            Extensions to assist will calling service REST endpoints
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.RestApiExtensions.GetWCFApiResponse``1(System.Uri,System.Action{``0},System.Action{System.Exception},IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Call a WCF Rest API (async)
+            Server Name Alternates: 
+             -- LOCAL_SERVER > uses local server or default server
+             -- FALLBACK_SERVER > uses fallback server or default server
+             PORT:
+             -- Use port 0: to infer the default port by host environment
+             (Sample) http://LOCAL_SERVER:0/DevTest/MyService.svc/rest/GetAll
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="uri"></param>
+            <param name="callback"></param>
+            <param name="onErrorCallback ">Action to perform when an exception occurs, otherwise exception is just thrown</param>
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.RestApiExtensions.GetWCFApiResponse``1(System.Uri,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String)">
+            <summary>
+            Call a WCF Rest API (synchronous)
+            Server Name Alternates: 
+             -- LOCAL_SERVER > uses local server or default server
+             -- FALLBACK_SERVER > uses fallback server or default server
+             PORT:
+             -- Use port 0: to infer the default port by host environment
+             (Sample) http://LOCAL_SERVER:0/DevTest/MyService.svc/rest/GetAll
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="uri"></param>        
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.EndpointHelper.GetEndpoint``1(System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,IBS.Infrastructure.Shared.ENUMs.EndpointDiscoveryType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Try get endpoint
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="EndpointDiscovery"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.EndpointHelper.GetEndpoint(System.String,System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,IBS.Infrastructure.Shared.ENUMs.EndpointDiscoveryType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Try get endpoint by FullServiceDomainPath
+            </summary>
+            <param name="FullServiceDomainPath"></param>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="EndpointDiscovery"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.EndpointHelper.GetEndpoint_FromService(System.String,System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Attempt to retrieve endpoint from the Endpoint Service
+            </summary>
+            <param name="FullServiceDomainPath"></param>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.EndpointHelper.GetEndpoint_FromService``1(System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Attempt to retrieve endpoint of type T from the Endpoint Service
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.EndpointHelper.GetEndpoint_Inferred(System.String,System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.Int32,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Attempt to infer an endpoint address based on system defined defaults
+            </summary>
+            <param name="FullServiceDomainPath"></param>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="Port"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.EndpointHelper.GetEndpoint_Inferred``1(System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.Int32,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Attempt to infer an endpoint address, of type T, based on system defined defaults
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="Port"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.FactoryHelper.CreateChannelFactory``1(System.ServiceModel.EndpointAddress,System.Boolean)">
+            <summary>
+            Generate a channel factory from an endpoint address
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_EndpointAddress"></param>
+            <param name="_UseWindowsAuthentication"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.FactoryHelper.CreateChannelFactory``1(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,IBS.Infrastructure.Shared.ENUMs.EndpointDiscoveryType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.Boolean)">
+            <summary>
+            Generate a channel factory from an endpoint address
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="BindingType"></param>
+            <param name="HostServer"></param>
+            <param name="EndpointDiscovery"></param>
+            <param name="HostEnvironment"></param>
+            <param name="_UseWindowsAuthentication"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.FactoryHelper.CreateChannelFactoryInferred``1(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.Boolean)">
+            <summary>
+            Generate a channel factory by creating an inferred endpoint address
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="BindingType"></param>
+            <param name="HostServer"></param>
+            <param name="EndpointDiscovery"></param>
+            <param name="HostEnvironment"></param>
+            <param name="_UseWindowsAuthentication"></param>
+            <returns></returns>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.SUPPRESS_ERRORS">
+            <summary>
+            If TRUE, errors will not be thrown to the client.
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.GetCurrentServer">
+            <summary>
+            Look for the current local Services server, returns fall back or default server if one is not found
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.GetLocalOrDefaultServer">
+            <summary>
+            Returns the local server, if configuration found, fallback is built in default server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.GetFallbackOrDefaultServer">
+            <summary>
+            Returns the fallback server, if configuration found, fallback is built in default server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.TryGetLocalServer">
+            <summary>
+            Attempts to get the local Services server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.TryGetFallbackServer">
+            <summary>
+            Attempts to get the Fallback Services server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.Helpers.ServiceDefaultsHelper.GetDiscoveryType">
+            <summary>
+            Check local server for endpoint inference method
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:IBS.Infrastructure.Client.ServiceClient`1">
+            <summary>
+            IBS Service Client which automates and assists with configuration and endpoint connection
+            </summary>
+            <typeparam name="TChannel"></typeparam>
+        </member>
+        <member name="F:IBS.Infrastructure.Client.ServiceClient`1.ExecuteInvokesExceptions">
+            <summary>
+            If TRUE, Exceptions will be thrown when using the Execute method
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClient`1.LastConnectedEndpoint">
+            <summary>
+            Endpoint used for last service call
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClient`1.DiscoveryType">
+            <summary>
+            Method used by ServiceClient to discover the service endpoint
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClient`1.UseWindowsAuthentication">
+            <summary>
+            Make service calls using windows authentication
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Client.ServiceClient`1.Channel">
+            <summary>
+            WCF channel of defined service contract type
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor">
+            <summary>
+            Create client using default Binding and HostServer
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String)">
+            <summary>
+            Create client, with default binding, inferring service on provided server
+            </summary>
+            <param name="HostServer"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType)">
+            <summary>
+            Create client, of the provided BindingType, inferring service on provided server
+            </summary>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType)">
+            <summary>
+            Create client, of the provided BindingType, inferring service on default server
+            </summary>
+            <param name="BindingType"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,System.String)">
+            <summary>
+            Create client using default Binding and HostServer w/ provided credentials
+            </summary>
+            <param name="UserName"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Create client, with default binding, inferring service on provided server w/ provided credentials
+            </summary>
+            <param name="HostServer"></param>
+            <param name="UserName"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,System.String)">
+            <summary>
+            Create client, of the provided BindingType, inferring service on provided server w/ provided credentials
+            </summary>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="UserName"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,System.String)">
+            <summary>
+            Create client, of the provided BindingType, inferring service on default server w/ provided credentials
+            </summary>
+            <param name="BindingType"></param>
+            <param name="UserName"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+            <summary>
+            Create client, with provided Binding, using the provided EndpointAddress
+            </summary>
+            <param name="binding"></param>
+            <param name="remoteAddress"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,System.ServiceModel.EndpointAddress)">
+            <summary>
+            Create client, with provided EnpointConfigurationName, using the provided EndpointAddress
+            </summary>
+            <param name="endpointConfigName"></param>
+            <param name="remoteAddress"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Create client, with default binding, inferring service based on Host Environment
+            </summary>
+            <param name="HostEnvironment"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Create client, with default binding, inferring service based on Host Environment
+            </summary>
+            <param name="BindingType"></param>
+            <param name="HostEnvironment"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Create client, with default binding, inferring service based on Host Environment
+            </summary>
+            <param name="HostServer"></param>
+            <param name="HostEnvironment"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.#ctor(System.String,IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Create client, with default binding, inferring service based on Host Environment
+            </summary>
+            <param name="HostServer"></param>
+            <param name="BindingType"></param>
+            <param name="HostEnvironment"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.Dispose">
+            <summary>
+            Dispose of Channel
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetServiceEnvironment(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Sets the current context IBSHeader info > Environment
+            </summary>
+            <param name="_environment">Release Environment</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetServiceProject(System.String)">
+            <summary>
+            Sets the current context IBSHeader info > Project
+            </summary>
+            <param name="_ProjectNumber"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetConnectionInstance(System.String)">
+            <summary>
+            Sets the current context IBSHeader info > ConnectionInstance
+            </summary>
+            <param name="_Instance">Connection Instance</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetConnectionEnvironment(IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment)">
+            <summary>
+            Sets the current context IBSHeader info > ConnectionEnvironment
+            </summary>
+            <param name="_ConnectionEnvironment">ConnectionEnvironment</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetServiceHeader(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String,System.String)">
+            <summary>
+            Sets the current context IBSHeader info
+            </summary>
+            <param name="_Environment"></param>
+            <param name="_ProjectNumber"></param>
+            <param name="_Instance"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetServiceHeader(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String,System.String)">
+            <summary>
+            Sets the current context IBSHeader info
+            </summary>
+            <param name="_Environment"></param>
+            <param name="_ConnectionEnvironment"></param>
+            <param name="_ProjectNumber"></param>
+            <param name="_Instance"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.SetServiceHeaderAppOnly(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String)">
+            <summary>
+            Sets the current context IBSHeader info
+            </summary>
+            <param name="_Environment"></param>
+            <param name="_DBInstance"></param>        
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.Execute``1(System.Func{``0},System.Action{IBS.Infrastructure.Client.Model.ServiceExceptionResult},System.String)">
+            <summary>
+            Executes a proxy function with exception handling
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="codetoExecute"></param>
+            <param name="onErrorCallback">Method to pass service execution errors</param>
+            <param name="memberName">Name of calling method</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.Execute(System.Action,System.Action{IBS.Infrastructure.Client.Model.ServiceExceptionResult},System.String)">
+            <summary>
+            Executes a proxy method
+            </summary>
+            <param name="codetoExecute"></param>
+            <param name="onErrorCallback">Method to pass service execution errors</param>
+            <param name="memberName">Name of calling method</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.TryGetFactoryEndpoint``1">
+            <summary>
+            Find the endpoint used for appropriate Channel Factory
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Client.ServiceClient`1.TryRemoveFactoryOfType``1">
+            <summary>
+            Try to remove (shutdown) a factor of type T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

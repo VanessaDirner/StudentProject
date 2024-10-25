@@ -28,159 +28,212 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.StudentProjectApp = new System.Windows.Forms.Label();
+            this.btn_firstname = new System.Windows.Forms.TextBox();
+            this.lbl_firstname = new System.Windows.Forms.Label();
+            this.lb_llastname = new System.Windows.Forms.Label();
+            this.txt_lastname = new System.Windows.Forms.TextBox();
+            this.lbl_phone = new System.Windows.Forms.Label();
+            this.lbl_email = new System.Windows.Forms.Label();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_startdate = new System.Windows.Forms.Label();
+            this.lbl_enddate = new System.Windows.Forms.Label();
+            this.dateTime_enddate = new System.Windows.Forms.DateTimePicker();
+            this.dateTime_startdate = new System.Windows.Forms.DateTimePicker();
+            this.chkbox_activate = new System.Windows.Forms.CheckBox();
+            this.btnEmpSubmit = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // StudentProjectApp
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(-5, -22);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1222, 810);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.StudentProjectApp.AutoSize = true;
+            this.StudentProjectApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudentProjectApp.Location = new System.Drawing.Point(89, 32);
+            this.StudentProjectApp.Name = "StudentProjectApp";
+            this.StudentProjectApp.Size = new System.Drawing.Size(321, 37);
+            this.StudentProjectApp.TabIndex = 1;
+            this.StudentProjectApp.Text = "Student Project App";
             // 
-            // gridView1
+            // btn_firstname
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
-            this.gridColumn1,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.LevelIndent = 0;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.PreviewIndent = 0;
+            this.btn_firstname.Location = new System.Drawing.Point(32, 102);
+            this.btn_firstname.Name = "btn_firstname";
+            this.btn_firstname.Size = new System.Drawing.Size(146, 31);
+            this.btn_firstname.TabIndex = 2;
             // 
-            // gridColumn2
+            // lbl_firstname
             // 
-            this.gridColumn2.Caption = "gridColumn2";
-            this.gridColumn2.MinWidth = 40;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 150;
+            this.lbl_firstname.AutoSize = true;
+            this.lbl_firstname.Location = new System.Drawing.Point(27, 69);
+            this.lbl_firstname.Name = "lbl_firstname";
+            this.lbl_firstname.Size = new System.Drawing.Size(116, 25);
+            this.lbl_firstname.TabIndex = 3;
+            this.lbl_firstname.Text = "First Name";
             // 
-            // gridColumn1
+            // lb_llastname
             // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.MinWidth = 40;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 150;
+            this.lb_llastname.AutoSize = true;
+            this.lb_llastname.Location = new System.Drawing.Point(222, 69);
+            this.lb_llastname.Name = "lb_llastname";
+            this.lb_llastname.Size = new System.Drawing.Size(115, 25);
+            this.lb_llastname.TabIndex = 5;
+            this.lb_llastname.Text = "Last Name";
             // 
-            // gridColumn3
+            // txt_lastname
             // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.MinWidth = 40;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 150;
+            this.txt_lastname.Location = new System.Drawing.Point(218, 102);
+            this.txt_lastname.Name = "txt_lastname";
+            this.txt_lastname.Size = new System.Drawing.Size(170, 31);
+            this.txt_lastname.TabIndex = 4;
             // 
-            // gridColumn4
+            // lbl_phone
             // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.MinWidth = 40;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 150;
+            this.lbl_phone.AutoSize = true;
+            this.lbl_phone.Location = new System.Drawing.Point(47, 197);
+            this.lbl_phone.Name = "lbl_phone";
+            this.lbl_phone.Size = new System.Drawing.Size(155, 25);
+            this.lbl_phone.TabIndex = 7;
+            this.lbl_phone.Text = "Phone Number";
             // 
-            // gridColumn5
+            // lbl_email
             // 
-            this.gridColumn5.Caption = "gridColumn5";
-            this.gridColumn5.MinWidth = 40;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 150;
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Location = new System.Drawing.Point(252, 197);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(65, 25);
+            this.lbl_email.TabIndex = 9;
+            this.lbl_email.Text = "Email";
             // 
-            // button1
+            // txt_email
             // 
-            this.button1.Location = new System.Drawing.Point(1025, 261);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 109);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.DragDrop += new System.Windows.Forms.DragEventHandler(this.button1_DragDrop);
+            this.txt_email.Location = new System.Drawing.Point(237, 228);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(100, 31);
+            this.txt_email.TabIndex = 8;
             // 
-            // dataGridView1
+            // label5
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(372, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 25);
+            this.label5.TabIndex = 11;
             // 
-            // label1
+            // lbl_startdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(189, 497);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.lbl_startdate.AutoSize = true;
+            this.lbl_startdate.Location = new System.Drawing.Point(424, 197);
+            this.lbl_startdate.Name = "lbl_startdate";
+            this.lbl_startdate.Size = new System.Drawing.Size(108, 25);
+            this.lbl_startdate.TabIndex = 13;
+            this.lbl_startdate.Text = "Start Date";
+            // 
+            // lbl_enddate
+            // 
+            this.lbl_enddate.AutoSize = true;
+            this.lbl_enddate.Location = new System.Drawing.Point(479, 70);
+            this.lbl_enddate.Name = "lbl_enddate";
+            this.lbl_enddate.Size = new System.Drawing.Size(101, 25);
+            this.lbl_enddate.TabIndex = 16;
+            this.lbl_enddate.Text = "End Date";
+            // 
+            // dateTime_enddate
+            // 
+            this.dateTime_enddate.Location = new System.Drawing.Point(429, 98);
+            this.dateTime_enddate.Name = "dateTime_enddate";
+            this.dateTime_enddate.Size = new System.Drawing.Size(359, 31);
+            this.dateTime_enddate.TabIndex = 17;
+            // 
+            // dateTime_startdate
+            // 
+            this.dateTime_startdate.Location = new System.Drawing.Point(429, 229);
+            this.dateTime_startdate.Name = "dateTime_startdate";
+            this.dateTime_startdate.Size = new System.Drawing.Size(359, 31);
+            this.dateTime_startdate.TabIndex = 18;
+            // 
+            // chkbox_activate
+            // 
+            this.chkbox_activate.AutoSize = true;
+            this.chkbox_activate.Checked = true;
+            this.chkbox_activate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkbox_activate.Location = new System.Drawing.Point(272, 321);
+            this.chkbox_activate.Name = "chkbox_activate";
+            this.chkbox_activate.Size = new System.Drawing.Size(192, 29);
+            this.chkbox_activate.TabIndex = 19;
+            this.chkbox_activate.Text = "Activate Account";
+            this.chkbox_activate.UseVisualStyleBackColor = true;
+            // 
+            // btnEmpSubmit
+            // 
+            this.btnEmpSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEmpSubmit.ForeColor = System.Drawing.Color.Black;
+            this.btnEmpSubmit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmpSubmit.Location = new System.Drawing.Point(272, 384);
+            this.btnEmpSubmit.Name = "btnEmpSubmit";
+            this.btnEmpSubmit.Size = new System.Drawing.Size(211, 51);
+            this.btnEmpSubmit.TabIndex = 20;
+            this.btnEmpSubmit.Text = "Submit Form";
+            this.btnEmpSubmit.UseVisualStyleBackColor = true;
+            this.btnEmpSubmit.Click += new System.EventHandler(this.btnEmpSubmit_Click);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(52, 244);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 31);
+            this.maskedTextBox1.TabIndex = 22;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 790);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.gridControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(822, 531);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.btnEmpSubmit);
+            this.Controls.Add(this.chkbox_activate);
+            this.Controls.Add(this.dateTime_startdate);
+            this.Controls.Add(this.dateTime_enddate);
+            this.Controls.Add(this.lbl_enddate);
+            this.Controls.Add(this.lbl_startdate);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_email);
+            this.Controls.Add(this.txt_email);
+            this.Controls.Add(this.lbl_phone);
+            this.Controls.Add(this.lb_llastname);
+            this.Controls.Add(this.txt_lastname);
+            this.Controls.Add(this.lbl_firstname);
+            this.Controls.Add(this.btn_firstname);
+            this.Controls.Add(this.StudentProjectApp);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.Button button1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource assignmentBindingSource;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource;
+        private studentprojectdbDataSet studentprojectdbDataSet;
+        private studentprojectdbDataSetTableAdapters.assignmentTableAdapter assignmentTableAdapter;
+        private studentprojectdbDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource1;
+        private System.Windows.Forms.Label StudentProjectApp;
+        private System.Windows.Forms.TextBox btn_firstname;
+        private System.Windows.Forms.Label lbl_firstname;
+        private System.Windows.Forms.Label lb_llastname;
+        private System.Windows.Forms.TextBox txt_lastname;
+        private System.Windows.Forms.Label lbl_phone;
+        private System.Windows.Forms.Label lbl_email;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_startdate;
+        private System.Windows.Forms.Label lbl_enddate;
+        private System.Windows.Forms.DateTimePicker dateTime_enddate;
+        private System.Windows.Forms.DateTimePicker dateTime_startdate;
+        private System.Windows.Forms.CheckBox chkbox_activate;
+        private System.Windows.Forms.Button btnEmpSubmit;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
 

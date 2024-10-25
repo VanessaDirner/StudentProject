@@ -1,0 +1,994 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IBSFileUtils</name>
+    </assembly>
+    <members>
+        <member name="M:IBSFileUtils.BlueBeamManager.CreateSet(System.Collections.Generic.List{System.String})">
+            <summary>
+            Create a Bluebeam Set from a List of (string)FilePaths
+            </summary>
+            <param name="_filePaths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.BlueBeamManager.CreateSet(System.Collections.Generic.List{System.IO.FileInfo})">
+            <summary>
+            Create a Bluebeam Set from a List Of FileInfo
+            </summary>
+            <param name="_files"></param>
+        </member>
+        <member name="M:IBSFileUtils.BlueBeamManager.CreateFileXMLNodeString(System.IO.FileInfo)">
+            <summary>
+            Create a string to build a string representation of the FILE XML node structure
+            </summary>
+            <param name="_fInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.BlueBeamManager.IsBluebeamInstalled">
+            <summary>
+            Attempts to see if bluebeam is installed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.BlueBeamManager.ClearOldSetFiles(System.IO.DirectoryInfo)">
+            <summary>
+            Clear any old TemporoarySet files
+            </summary>
+            <param name="dInfo"></param>
+        </member>
+        <member name="M:IBSFileUtils.BlueBeamManager.GenerateCreateSetException(IBSFileUtils.Model.CreateSetResult,System.Exception)">
+            <summary>
+            Generate an exception for the create set
+            </summary>
+            <param name="_result"></param>
+            <param name="_exception"></param>
+        </member>
+        <member name="T:IBSFileUtils.EmbeddedFiles">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IBSFileUtils.EmbeddedFiles.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IBSFileUtils.EmbeddedFiles.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:IBSFileUtils.EmbeddedFiles.BBDefaultSet">
+             <summary>
+               Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+            &lt;BluebeamRevuPageSet Version=&quot;1&quot;&gt;
+              &lt;!-- Settings --&gt;
+              &lt;PageSort&gt;1&lt;/PageSort&gt;
+              &lt;PageSortType&gt;3&lt;/PageSortType&gt;
+              &lt;AddendumKey&gt;&lt;![CDATA[_Add. #;_Add.#;_Add._#;_Add._?;Add#;Add. #;Add.#;Add._#;Add._?;Add_#;Add_?;Addendum #;Addendum#;Addendum_#;Addendum_?;_Bulletin #;_Bulletin#;_Bulletin_#; Bulletin #; Bulletin#; Bulletin_#;_DR#;_Rev #;_Rev#;_Rev. #;_Rev.#;_Rev._#;_Rev._?;_Rev_#;Rev #;Rev ?;#-#-#;#/#/#; Rev#-#-#;_Rev#-#-#;Rev#-#-#;Rev#;Rev. # ;Rev.#;Rev._#;Rev._?;R [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.MoveToFileSystem_Rename(System.IO.FileInfo,System.String,System.Boolean)">
+            <summary>
+            Move current file instance to a new file location
+            [Will not overwrite if destination file exists, a new file will be created with a different name]
+            (ie. [fileName](#))
+            </summary>
+            <param name="fileInfo">Current instance</param>
+            <param name="destFileName">The Path to move current instance to, which can specify a different file name</param>        
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.CopyToFileSystem_Rename(System.IO.FileInfo,System.String,System.Boolean)">
+            <summary>
+            Copy current file instance to a new file location
+            [Will not overwrite if destination file exists, a new file will be created with a different name]
+            (ie. [fileName](#))
+            </summary>
+            <param name="fileInfo">Current instance</param>
+            <param name="destFileName">The Path to copy current instance to, which can specify a different file name</param>        
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.TransferToFileSystem_Rename(IBSFileUtils.ENUMs.FileTransferType,System.IO.FileInfo,System.String,System.Boolean)">
+            <summary>
+            Generic Transfer function with file renaming
+            </summary>
+            <param name="_type"></param>
+            <param name="_sourceFileInfo"></param>
+            <param name="_destinationFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.MoveToFileSystem(System.IO.FileInfo,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Move the current file instance to a new file location
+            NOTE: Transfer exceptions will be shown in the Transfer Result
+            </summary>
+            <param name="_sourceFileInfo"></param>
+            <param name="_destinationFilePath"></param>
+            <param name="_forceOverwrite">If Destination file already exists, file will be overwritten (Supersedes AllowUserOverwrite property)</param>
+            <param name="_allowUserOverwrite">If Destination file already exists, user will be prompted to overwrite file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.CopyToFileSystem(System.IO.FileInfo,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Copies the current file instance to a new location
+            </summary>
+            <param name="_sourceFileInfo"></param>
+            <param name="_destinationFilePath"></param>
+            <param name="_forceOverwrite">If Destination file already exists, file will be overwritten (Supersedes AllowUserOverwrite property)</param>
+            <param name="_allowUserOverwrite">If Destination file already exists, user will be prompted to overwrite file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.ToUNC(System.IO.FileInfo)">
+            <summary>
+            Return the UNC representation of the file path
+            </summary>
+            <param name="fileInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileInfoExtensions.IsFileInUse(System.IO.FileInfo)">
+            <summary>
+            Checks to see if the file is currently locked by another process
+            </summary>
+            <param name="fileInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.#ctor(System.String,System.Boolean)">
+            <summary>
+            Default Constructor
+            </summary>
+            <param name="_Root_Path"></param>
+            <param name="_suppressTransferErrors">True = Any Exceptions which are generated during file transfer activities (ie. Move/Copy) will be suppressed.  Exception will be logged on the FileTransferResult object.   
+                                                  False = Exception message will be shown to user in popup.  Exception will be logged on the FileTransferResult object.</param>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.AppendToRootPath(System.String)">
+            <summary>
+            Append a new folder to the FileManager root path
+            </summary>
+            <param name="_folderName"></param>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.RemoveFromRootPath(System.String)">
+            <summary>
+            Will remove folder path from passed in folder name to end
+            </summary>
+            <param name="_folderName"></param>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.ResetRootPath">
+            <summary>
+            Reset to original Root_Path
+            </summary>        
+        </member>
+        <member name="M:IBSFileUtils.FileManager.CreateFileInfo(System.String,System.String)">
+            <summary>
+            Create a FileInfo object combining the ROOT_PATH + _appendToRoot + filename
+            </summary>
+            <param name="_appendToRoot">Path that will be appended to the ROOT_PATH</param>
+            <param name="_fileName">Name of new file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.MoveFile(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Move the current file instance to a new file location
+            </summary>
+            <param name="_sourceFilePath">Path of file to copy</param>
+            <param name="_appendToRoot">Path to append to the current FileManager [ROOT_PATH]</param>
+            <param name="_forceOverwrite">If Destination file already exists, file will be overwritten (Supersedes AllowUserOverwrite property)</param>
+            <param name="_allowUserOverwrite">If Destination file already exists, user will be prompted to overwrite file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.MoveFile_Rename(System.String,System.String)">
+            <summary>
+            Move current file instance to a new file location
+            [Will not overwrite if destination file exists, a new file will be created with a different name]
+            (ie. [fileName](#))
+            </summary>
+            <param name="_sourceFilePath">Path of file to copy</param>
+            <param name="_appendToRoot">Path to append to the current FileManager [ROOT_PATH]</param>        
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.CopyFile(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Copies the current file instance to a new location
+            </summary>
+            <param name="_sourceFilePath">Path of file to copy</param>
+            <param name="_appendToRoot">Path to append to the current FileManager [ROOT_PATH]</param>
+            <param name="_forceOverwrite">If Destination file already exists, file will be overwritten (Supersedes AllowUserOverwrite property)</param>
+            <param name="_allowUserOverwrite">If Destination file already exists, user will be prompted to overwrite file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.CopyFile_Rename(System.String,System.String)">
+            <summary>
+            Copy current file instance to a new file location
+            [Will not overwrite if destination file exists, a new file will be created with a different name]
+            (ie. [fileName](#))
+            </summary>
+            <param name="_sourceFilePath">Path of file to copy</param>
+            <param name="_appendToRoot">Path to append to the current FileManager [ROOT_PATH]</param>        
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.SaveFile(System.Byte[],System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Save a byte array to the file system                
+            </summary>
+            <param name="_sourceFilePath">Path of file to copy</param>
+            <param name="_appendToRoot">Path to append to the current FileManager [ROOT_PATH]</param>        
+            <param name="_fileName">Name of file (include extension)</param> 
+            <param name="_forceOverwrite">If Destination file already exists, file will be overwritten (Supersedes AllowUserOverwrite property)</param>
+            <param name="_allowUserOverwrite">If Destination file already exists, user will be prompted to overwrite file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.FileInUse(System.String,System.String)">
+            <summary>
+            Check if a file is in use
+            </summary>
+            <param name="_appendToRoot">Path to append to the current FileManager [ROOT_PATH]</param>
+            <param name="_fileName">Name of file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.FileInUse(System.String)">
+            <summary>
+            Check if a file is in use
+            </summary>
+            <param name="_filePath">Full file path</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.TransferFile(IBSFileUtils.ENUMs.FileTransferTypeDetailed,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Transfer a file 
+            </summary>
+            <param name="_type"></param>
+            <param name="_sourceFilePath"></param>
+            <param name="_appendToRoot"></param>
+            <param name="_forceOverwrite"></param>
+            <param name="_allowUserOverwrite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.FileManager.CheckFileInUse(System.String)">
+            <summary>
+            Check if the current file is in use
+            </summary>
+            <param name="_filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.DirectoryHelper.CreateDirectory(System.String)">
+            <summary>
+            Generate a directory structure for a file if it does not exists
+            </summary>
+            <param name="_filePath"></param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.DirectoryHelper.BrowseForDirectory(System.String)">
+            <summary>
+            Open folder dialog (return unc path if network drive)
+            </summary>
+            <param name="curPath"></param>
+            <param name="getUnc"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FileHelper.GetUNCPath(System.String)">
+            <summary>
+            Given a path, returns the UNC path or the original. (No exceptions
+            are raised by this function directly). For example, "P:\2008-02-29"
+            might return: "\\networkserver\Shares\Photos\2008-02-09"
+            </summary>
+            <param name="originalPath">The path to convert to a UNC Path</param>
+            <returns>A UNC path. If a network drive letter is specified, the
+            drive letter is converted to a UNC or network path. If the 
+            originalPath cannot be converted, it is returned unchanged.</returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FileHelper.GetAllFiles(System.String,System.Boolean,System.String)">
+            <summary>
+            CUSTOM File Load: Attempts to load a list of files from the file system.
+            NOTE: Use built in GetFileSystemInfos(...) on a directory to get similar information        
+            </summary>
+            <param name="_RootFolderPath">Root folder</param>
+            <param name="_loadSubDirectories">If True, will recursively include all files within in any sub folders</param>
+            <param name="_fileFilter">Filter file types</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FileHelper.FileLoad(System.IO.DirectoryInfo,System.Collections.Generic.List{System.IO.FileInfo}@,System.Collections.Generic.List{System.Exception}@,System.Boolean,System.String)">
+            <summary>
+            Load list of files from file system
+            </summary>
+            <param name="root"></param>
+            <param name="fileCol"></param>
+            <param name="log"></param>
+            <param name="loadAllSubDirectories">Will load all file paths in and sub-directories as well as the current directory</param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FileHelper.BrowseForFile(System.String,System.String,System.String,System.String)">
+            <summary>
+            Open file dialog (return unc path if network drive)
+            </summary>
+            <param name="curPath"></param>
+            <param name="ext">default file extention</param>
+            <param name="filter">ie. "xls Files(*.xls)|*.xls|xlsx files(*.xlsx)|*.xlsx"</param>
+            <returns>FileInfo</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FileHelper.WriteBytesToFile(System.Byte[],System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Saves a byte array to a file (must know the destintation file type)
+            </summary>
+            <param name="_fileByteArray"></param>
+            <param name="_destinationFilePath"></param>
+            <param name="_forceOverwrite">If Destination file already exists, file will be overwritten (Supersedes AllowUserOverwrite property)</param>
+            <param name="_allowUserOverwrite">If Destination file already exists, user will be prompted to overwrite file</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FilePathHelper.AppendToPath(System.String@,System.String)">
+            <summary>
+            Append a new folder to the FileManager root path
+            </summary>
+            <param name="_filePath"></param>
+            <param name="_appendFolderName"></param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FilePathHelper.RemoveFromPath(System.String@,System.String)">
+            <summary>
+            Remove from the path starting at the point of the folder name
+            </summary>
+            <param name="_filePath"></param>
+            <param name="_folderToRemove"></param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.FilePathHelper.AppendLeadingSlash(System.String@)">
+            <summary>
+            Append a \ to start of file path if one does not exist
+            </summary>
+            <param name="_filePath"></param>        
+        </member>
+        <member name="M:IBSFileUtils.Helper.FilePathHelper.RemoveTrailingSlash(System.String@)">
+            <summary>
+            Remove a \ from end of file path if one exists
+            </summary>
+            <param name="_filePath"></param>        
+        </member>
+        <member name="M:IBSFileUtils.Helper.InstallHelper.GetAppProductCode(System.String)">
+            <summary>
+            Get windows installer Application product code
+            </summary>
+            <param name="appName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.InstallHelper.IsProgramInstalled(System.String,System.Boolean)">
+            <summary>
+            Attempts to see if a program is installed (checks for registry entry)
+            </summary>
+            <param name="productName"></param>        
+            <param name="_useFuzzyLogic">Performs a StartsWith check, not an exact match</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.InstallHelper.CheckKeyExists(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Check for registry key
+            </summary>
+            <param name="uninstallKey"></param>
+            <param name="displayName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.InstallHelper.CheckUsersKeyValueExists(System.String,System.String)">
+            <summary>
+            Check for registry key value exists
+            </summary>
+            <param name="regPath"></param>
+            <param name="_keyName"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.InstallHelper.CheckUsersPathExists(System.String)">
+            <summary>
+            Check for registry path
+            </summary>
+            <param name="regPath"></param>           
+            <returns></returns>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.DEFAULTOPERATOR">
+            <summary>
+            Constant used for the default operator. </summary>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.operators">
+            <summary>
+            A map with all supported operators operators (PDF syntax). </summary>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.baos">
+            <summary>
+            The OutputStream of this worker object. </summary>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.mc_balance">
+            <summary>
+            Keeps track of BMC/EMC balance. </summary>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.ocgs">
+            <summary>
+            The OCGs that need to be removed. </summary>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.properties">
+            <summary>
+            The OCG properties. </summary>
+        </member>
+        <member name="F:IBSFileUtils.Helper.OCGParser.xobj">
+            <summary>
+            The names of XObjects that shouldn't be shown. </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.#ctor(System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Creates an instance of the OCGParser. </summary>
+            <param name="ocgs">	a set of String values with the names of the OCGs that need to be removed. </param>
+        </member>
+        <member name="P:IBSFileUtils.Helper.OCGParser.ToRemoved">
+            <summary>
+            Checks if the parser is currently parsing content that needs to be ignored.
+            @return	true if the content needs to be ignored
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.Parse(iTextSharp.text.pdf.PRStream,iTextSharp.text.pdf.PdfDictionary)">
+            <summary>
+            Parses a stream object and removes OCGs. </summary>
+            <param name="stream">	a stream object </param>
+            <param name="resources">	the resources dictionary of that object (containing info about the OCGs) </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.ProcessOperator(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <summary>
+            Processes an operator. </summary>
+            <param name="parser">	the parser that needs to process the operator </param>
+            <param name="operator">	the operator </param>
+            <param name="operands">	its operands </param>
+            <exception cref="T:System.Exception"> </exception>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.PopulateOperators">
+            <summary>
+            Populates the operators variable.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.IsVisible(System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <summary>
+            Checks operands to find out if the corresponding operator needs to be present or not. </summary>
+            <param name="operands">	a list of operands
+            @return	true if the operators needs to be present. </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.CheckMarkedContentStart(iTextSharp.text.pdf.PdfName)">
+            <summary>
+            Keeps track of the MarkedContent state. </summary>
+            <param name="ocref">	a reference to an OCG dictionary </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.CheckMarkedContentEnd">
+            <summary>
+            Keeps track of the MarkedContent state.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.Process(iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject},System.Boolean)">
+            <summary>
+            Processes an operator </summary>
+            <param name="operator">	the operator </param>
+            <param name="operands">	its operands </param>
+            <param name="removable">	is the operator eligable for removal? </param>
+            <exception cref="T:System.IO.IOException"> </exception>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.PrintSp(iTextSharp.text.pdf.PdfObject)">
+            <summary>
+            Writes a PDF object to the OutputStream, followed by a space character. </summary>
+            <param name="o"> </param>
+            <exception cref="T:System.IO.IOException"> </exception>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.PrintLn(iTextSharp.text.pdf.PdfObject)">
+            <summary>
+            Writes a PDF object to the OutputStream, followed by a newline character. </summary>
+            <param name="o"> </param>
+            <exception cref="T:System.IO.IOException"> </exception>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.CopyContentOperator">
+            <summary>
+            Class that processes unknown content.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.CopyContentOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.GraphicsOperator">
+            <summary>
+            Class that knows how to process graphics state operators.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.GraphicsOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.InlineImageOperator">
+            <summary>
+            Class that knows how to process inline image operators.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.InlineImageOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.MarkedContentOperator">
+            <summary>
+            Class that knows how to process marked content operators.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.MarkedContentOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.PathConstructionOrPaintingOperator">
+            <summary>
+            Class that knows how to process path construction, path painting and path clipping operators.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.PathConstructionOrPaintingOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.PdfOperator">
+            <summary>
+            PDF Operator interface.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.PdfOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <summary>
+            Methods that processes an operator </summary>
+            <param name="parser">	the parser </param>
+            <param name="operator">	the operator </param>
+            <param name="operands">	its operands </param>
+            <exception cref="T:System.IO.IOException"> </exception>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.TextOperator">
+            <summary>
+            Class that knows how to process text state operators.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.TextOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGParser.XObjectOperator">
+            <summary>
+            Class that knows how to process XObject operators.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGParser.XObjectOperator.Process(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfLiteral,System.Collections.Generic.IList{iTextSharp.text.pdf.PdfObject})">
+            <seealso cref= "!:PdfOperator.Process(OCGParser, PdfLiteral, List&lt;T&gt;)"> </seealso>
+        </member>
+        <member name="T:IBSFileUtils.Helper.OCGRemover">
+            <summary>
+            Class that knows how to remove OCG layers.
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.RemoveLayers(iTextSharp.text.pdf.PdfReader,System.String[])">
+            <summary>
+            Removes layers from a PDF document </summary>
+            <param name="reader">	a PdfReader containing a PDF document </param>
+            <param name="layers">	a sequence of names of OCG layers </param>
+            <exception cref="!:IOException"> </exception>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.RemoveOCGsFromArray(iTextSharp.text.pdf.PdfDictionary,iTextSharp.text.pdf.PdfName,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Gets an array from a dictionary and checks if it contains references to OCGs that need to be removed </summary>
+            <param name="dict">	the dictionary </param>
+            <param name="name">	the name of an array entry </param>
+            <param name="ocgs">	the removal list </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.RemoveOCGsFromArray(iTextSharp.text.pdf.PdfArray,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Searches an array for references to OCGs that need to be removed. </summary>
+            <param name="array">	the array </param>
+            <param name="ocgs">	the removal list </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.RemoveAnnots(iTextSharp.text.pdf.PdfDictionary,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Removes annotations from a page dictionary </summary>
+            <param name="page">	a page dictionary </param>
+            <param name="ocgs">	a set of names of OCG layers </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.RemoveProperties(iTextSharp.text.pdf.PdfDictionary,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Removes ocgs from a page resources </summary>
+            <param name="page">	a page dictionary </param>
+            <param name="ocgs">	a set of names of OCG layers </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.IsToBeRemoved(iTextSharp.text.pdf.PdfDictionary,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Checks if an OCG dictionary is on the list for removal. </summary>
+            <param name="ocg">	a dictionary </param>
+            <param name="names">	the removal list
+            @return	true if the dictionary should be removed </param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.OCGRemover.Parse(IBSFileUtils.Helper.OCGParser,iTextSharp.text.pdf.PdfDictionary)">
+            <summary>
+            Uses the OCGParser on a page </summary>
+            <param name="parser">	the OCGParser </param>
+            <param name="page">		the page dictionary of the page that needs to be parsed. </param>
+            <exception cref="!:IOException"> </exception>
+        </member>
+        <member name="M:IBSFileUtils.Helper.PDFHelper.CreatePDFFromImage(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Create a PDF document from an Image File
+            </summary>
+            <param name="imagePath"></param>
+            <param name="_scaleToFit"></param>
+            <param name="_suppressExceptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.PDFHelper.CreatePDFFromExcel(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Create a PDF document from an Excel File
+            </summary>
+            <param name="filePath"></param>
+            <param name="_saveToTempDirectory">If False, file will be saved in same directory as _filePath</param>
+            <param name="_suppressExceptions"></param>
+            <returns>PDFExportResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.PDFHelper.CreatePDFFromWord(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Create a PDF Document from a Word Document
+            </summary>
+            <param name="filePath"></param>
+            <param name="_saveToTempDirectory">If False, file will be saved in same directory as _filePath</param>
+            <param name="_suppressExceptions"></param>
+            <returns>PDFExportResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.PDFHelper.CreatePDFFromVisio(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Create a PDF document from a VISIO document
+            </summary>
+            <param name="filePath"></param>
+            <param name="_saveToTempDirectory">If False, file will be saved in same directory as _filePath</param>
+            <param name="_suppressExceptions"></param>
+            <returns>PDFExportResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.ProcessHelper.IsProcessOpen(System.String)">
+            <summary>
+            Check to see if a process by the name of [processName] is currently running
+            </summary>
+            <param name="processName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.ProcessHelper.GetOpenProcess(System.String)">
+            <summary>
+            Get the first process associated to a particular [processName]
+            </summary>
+            <param name="processName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.Helper.ProcessHelper.KillAllProcesses(System.String,System.Int32)">
+            <summary>
+            Kill all processes which match the [processName]
+            </summary>
+            <param name="processName"></param>
+            <param name="_waitForExitDuration">(milliseconds to wait)
+                                               If == 0: Will wait indefinetly for process to end
+                                               If > 0: Will set max time to wait for process to end</param>
+        </member>
+        <member name="M:IBSFileUtils.Helper.StringHelper.StringConversion(System.Object)">
+            <summary>
+            Checks for NULL values and convert special characters in strings replace ' with ''
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:IBSFileUtils.MailManager.SendEmail(System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.Net.Mail.MailPriority)">
+            <summary>
+            Generate an EMAIL
+            </summary>
+            <param name="_subject"></param>
+            <param name="_content"></param>
+            <param name="_to">comman separated list</param>
+            <param name="_from"></param>
+            <param name="_attachments">List of file paths</param>
+            <param name="_bcc">comma separated list</param>
+        </member>
+        <member name="M:IBSFileUtils.MailManager.SendEmail(System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.IO.FileInfo},System.String,System.Net.Mail.MailPriority)">
+            <summary>
+            Generate an EMAIL
+            </summary>
+            <param name="_subject"></param>
+            <param name="_content"></param>
+            <param name="_to">COMMA separated list</param>
+            <param name="_from"></param>
+            <param name="_attachments">List of FileInfo</param>
+            <param name="_bcc">COMMA separated list</param>
+        </member>
+        <member name="M:IBSFileUtils.MailManager.CreateEmail(System.String,System.String,System.String,System.Collections.Generic.List{System.IO.FileInfo},System.String)">
+            <summary>
+            Create an EMAIL, which will popup for the user in an outlook message
+            </summary>
+            <param name="_subect"></param>
+            <param name="_content"></param>
+            <param name="_to">Semi Colon seperated list</param>
+            <param name="_attachements"></param>
+            <param name="_bcc">Semi Colon seperated list</param>
+        </member>
+        <member name="F:IBSFileUtils.PDFManager.ImageExtensions">
+            <summary>
+            Allowable image file types to convert to PDF
+            </summary>
+        </member>
+        <member name="F:IBSFileUtils.PDFManager.OfficeExtensions">
+            <summary>
+            Allowable Office file types to convert to PDF
+            </summary>
+        </member>
+        <member name="F:IBSFileUtils.PDFManager.StandardPageSizes">
+            <summary>
+            Allowable Standard Page Sizes
+            </summary>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Default Constructor
+            ** NOTE: iTextSharp.dll is REQUIRED in your project as a reference to use the PDF Manager of PDFHelper utility functions
+            </summary>
+            <param name="_suppressTransferErrors">True = Any Exceptions which are generated during PDF Generation activities will be suppressed.  Exception will be logged on the PDFExportResult object.   
+                                                  False = Exception message will be shown to user in popup.  Exception will be logged on the PDFExportResult object.</param>
+            <param name="_showLayersNotInVisibleList">True = Layers which are not in the VisibleLayers list will be made visible by default.  
+                                                  False = Layers which are not in the VisibleLayers list will be hidden.</param>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.CreatePDFFromImage(System.String,System.Boolean)">
+            <summary>
+            Create a PDF document from an image        
+            </summary>
+            <param name="_filePath"></param>
+            <param name="_scaleToFit"></param>        
+            <returns>PDFCreateResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.CreatePDFFromExcel(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Create a PDF document from an excel file        
+            </summary>
+            <param name="_filePath"></param>
+            <param name="_landscapeOrientation">Will export in landscape orientation, default is portrait</param>
+            <param name="_saveToTempDirectory">If False, file will be saved in same directory as _filePath</param>
+            <returns>PDFCreateResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.CreatePDFFromWord(System.String,System.Boolean)">
+            <summary>
+            Create a PDF document from a Word document        
+            </summary>
+            <param name="_filePath"></param>
+            <param name="_saveToTempDirectory">If False, file will be saved in same directory as _filePath</param>
+            <returns>PDFCreateResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.CreatePDFFromVisio(System.String,System.Boolean)">
+            <summary>
+            Create a PDF document from a Visio document        
+            </summary>
+            <param name="_filePath"></param>
+            <param name="_saveToTempDirectory">If False, file will be saved in same directory as _filePath</param>
+            <returns>PDFCreateResult</returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.MergeFilesToPDF(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Merge a List of Filespaths to a single PDF
+            </summary>
+            <param name="_files">(Images, PDFs, Excel, Word, Visio) as a list of file paths</param>
+            <param name="targetPdf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.MergeFilesToPDF(System.Collections.Generic.IEnumerable{System.IO.FileInfo},System.String)">
+            <summary>
+            Merge a List of Files to a single PDF
+            </summary>
+            <param name="_files">(Images, PDFs, Excel, Word, Visio)</param>
+            <param name="targetPdf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.GetPDFLayers(System.String)">
+            <summary>
+            Get All Layers from a PDF file
+            </summary>
+            <param name="_sourceFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.UpdateLayers(System.String,System.String,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Update layer visibility on a pdf
+            </summary>
+            <param name="_sourcePDF"></param>
+            <param name="_outputPDF"></param>
+            <param name="_visibleLayerNames"></param>
+            <param name="_deleteLayers">[True]: layer content will be removed from PDF
+                                        [False]: layer content will remain but be hidden</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.UpdateLayers(IBSFileUtils.PdfFileInfo,System.String,System.Collections.Generic.List{IBSFileUtils.PdfLayerVisibleInfo},System.Boolean)">
+            <summary>
+            Update layer visibility on a pdf
+            </summary>
+            <param name="_sourcePDF"></param>
+            <param name="_outputPDF"></param>
+            <param name="_visibleLayers"></param>
+            <param name="_deleteLayers">[True]: layer content will be removed from PDF
+                                        [False]: layer content will remain but be hidden</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.UpdateLayersAndCreateSet(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Update layer visibiliy on multiple pdf documents and creates a set from the resulting modified pdfs
+            </summary>
+            <param name="_sourceFiles"></param>
+            <param name="_visibleLayerNames"></param>
+            <param name="_tempFolderLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.UpdateLayersAndCreateSet(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.List{IBSFileUtils.PdfLayerVisibleInfo},System.String)">
+            <summary>
+            Update layer visibiliy on multiple pdf documents and creates a set from the resulting modified pdfs
+            </summary>
+            <param name="_sourceFiles"></param>
+            <param name="_visibleLayerNames"></param>
+            <param name="_tempFolderLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.UpdateLayersAndCreateSet(System.Collections.Generic.IEnumerable{IBSFileUtils.PdfFileInfo},System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Update layer visibiliy on multiple pdf documents and creates a set from the resulting modified pdfs
+            </summary>
+            <param name="_sourceFiles"></param>
+            <param name="_visibleLayerNames"></param>
+            <param name="_tempFolderLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.UpdateLayersAndCreateSet(System.Collections.Generic.IEnumerable{IBSFileUtils.PdfFileInfo},System.Collections.Generic.List{IBSFileUtils.PdfLayerVisibleInfo},System.String)">
+            <summary>
+            Update layer visibiliy on multiple pdf documents and creates a set from the resulting modified pdfs
+            </summary>
+            <param name="_sourceFiles"></param>
+            <param name="_visibleLayerNames"></param>
+            <param name="_tempFolderLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.StampPDFWithImage(System.String,System.String,System.String,System.String,IBSFileUtils.PDFManager.DefaultAnnotationLocation,System.Int32,System.Int32)">
+            <summary>
+            Stamp PDF with image from file
+            </summary>
+            <param name="_sourcePDF"></param>
+            <param name="_outputPDF"></param>
+            <param name="_ImagePath"></param>
+            <param name="layerName"></param>
+            <param name="_defaultLocation"></param>
+            <param name="scaleToWidth"></param>
+            <param name="scaleToHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.StampPDFWithImage(System.String,System.String,System.Byte[],System.String,IBSFileUtils.PDFManager.DefaultAnnotationLocation,System.Int32,System.Int32)">
+            <summary>
+            Stamp PDF with image from byte []
+            </summary>
+            <param name="_sourcePDF"></param>
+            <param name="_outputPDF"></param>
+            <param name="_imageArray"></param>
+            <param name="layerName"></param>
+            <param name="_defaultLocation"></param>
+            <param name="scaleToWidth"></param>
+            <param name="scaleToHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.StampPDFWithImage(System.String,System.String,System.Drawing.Image,System.String,IBSFileUtils.PDFManager.DefaultAnnotationLocation,System.Int32,System.Int32)">
+            <summary>
+            Stamp PDF with image from System.Drawing.Image
+            </summary>
+            <param name="_sourcePDF"></param>
+            <param name="_outputPDF"></param>
+            <param name="_image"></param>
+            <param name="layerName"></param>
+            <param name="_defaultLocation"></param>
+            <param name="scaleToWidth"></param>
+            <param name="scaleToHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.StampPDFWithImage(System.String,System.String,iTextSharp.text.Image,System.String,IBSFileUtils.PDFManager.DefaultAnnotationLocation,System.Int32,System.Int32)">
+            <summary>
+            Stamp PDF with image from iTextSharp.text.Image
+            </summary>
+            <param name="_sourcePDF"></param>
+            <param name="_outputPDF"></param>
+            <param name="image"></param>
+            <param name="layerName"></param>
+            <param name="_defaultLocation"></param>
+            <param name="scaleToWidth"></param>
+            <param name="scaleToHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.GetChildLayers(iTextSharp.text.pdf.PdfLayer)">
+            <summary>
+            Get All child layers under the passed in layer
+            </summary>
+            <param name="_parentLayer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.IsChildLayer(iTextSharp.text.pdf.PdfLayer,iTextSharp.text.pdf.PdfLayer)">
+            <summary>
+            Check if a layer is the child layer of a given parent layer
+            </summary>
+            <param name="_parentLayer"></param>
+            <param name="_checkLayer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.CanShowLayer(System.String,System.Collections.Generic.Dictionary{System.String,iTextSharp.text.pdf.PdfLayer},System.Collections.Generic.List{IBSFileUtils.PdfLayerVisibleInfo},System.Boolean)">
+            <summary>
+            Check if a layer is the child layer of a given parent layer
+            </summary>
+            <param name="_parentLayer"></param>
+            <param name="_checkLayer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.FileIsImage(System.String)">
+            <summary>
+            File is in the accepted ImageExtensions list
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.FileIsOffice(System.String)">
+            <summary>
+            File is in the accepted OfficeExtensions list
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.FileIsPDF(System.String)">
+            <summary>
+            File is a pdf file
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.ScalePDFToLetter(System.String,System.String)">
+            <summary>
+            Scale a document to Letter Size
+            </summary>
+            <param name="sourcePDF"></param>
+            <param name="outputPDF"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.ScalePDFToLegal(System.String,System.String)">
+            <summary>
+            Scale a document to Legal Size
+            </summary>
+            <param name="sourcePDF"></param>
+            <param name="outputPDF"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.ScalePDFTo11x17(System.String,System.String)">
+            <summary>
+            Scale a document to 11x17
+            </summary>
+            <param name="sourcePDF"></param>
+            <param name="outputPDF"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.ScalePDF(System.String,System.String,iTextSharp.text.Rectangle,System.Single)">
+            <summary>
+            Scale document to a particular page size
+            </summary>
+            <param name="sourcePDF"></param>
+            <param name="outputPDF"></param>
+            <param name="scaleToPageSize">iTextSharp.text.PageSize
+                                          If null, function will attempt to auto-detect the page size based on [StandardPageSizes]</param>
+            <param name="differentialThreshold">Used for auto-page size selection
+                                                If a page size is close to a larger page size, it will return the large page size (within threshold amount)</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.FlattenPDF(System.IO.FileInfo)">
+            <summary>
+            Return a pdf (flattened) as a memory stream
+            </summary>
+            <param name="_pdfPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.TryFindStandardPageSize(iTextSharp.text.Rectangle,System.Single)">
+            <summary>
+            Attempt to find a standard paper size based on current page size
+            </summary>
+            <param name="_currentPageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.GeneratePDFMergeException(IBSFileUtils.Model.PDFMergeResult,System.Exception)">
+            <summary>
+            Generate an exception for the create set
+            </summary>
+            <param name="_result"></param>
+            <param name="_exception"></param>
+        </member>
+        <member name="M:IBSFileUtils.PDFManager.CreateTempFileInfo(System.IO.FileInfo,System.String)">
+            <summary>
+            Create a file info for the current file with appended text
+            </summary>
+            <param name="_source"></param>
+            <param name="_newFileAppend"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
