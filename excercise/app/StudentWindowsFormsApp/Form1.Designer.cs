@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.StudentProjectApp = new System.Windows.Forms.Label();
-            this.btn_firstname = new System.Windows.Forms.TextBox();
+            this.txt_firstname = new System.Windows.Forms.TextBox();
             this.lbl_firstname = new System.Windows.Forms.Label();
             this.lb_llastname = new System.Windows.Forms.Label();
             this.txt_lastname = new System.Windows.Forms.TextBox();
@@ -56,19 +56,19 @@
             this.StudentProjectApp.TabIndex = 1;
             this.StudentProjectApp.Text = "Student Project App";
             // 
-            // btn_firstname
+            // txt_firstname
             // 
-            this.btn_firstname.Location = new System.Drawing.Point(32, 102);
-            this.btn_firstname.Name = "btn_firstname";
-            this.btn_firstname.Size = new System.Drawing.Size(146, 31);
-            this.btn_firstname.TabIndex = 2;
+            this.txt_firstname.Location = new System.Drawing.Point(32, 102);
+            this.txt_firstname.Name = "txt_firstname";
+            this.txt_firstname.Size = new System.Drawing.Size(146, 20);
+            this.txt_firstname.TabIndex = 2;
             // 
             // lbl_firstname
             // 
             this.lbl_firstname.AutoSize = true;
             this.lbl_firstname.Location = new System.Drawing.Point(27, 69);
             this.lbl_firstname.Name = "lbl_firstname";
-            this.lbl_firstname.Size = new System.Drawing.Size(116, 25);
+            this.lbl_firstname.Size = new System.Drawing.Size(57, 13);
             this.lbl_firstname.TabIndex = 3;
             this.lbl_firstname.Text = "First Name";
             // 
@@ -77,7 +77,7 @@
             this.lb_llastname.AutoSize = true;
             this.lb_llastname.Location = new System.Drawing.Point(222, 69);
             this.lb_llastname.Name = "lb_llastname";
-            this.lb_llastname.Size = new System.Drawing.Size(115, 25);
+            this.lb_llastname.Size = new System.Drawing.Size(58, 13);
             this.lb_llastname.TabIndex = 5;
             this.lb_llastname.Text = "Last Name";
             // 
@@ -85,7 +85,7 @@
             // 
             this.txt_lastname.Location = new System.Drawing.Point(218, 102);
             this.txt_lastname.Name = "txt_lastname";
-            this.txt_lastname.Size = new System.Drawing.Size(170, 31);
+            this.txt_lastname.Size = new System.Drawing.Size(170, 20);
             this.txt_lastname.TabIndex = 4;
             // 
             // lbl_phone
@@ -93,7 +93,7 @@
             this.lbl_phone.AutoSize = true;
             this.lbl_phone.Location = new System.Drawing.Point(47, 197);
             this.lbl_phone.Name = "lbl_phone";
-            this.lbl_phone.Size = new System.Drawing.Size(155, 25);
+            this.lbl_phone.Size = new System.Drawing.Size(78, 13);
             this.lbl_phone.TabIndex = 7;
             this.lbl_phone.Text = "Phone Number";
             // 
@@ -102,7 +102,7 @@
             this.lbl_email.AutoSize = true;
             this.lbl_email.Location = new System.Drawing.Point(252, 197);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(65, 25);
+            this.lbl_email.Size = new System.Drawing.Size(32, 13);
             this.lbl_email.TabIndex = 9;
             this.lbl_email.Text = "Email";
             // 
@@ -110,7 +110,7 @@
             // 
             this.txt_email.Location = new System.Drawing.Point(237, 228);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(100, 31);
+            this.txt_email.Size = new System.Drawing.Size(100, 20);
             this.txt_email.TabIndex = 8;
             // 
             // label5
@@ -118,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(372, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 25);
+            this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 11;
             // 
             // lbl_startdate
@@ -126,7 +126,7 @@
             this.lbl_startdate.AutoSize = true;
             this.lbl_startdate.Location = new System.Drawing.Point(424, 197);
             this.lbl_startdate.Name = "lbl_startdate";
-            this.lbl_startdate.Size = new System.Drawing.Size(108, 25);
+            this.lbl_startdate.Size = new System.Drawing.Size(55, 13);
             this.lbl_startdate.TabIndex = 13;
             this.lbl_startdate.Text = "Start Date";
             // 
@@ -135,7 +135,7 @@
             this.lbl_enddate.AutoSize = true;
             this.lbl_enddate.Location = new System.Drawing.Point(479, 70);
             this.lbl_enddate.Name = "lbl_enddate";
-            this.lbl_enddate.Size = new System.Drawing.Size(101, 25);
+            this.lbl_enddate.Size = new System.Drawing.Size(52, 13);
             this.lbl_enddate.TabIndex = 16;
             this.lbl_enddate.Text = "End Date";
             // 
@@ -143,14 +143,14 @@
             // 
             this.dateTime_enddate.Location = new System.Drawing.Point(429, 98);
             this.dateTime_enddate.Name = "dateTime_enddate";
-            this.dateTime_enddate.Size = new System.Drawing.Size(359, 31);
+            this.dateTime_enddate.Size = new System.Drawing.Size(359, 20);
             this.dateTime_enddate.TabIndex = 17;
             // 
             // dateTime_startdate
             // 
             this.dateTime_startdate.Location = new System.Drawing.Point(429, 229);
             this.dateTime_startdate.Name = "dateTime_startdate";
-            this.dateTime_startdate.Size = new System.Drawing.Size(359, 31);
+            this.dateTime_startdate.Size = new System.Drawing.Size(359, 20);
             this.dateTime_startdate.TabIndex = 18;
             // 
             // chkbox_activate
@@ -160,7 +160,7 @@
             this.chkbox_activate.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkbox_activate.Location = new System.Drawing.Point(272, 321);
             this.chkbox_activate.Name = "chkbox_activate";
-            this.chkbox_activate.Size = new System.Drawing.Size(192, 29);
+            this.chkbox_activate.Size = new System.Drawing.Size(108, 17);
             this.chkbox_activate.TabIndex = 19;
             this.chkbox_activate.Text = "Activate Account";
             this.chkbox_activate.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(52, 244);
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 31);
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 22;
             // 
             // Form1
@@ -202,7 +202,7 @@
             this.Controls.Add(this.lb_llastname);
             this.Controls.Add(this.txt_lastname);
             this.Controls.Add(this.lbl_firstname);
-            this.Controls.Add(this.btn_firstname);
+            this.Controls.Add(this.txt_firstname);
             this.Controls.Add(this.StudentProjectApp);
             this.Name = "Form1";
             this.ResumeLayout(false);
@@ -219,7 +219,7 @@
         private studentprojectdbDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource1;
         private System.Windows.Forms.Label StudentProjectApp;
-        private System.Windows.Forms.TextBox btn_firstname;
+        private System.Windows.Forms.TextBox txt_firstname;
         private System.Windows.Forms.Label lbl_firstname;
         private System.Windows.Forms.Label lb_llastname;
         private System.Windows.Forms.TextBox txt_lastname;

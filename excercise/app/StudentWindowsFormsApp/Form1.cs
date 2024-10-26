@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,42 @@ namespace StudentWindowsFormsApp
 
         private void btnEmpSubmit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Employee creation successful.{btn_firstname.Text} {txt_lastname.Text} {txt_email.Text} {dateTime_startdate.Text} {dateTime_enddate.Text}  {chkbox_activate.Checked}");
+
+            // send items from form into variables
+            string firstname = txt_firstname.Text;
+            string lastname = txt_lastname.Text;
+            string email = txt_email.Text;
+            DateTime startdate = dateTime_startdate.Value;
+            DateTime enddate = dateTime_enddate.Value;
+            bool activate = chkbox_activate.Checked;
+
+            //verify details from form before saving details
+
+            // check if any fields are null
+            // (except for any fields with defaults or non required fields)
+            if ((string.IsNullOrWhiteSpace(firstname) || 
+                string.IsNullOrWhiteSpace(lastname) || 
+                string.IsNullOrWhiteSpace(email)) ||
+                startdate > enddate                
+                )
+                {
+                    MessageBox.Show("Required fields are empty." +
+                        "Please double check and resubmit request.");
+                }
+            
+            
+
+            // send details to database
+
+
+            // show confirmation of adding employee
+            MessageBox.Show($"Employee creation successful.\n\r" +
+                $"first name: {firstname} \n\r" +
+                $"last name: {lastname} \n\r" +
+                $"email: {email} \n\r" +
+                $"start date: {startdate}\n\r " +
+                $"end date: {enddate} \n\r" +
+                $"account activated: {activate} \n\r");
         }
     }
     
