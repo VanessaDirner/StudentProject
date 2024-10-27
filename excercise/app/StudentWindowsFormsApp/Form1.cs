@@ -25,6 +25,8 @@ namespace StudentWindowsFormsApp
 
         private void btnEmpSubmit_Click(object sender, EventArgs e)
         {
+            // set defaults for some variables for checking form
+            bool isvalid = true;
 
             // send items from form into variables
             string firstname = txt_firstname.Text;
@@ -44,23 +46,32 @@ namespace StudentWindowsFormsApp
                 startdate > enddate                
                 )
                 {
+                    isvalid = false;
                     MessageBox.Show("Required fields are empty." +
                         "Please double check and resubmit request.");
                 }
             
             
 
-            // send details to database
+            // if form filled out ok, process form and show confirmation of save
+            if (isvalid == true)
+            {
+                // send details to database
+
+                // save changes to database
 
 
-            // show confirmation of adding employee
-            MessageBox.Show($"Employee creation successful.\n\r" +
-                $"first name: {firstname} \n\r" +
-                $"last name: {lastname} \n\r" +
-                $"email: {email} \n\r" +
-                $"start date: {startdate}\n\r " +
-                $"end date: {enddate} \n\r" +
-                $"account activated: {activate} \n\r");
+                // show confirmation of adding employee
+                MessageBox.Show($"Employee creation successful.\n\r" +
+                    $"first name: {firstname} \n\r" +
+                    $"last name: {lastname} \n\r" +
+                    $"email: {email} \n\r" +
+                    $"start date: {startdate}\n\r " +
+                    $"end date: {enddate} \n\r" +
+                    $"account activated: {activate} \n\r");
+            }
+
+            
         }
     }
     

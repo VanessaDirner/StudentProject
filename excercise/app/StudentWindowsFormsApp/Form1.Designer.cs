@@ -214,9 +214,6 @@
         private System.Windows.Forms.BindingSource assignmentBindingSource;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource;
-        private studentprojectdbDataSet studentprojectdbDataSet;
-        private studentprojectdbDataSetTableAdapters.assignmentTableAdapter assignmentTableAdapter;
-        private studentprojectdbDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource1;
         private System.Windows.Forms.Label StudentProjectApp;
         private System.Windows.Forms.TextBox txt_firstname;

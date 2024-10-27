@@ -288,3 +288,7 @@ C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\de\DevEx
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\es\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\ja\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\ru\DevExpress.Diagram.v20.2.Core.resources.dll
+C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.dll
+C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.xml
+C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.SqlServer.xml
