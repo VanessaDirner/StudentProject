@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.StudentProjectApp = new System.Windows.Forms.Label();
+            this.Employees = new System.Windows.Forms.Label();
             this.txt_firstname = new System.Windows.Forms.TextBox();
             this.lbl_firstname = new System.Windows.Forms.Label();
             this.lb_llastname = new System.Windows.Forms.Label();
@@ -48,15 +48,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).BeginInit();
             this.SuspendLayout();
             // 
-            // StudentProjectApp
+            // Employees
             // 
-            this.StudentProjectApp.AutoSize = true;
-            this.StudentProjectApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudentProjectApp.Location = new System.Drawing.Point(128, 18);
-            this.StudentProjectApp.Name = "StudentProjectApp";
-            this.StudentProjectApp.Size = new System.Drawing.Size(321, 37);
-            this.StudentProjectApp.TabIndex = 1;
-            this.StudentProjectApp.Text = "Student Project App";
+            this.Employees.AutoSize = true;
+            this.Employees.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employees.Location = new System.Drawing.Point(311, 19);
+            this.Employees.Name = "Employees";
+            this.Employees.Size = new System.Drawing.Size(182, 37);
+            this.Employees.TabIndex = 1;
+            this.Employees.Text = "Employees";
+            this.Employees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_firstname
             // 
@@ -214,7 +215,7 @@
             this.Controls.Add(this.txt_lastname);
             this.Controls.Add(this.lbl_firstname);
             this.Controls.Add(this.txt_firstname);
-            this.Controls.Add(this.StudentProjectApp);
+            this.Controls.Add(this.Employees);
             this.Name = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).EndInit();
@@ -228,7 +229,7 @@
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource;
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource1;
-        private System.Windows.Forms.Label StudentProjectApp;
+        private System.Windows.Forms.Label Employees;
         private System.Windows.Forms.TextBox txt_firstname;
         private System.Windows.Forms.Label lbl_firstname;
         private System.Windows.Forms.Label lb_llastname;
