@@ -7,20 +7,8 @@
       "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\employeeform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:employeeform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
@@ -57,7 +45,7 @@
               "RelativeDocumentMoniker": "EmployeeForm.cs",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.cs",
               "RelativeToolTip": "EmployeeForm.cs",
-              "ViewState": "AgIAADEAAADAAAAAAIAWwF8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAlwFoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T15:14:31.502Z",
               "IsPinned": true,
@@ -65,54 +53,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "employee.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\employee.cs",
-              "RelativeDocumentMoniker": "employee.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\employee.cs",
-              "RelativeToolTip": "employee.cs",
-              "ViewState": "AgIAABEAAADQAAAAAMAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T01:33:13.197Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T01:11:40.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EmployeeForm.Designer.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.Designer.cs",
-              "RelativeDocumentMoniker": "EmployeeForm.Designer.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.Designer.cs",
-              "RelativeToolTip": "EmployeeForm.Designer.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAUwDsAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T17:54:35.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Model1.edmx [Diagram1]",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\Model1.edmx",
               "RelativeDocumentMoniker": "Model1.edmx",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\Model1.edmx [Diagram1]",
               "RelativeToolTip": "Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-10-27T00:57:08.894Z",
-              "EditorCaption": " [Diagram1]"
+              "WhenOpened": "2024-10-27T00:57:08.894Z"
             }
           ]
         }

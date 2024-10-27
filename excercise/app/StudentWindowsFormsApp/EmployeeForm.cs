@@ -67,7 +67,10 @@ namespace StudentWindowsFormsApp
                 employee.email = email;
                 employee.startdate = startdate; 
                 employee.enddate = enddate;
-                
+                employee.createdate = DateTime.Now;
+                employee.modifieddate = DateTime.Now;
+                employee.createdby = "admin";
+                employee.modifiedby = "admin";
 
                 // send details to database
                 _studentprojectEntities.employees.Add(employee);
