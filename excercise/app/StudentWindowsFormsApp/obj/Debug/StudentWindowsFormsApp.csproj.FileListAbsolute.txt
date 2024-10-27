@@ -24,7 +24,6 @@ C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\DevExpre
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\DevExpress.XtraTreeList.v23.2.xml
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\DevExpress.Office.v23.2.Core.xml
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.csproj.AssemblyReference.cache
-C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.Form1.resources
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.Properties.Resources.resources
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.csproj.GenerateResource.cache
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.exe.licenses
@@ -292,3 +291,4 @@ C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFr
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.SqlServer.dll
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.xml
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EmployeeForm.resources

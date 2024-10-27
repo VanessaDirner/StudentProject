@@ -1,6 +1,6 @@
 ﻿namespace StudentWindowsFormsApp
 {
-    partial class Form1
+    partial class EmployeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,13 +44,15 @@
             this.chkbox_activate = new System.Windows.Forms.CheckBox();
             this.btnEmpSubmit = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.viewEmployees = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // StudentProjectApp
             // 
             this.StudentProjectApp.AutoSize = true;
             this.StudentProjectApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudentProjectApp.Location = new System.Drawing.Point(89, 32);
+            this.StudentProjectApp.Location = new System.Drawing.Point(128, 18);
             this.StudentProjectApp.Name = "StudentProjectApp";
             this.StudentProjectApp.Size = new System.Drawing.Size(321, 37);
             this.StudentProjectApp.TabIndex = 1;
@@ -91,7 +93,7 @@
             // lbl_phone
             // 
             this.lbl_phone.AutoSize = true;
-            this.lbl_phone.Location = new System.Drawing.Point(47, 197);
+            this.lbl_phone.Location = new System.Drawing.Point(49, 136);
             this.lbl_phone.Name = "lbl_phone";
             this.lbl_phone.Size = new System.Drawing.Size(78, 13);
             this.lbl_phone.TabIndex = 7;
@@ -100,7 +102,7 @@
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(252, 197);
+            this.lbl_email.Location = new System.Drawing.Point(256, 136);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(32, 13);
             this.lbl_email.TabIndex = 9;
@@ -108,7 +110,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(237, 228);
+            this.txt_email.Location = new System.Drawing.Point(241, 167);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(100, 20);
             this.txt_email.TabIndex = 8;
@@ -124,7 +126,7 @@
             // lbl_startdate
             // 
             this.lbl_startdate.AutoSize = true;
-            this.lbl_startdate.Location = new System.Drawing.Point(424, 197);
+            this.lbl_startdate.Location = new System.Drawing.Point(428, 136);
             this.lbl_startdate.Name = "lbl_startdate";
             this.lbl_startdate.Size = new System.Drawing.Size(55, 13);
             this.lbl_startdate.TabIndex = 13;
@@ -143,14 +145,14 @@
             // 
             this.dateTime_enddate.Location = new System.Drawing.Point(429, 98);
             this.dateTime_enddate.Name = "dateTime_enddate";
-            this.dateTime_enddate.Size = new System.Drawing.Size(359, 20);
+            this.dateTime_enddate.Size = new System.Drawing.Size(199, 20);
             this.dateTime_enddate.TabIndex = 17;
             // 
             // dateTime_startdate
             // 
-            this.dateTime_startdate.Location = new System.Drawing.Point(429, 229);
+            this.dateTime_startdate.Location = new System.Drawing.Point(429, 164);
             this.dateTime_startdate.Name = "dateTime_startdate";
-            this.dateTime_startdate.Size = new System.Drawing.Size(359, 20);
+            this.dateTime_startdate.Size = new System.Drawing.Size(211, 20);
             this.dateTime_startdate.TabIndex = 18;
             // 
             // chkbox_activate
@@ -158,7 +160,7 @@
             this.chkbox_activate.AutoSize = true;
             this.chkbox_activate.Checked = true;
             this.chkbox_activate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkbox_activate.Location = new System.Drawing.Point(272, 321);
+            this.chkbox_activate.Location = new System.Drawing.Point(732, 89);
             this.chkbox_activate.Name = "chkbox_activate";
             this.chkbox_activate.Size = new System.Drawing.Size(108, 17);
             this.chkbox_activate.TabIndex = 19;
@@ -170,9 +172,9 @@
             this.btnEmpSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEmpSubmit.ForeColor = System.Drawing.Color.Black;
             this.btnEmpSubmit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmpSubmit.Location = new System.Drawing.Point(272, 384);
+            this.btnEmpSubmit.Location = new System.Drawing.Point(759, 144);
             this.btnEmpSubmit.Name = "btnEmpSubmit";
-            this.btnEmpSubmit.Size = new System.Drawing.Size(211, 51);
+            this.btnEmpSubmit.Size = new System.Drawing.Size(91, 51);
             this.btnEmpSubmit.TabIndex = 20;
             this.btnEmpSubmit.Text = "Submit Form";
             this.btnEmpSubmit.UseVisualStyleBackColor = true;
@@ -180,14 +182,23 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(52, 244);
+            this.maskedTextBox1.Location = new System.Drawing.Point(52, 160);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 22;
             // 
-            // Form1
+            // viewEmployees
             // 
-            this.ClientSize = new System.Drawing.Size(822, 531);
+            this.viewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewEmployees.Location = new System.Drawing.Point(30, 213);
+            this.viewEmployees.Name = "viewEmployees";
+            this.viewEmployees.Size = new System.Drawing.Size(842, 256);
+            this.viewEmployees.TabIndex = 23;
+            // 
+            // EmployeeForm
+            // 
+            this.ClientSize = new System.Drawing.Size(896, 518);
+            this.Controls.Add(this.viewEmployees);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.btnEmpSubmit);
             this.Controls.Add(this.chkbox_activate);
@@ -204,7 +215,9 @@
             this.Controls.Add(this.lbl_firstname);
             this.Controls.Add(this.txt_firstname);
             this.Controls.Add(this.StudentProjectApp);
-            this.Name = "Form1";
+            this.Name = "EmployeeForm";
+            this.Load += new System.EventHandler(this.EmployeeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +244,7 @@
         private System.Windows.Forms.CheckBox chkbox_activate;
         private System.Windows.Forms.Button btnEmpSubmit;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.DataGridView viewEmployees;
     }
 }
 
