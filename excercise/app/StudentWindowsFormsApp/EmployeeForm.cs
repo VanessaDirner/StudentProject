@@ -24,6 +24,28 @@ namespace StudentWindowsFormsApp
             _studentprojectEntities = new studentprojectEntities();
         }
 
+        private async void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            // get employees from database from database object
+            // var employees = _studentprojectEntities.employees.ToList();
+            var employees =  _studentprojectEntities.employees.Select(item => new
+            {
+                firstname = item.firstname,
+                lastname = item.lastname,
+                email = item.email,
+                startdate = item.startdate,
+                enddate = item.enddate,
+                createdby = item.createdby,
+                modifiedby = item.modifiedby,
+                phone = item.phonenumber,
+                id = item.personID,
+                active = item.active
+            }).ToList();
+
+            viewEmployees.DataSource = employees;
+
+        }
+
         private void btnEmpSubmit_Click(object sender, EventArgs e)
         {
             // set defaults for some variables for checking form
@@ -90,7 +112,7 @@ namespace StudentWindowsFormsApp
                         $"end date: {enddate} \n\r" +
                         $"account activated: {activate} \n\r");
 
-                    // reload datagrid with updated info
+                    //TODO  reload datagrid with updated info
 
                 }
                 catch 
@@ -101,31 +123,16 @@ namespace StudentWindowsFormsApp
                         $" or contact an administrator.");
                 }
 
+            //TODO reload datagrid
+
+
             }
 
             
         }
 
         // action when form loads on page
-        private void EmployeeForm_Load(object sender, EventArgs e)
-        {
-            // get employees from database from database object
-           // var employees = _studentprojectEntities.employees.ToList();
-            var employees = _studentprojectEntities.employees.Select(item => new 
-                {firstname =  item.firstname,
-                lastname = item.lastname,
-                email = item.email,
-                startdate = item.startdate,
-                enddate = item.enddate,
-                createdby = item.createdby,
-                modifiedby = item.modifiedby,
-                phone = item.phonenumber,
-                id = item.personID,
-                active = item.active
-                }).ToList();
-            viewEmployees.DataSource = employees;
-            
-        }
+
 
    
     }

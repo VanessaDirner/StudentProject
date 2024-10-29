@@ -41,9 +41,11 @@
             // viewAssignments
             // 
             this.viewAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewAssignments.Location = new System.Drawing.Point(12, 155);
+            this.viewAssignments.Location = new System.Drawing.Point(24, 298);
+            this.viewAssignments.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.viewAssignments.Name = "viewAssignments";
-            this.viewAssignments.Size = new System.Drawing.Size(776, 295);
+            this.viewAssignments.RowHeadersWidth = 82;
+            this.viewAssignments.Size = new System.Drawing.Size(1552, 567);
             this.viewAssignments.TabIndex = 40;
             // 
             // btn_assign_submit
@@ -51,9 +53,10 @@
             this.btn_assign_submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_assign_submit.ForeColor = System.Drawing.Color.Black;
             this.btn_assign_submit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_assign_submit.Location = new System.Drawing.Point(665, 50);
+            this.btn_assign_submit.Location = new System.Drawing.Point(1330, 96);
+            this.btn_assign_submit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_assign_submit.Name = "btn_assign_submit";
-            this.btn_assign_submit.Size = new System.Drawing.Size(91, 51);
+            this.btn_assign_submit.Size = new System.Drawing.Size(182, 98);
             this.btn_assign_submit.TabIndex = 38;
             this.btn_assign_submit.Text = "Submit Form";
             this.btn_assign_submit.UseVisualStyleBackColor = true;
@@ -62,26 +65,29 @@
             // lbl_assign_email
             // 
             this.lbl_assign_email.AutoSize = true;
-            this.lbl_assign_email.Location = new System.Drawing.Point(83, 50);
+            this.lbl_assign_email.Location = new System.Drawing.Point(166, 96);
+            this.lbl_assign_email.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_assign_email.Name = "lbl_assign_email";
-            this.lbl_assign_email.Size = new System.Drawing.Size(32, 13);
+            this.lbl_assign_email.Size = new System.Drawing.Size(332, 50);
             this.lbl_assign_email.TabIndex = 31;
-            this.lbl_assign_email.Text = "Email";
+            this.lbl_assign_email.Text = "Employee Email";
             // 
             // txt_assign_email
             // 
-            this.txt_assign_email.Location = new System.Drawing.Point(72, 81);
+            this.txt_assign_email.Location = new System.Drawing.Point(144, 156);
+            this.txt_assign_email.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_assign_email.Name = "txt_assign_email";
-            this.txt_assign_email.Size = new System.Drawing.Size(100, 20);
+            this.txt_assign_email.Size = new System.Drawing.Size(196, 31);
             this.txt_assign_email.TabIndex = 30;
             // 
             // Assignments
             // 
             this.Assignments.AutoSize = true;
             this.Assignments.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Assignments.Location = new System.Drawing.Point(225, 0);
+            this.Assignments.Location = new System.Drawing.Point(450, 0);
+            this.Assignments.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Assignments.Name = "Assignments";
-            this.Assignments.Size = new System.Drawing.Size(212, 37);
+            this.Assignments.Size = new System.Drawing.Size(411, 73);
             this.Assignments.TabIndex = 24;
             this.Assignments.Text = "Assignments";
             this.Assignments.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,24 +95,26 @@
             // lbl_assign_deptName
             // 
             this.lbl_assign_deptName.AutoSize = true;
-            this.lbl_assign_deptName.Location = new System.Drawing.Point(258, 50);
+            this.lbl_assign_deptName.Location = new System.Drawing.Point(516, 96);
+            this.lbl_assign_deptName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_assign_deptName.Name = "lbl_assign_deptName";
-            this.lbl_assign_deptName.Size = new System.Drawing.Size(93, 13);
+            this.lbl_assign_deptName.Size = new System.Drawing.Size(185, 25);
             this.lbl_assign_deptName.TabIndex = 42;
             this.lbl_assign_deptName.Text = "Department Name";
             // 
             // txt_assign_deptname
             // 
-            this.txt_assign_deptname.Location = new System.Drawing.Point(258, 83);
+            this.txt_assign_deptname.Location = new System.Drawing.Point(516, 160);
+            this.txt_assign_deptname.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt_assign_deptname.Name = "txt_assign_deptname";
-            this.txt_assign_deptname.Size = new System.Drawing.Size(146, 20);
+            this.txt_assign_deptname.Size = new System.Drawing.Size(288, 31);
             this.txt_assign_deptname.TabIndex = 41;
             // 
             // AssignmentsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.lbl_assign_deptName);
             this.Controls.Add(this.txt_assign_deptname);
             this.Controls.Add(this.viewAssignments);
@@ -114,6 +122,7 @@
             this.Controls.Add(this.lbl_assign_email);
             this.Controls.Add(this.txt_assign_email);
             this.Controls.Add(this.Assignments);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "AssignmentsForm";
             this.Text = "ManageAssignments";
             this.Load += new System.EventHandler(this.AssignemntsForm_Load);

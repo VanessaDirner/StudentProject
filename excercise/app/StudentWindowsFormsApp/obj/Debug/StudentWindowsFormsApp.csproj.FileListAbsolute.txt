@@ -294,3 +294,4 @@ C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\EntityFr
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EmployeeForm.resources
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.MainWindowForm.resources
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DepartmentsForm.resources
+C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AssignmentsForm.resources

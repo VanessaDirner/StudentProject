@@ -19,6 +19,7 @@ namespace StudentWindowsFormsApp
 
         private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
         {            
+            // TODO check if form already open
             EmployeeForm employeeForm = new EmployeeForm();
             employeeForm.MdiParent = this;
             employeeForm.Show();           
@@ -26,6 +27,7 @@ namespace StudentWindowsFormsApp
 
         private void assignmentsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            // TODO  check if form already open
             AssignmentsForm assignemntsForm = new AssignmentsForm();
             assignemntsForm.MdiParent = this;
             assignemntsForm.Show();
@@ -33,6 +35,7 @@ namespace StudentWindowsFormsApp
 
         private void departmentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // TODO  check if form already open
             DepartmentsForm departmentsForm = new DepartmentsForm();
             departmentsForm.MdiParent = this;
             departmentsForm.Show();
