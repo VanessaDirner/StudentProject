@@ -26,7 +26,7 @@ namespace StudentWindowsFormsApp
 
         private void assignmentsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            AssignemntsForm assignemntsForm = new AssignemntsForm();
+            AssignmentsForm assignemntsForm = new AssignmentsForm();
             assignemntsForm.MdiParent = this;
             assignemntsForm.Show();
         }

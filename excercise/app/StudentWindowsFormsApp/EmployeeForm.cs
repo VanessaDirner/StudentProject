@@ -9,18 +9,18 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using DevExpress.XtraGrid.Scrolling;
-
 
 namespace StudentWindowsFormsApp
 {
     public partial class EmployeeForm : Form
     {
+        // database object
         private readonly studentprojectEntities _studentprojectEntities;
 
         public EmployeeForm()
         {
             InitializeComponent();
+            // initialize the database object
             _studentprojectEntities = new studentprojectEntities();
         }
 
@@ -62,6 +62,7 @@ namespace StudentWindowsFormsApp
                 var employee = new employee();
 
                 // assign variables from form to database object equivalents
+                employee.personID = Guid.NewGuid();
                 employee.firstname = firstname;
                 employee.lastname = lastname;  
                 employee.email = email;
@@ -88,6 +89,9 @@ namespace StudentWindowsFormsApp
                         $"start date: {startdate}\n\r " +
                         $"end date: {enddate} \n\r" +
                         $"account activated: {activate} \n\r");
+
+                    // reload datagrid with updated info
+
                 }
                 catch 
                 {
@@ -106,7 +110,19 @@ namespace StudentWindowsFormsApp
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             // get employees from database from database object
-            var employees = _studentprojectEntities.employees.ToList();
+           // var employees = _studentprojectEntities.employees.ToList();
+            var employees = _studentprojectEntities.employees.Select(item => new 
+                {firstname =  item.firstname,
+                lastname = item.lastname,
+                email = item.email,
+                startdate = item.startdate,
+                enddate = item.enddate,
+                createdby = item.createdby,
+                modifiedby = item.modifiedby,
+                phone = item.phonenumber,
+                id = item.personID,
+                active = item.active
+                }).ToList();
             viewEmployees.DataSource = employees;
             
         }

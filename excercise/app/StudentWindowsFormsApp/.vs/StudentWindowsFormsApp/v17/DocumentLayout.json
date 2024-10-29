@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\departmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:departmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\assignmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:assignmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:employeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\departmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:departmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|c:\\pcldev\\studentproject\\excercise\\app\\studentwindowsformsapp\\assignmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{11475A0F-7439-485B-9A93-31E61A14D07C}|StudentWindowsFormsApp.csproj|solutionrelative:assignmentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,55 +25,55 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 150,
+          "DockedWidth": 226,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DepartmentsForm.cs",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\DepartmentsForm.cs",
-              "RelativeDocumentMoniker": "DepartmentsForm.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\DepartmentsForm.cs",
-              "RelativeToolTip": "DepartmentsForm.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowB4AAACbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:37:40.182Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\Model1.edmx",
+              "RelativeDocumentMoniker": "Model1.edmx",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-10-29T02:49:48.674Z",
+              "EditorCaption": " [Diagram1]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DepartmentsForm.cs [Design]",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\DepartmentsForm.cs",
-              "RelativeDocumentMoniker": "DepartmentsForm.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\DepartmentsForm.cs [Design]",
-              "RelativeToolTip": "DepartmentsForm.cs [Design]",
+              "Title": "AssignmentsForm.cs",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\AssignmentsForm.cs",
+              "RelativeDocumentMoniker": "AssignmentsForm.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\AssignmentsForm.cs",
+              "RelativeToolTip": "AssignmentsForm.cs",
+              "ViewState": "AgIAABEAAABo/////18ywBoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:37:32.178Z",
+              "WhenOpened": "2024-10-29T01:28:24.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AssignmentsForm.cs [Design]",
+              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\AssignmentsForm.cs",
+              "RelativeDocumentMoniker": "AssignmentsForm.cs",
+              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\AssignmentsForm.cs [Design]",
+              "RelativeToolTip": "AssignmentsForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T01:28:06.282Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EmployeeForm.cs [Design]",
-              "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.cs",
-              "RelativeDocumentMoniker": "EmployeeForm.cs",
-              "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.cs [Design]",
-              "RelativeToolTip": "EmployeeForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T20:10:57.559Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "EmployeeForm.cs",
               "DocumentMoniker": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.cs",
               "RelativeDocumentMoniker": "EmployeeForm.cs",
               "ToolTip": "C:\\PCLDev\\StudentProject\\excercise\\app\\StudentWindowsFormsApp\\EmployeeForm.cs",
               "RelativeToolTip": "EmployeeForm.cs",
-              "ViewState": "AgIAAGgAAACAZ2ZmZuYTwEIAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAACUzMzMzKwwwHIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T15:14:31.502Z",
               "EditorCaption": ""

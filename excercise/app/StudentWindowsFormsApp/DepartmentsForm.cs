@@ -27,8 +27,11 @@ namespace StudentWindowsFormsApp
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
         {
+            // load database table and save to a variable, assign variable names to the data and create a list to hold it all
             // var department = _studentprojectEntities.departments.ToList();
             var department = _studentprojectEntities.departments.Select(items => new { DeptName = items.deptname, deptabbr = items.abbreviation }).ToList();
+           
+            // set the viewDepartments object's datasource to the variable we just created
             viewDepartments.DataSource = department;
         }
     }
