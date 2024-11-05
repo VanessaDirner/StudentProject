@@ -172,7 +172,6 @@ C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\de\DevEx
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\es\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\ja\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\ru\DevExpress.Diagram.v20.2.Core.resources.dll
-C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.csproj.AssemblyReference.cache
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AssignmentsForm.resources
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DepartmentsForm.resources
 C:\PCLDev\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EmployeeForm.resources

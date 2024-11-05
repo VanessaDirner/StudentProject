@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="studentprojectdbtablesModel.assignment" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="studentprojectdbtablesModel.department" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="studentprojectdbtablesModel.employee" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="studentprojectdbtablesModel.sysdiagram" Width="1.5" PointX="6.25" PointY="6.375" IsExpanded="true" />
         <AssociationConnector Association="studentprojectdbtablesModel.FK__assignmen__deptI__4316F928" ManuallyRouted="false" />
         <AssociationConnector Association="studentprojectdbtablesModel.FK__assignmen__perso__4222D4EF" ManuallyRouted="false" />
       </Diagram>

@@ -28,8 +28,5 @@ namespace StudentWindowsFormsApp.studentprojectEntitiesDataModel {
             get { return GetRepository(x => x.Set<employee>(), (employee x) => x.personID); }
         }
 
-        IRepository<sysdiagram, int> IstudentprojectEntitiesUnitOfWork.sysdiagrams {
-            get { return GetRepository(x => x.Set<sysdiagram>(), (sysdiagram x) => x.diagram_id); }
-        }
     }
 }

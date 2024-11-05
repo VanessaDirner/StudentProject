@@ -25,10 +25,6 @@ namespace StudentWindowsFormsApp.studentprojectEntitiesDataModel {
         /// The employee entities repository.
         /// </summary>
 		IRepository<employee, Guid> employees { get; }
-        
-        /// <summary>
-        /// The sysdiagram entities repository.
-        /// </summary>
-		IRepository<sysdiagram, int> sysdiagrams { get; }
+  
     }
 }

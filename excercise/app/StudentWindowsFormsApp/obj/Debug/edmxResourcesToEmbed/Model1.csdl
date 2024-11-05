@@ -45,16 +45,6 @@
     <Property Name="modifieddate" Type="DateTime" Precision="0" />
     <NavigationProperty Name="assignments" Relationship="Self.FK__assignmen__perso__4222D4EF" FromRole="employee" ToRole="assignment" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <Association Name="FK__assignmen__deptI__4316F928">
     <End Role="department" Type="Self.department" Multiplicity="1" />
     <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
@@ -83,7 +73,6 @@
     <EntitySet Name="assignments" EntityType="Self.assignment" />
     <EntitySet Name="departments" EntityType="Self.department" />
     <EntitySet Name="employees" EntityType="Self.employee" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK__assignmen__deptI__4316F928" Association="Self.FK__assignmen__deptI__4316F928">
       <End Role="department" EntitySet="departments" />
       <End Role="assignment" EntitySet="assignments" />

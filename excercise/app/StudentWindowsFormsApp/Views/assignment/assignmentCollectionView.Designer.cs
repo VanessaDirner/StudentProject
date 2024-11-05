@@ -62,13 +62,13 @@
             // 
             this.gridControl.DataSource = this.assignmentCollectionViewBindingSource;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.gridControl.Location = new System.Drawing.Point(0, 932);
+            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.gridControl.Location = new System.Drawing.Point(0, 214);
             this.gridControl.MainView = this.gridView;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.gridControl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.gridControl.MenuManager = this.ribbonControl;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(4096, 2612);
+            this.gridControl.Size = new System.Drawing.Size(2048, 1263);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -90,7 +90,7 @@
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9});
-            this.gridView.DetailHeight = 808;
+            this.gridView.DetailHeight = 673;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -186,7 +186,7 @@
             this.bbiDelete,
             this.bbiRefresh});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.OptionsMenuMinWidth = 660;
@@ -195,7 +195,7 @@
             this.ribbonPage2});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(4096, 466);
+            this.ribbonControl.Size = new System.Drawing.Size(2048, 214);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -283,11 +283,11 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 3440);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 1433);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(4096, 104);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(2048, 44);
             // 
             // mvvmContext
             // 
@@ -313,14 +313,14 @@
             // 
             // assignmentCollectionView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);
-            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "assignmentCollectionView";
-            this.Size = new System.Drawing.Size(2048, 1772);
+            this.Size = new System.Drawing.Size(2048, 1477);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentCollectionViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

@@ -22,6 +22,12 @@ namespace StudentWindowsFormsApp
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.studentprojectDataSet00000000layout.employee);
+            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.department);
+            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.assignment' table. You can move, or remove it, as needed.
+            this.assignmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.assignment);
             // load database table and save to a variable, assign variable names to the data and create a list to hold it all
             // var department = _studentprojectEntities.departments.ToList();
             var department = _studentprojectEntities.departments.Select(items => new
@@ -39,7 +45,7 @@ namespace StudentWindowsFormsApp
 
 
             // set the viewDepartments object's datasource to the variable we just created
-            viewDepartments.DataSource = department;
+           // viewDepartments.DataSource = department;
         }
 
 
@@ -50,8 +56,8 @@ namespace StudentWindowsFormsApp
             bool isvalid = true;
 
             // send items from form into variables
-            string DepartmentName = txt_deptname.Text;
-            string DepartmentAbbreviation = txtdeptabbr.Text;
+            string DepartmentName = "a"; //.Text;
+            string DepartmentAbbreviation = "B"; // txtdeptabbr.Text;
 
             //verify details from form before saving details
 
@@ -115,6 +121,28 @@ namespace StudentWindowsFormsApp
 
 
         }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.departmentTableAdapter.FillBy(this.studentprojectDataSet00000000layout.department);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // handle adding newrow to db using the grid iew, give default data
+        private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            // ex. 
+           // gridView1.SetRowCellValue(e.RowHandle, "modifieddate", DateTime.Now.Date);
+        }
+
+        // add handler to add or delete row on click
     }
 
 }

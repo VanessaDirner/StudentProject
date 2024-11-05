@@ -28,6 +28,5 @@ namespace StudentWindowsFormsApp
         public virtual DbSet<assignment> assignments { get; set; }
         public virtual DbSet<department> departments { get; set; }
         public virtual DbSet<employee> employees { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
