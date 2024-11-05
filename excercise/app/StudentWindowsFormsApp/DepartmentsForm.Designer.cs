@@ -41,8 +41,6 @@
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -127,8 +125,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 2699264;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage3});
+            this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(2273, 270);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -183,18 +180,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.Delete);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "ribbonPage3";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
             // ribbonStatusBar1
             // 
@@ -467,8 +452,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem Delete;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
         private studentprojectDataSet00000000layout studentprojectDataSet00000000layout;
         private System.Windows.Forms.BindingSource assignmentBindingSource;

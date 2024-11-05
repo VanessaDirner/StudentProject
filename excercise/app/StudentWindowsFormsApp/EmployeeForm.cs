@@ -24,11 +24,11 @@ namespace StudentWindowsFormsApp
             _studentprojectEntities = new studentprojectEntities();
         }
 
-        private async void EmployeeForm_Load(object sender, EventArgs e)
+        private void EmployeeForm_Load(object sender, EventArgs e)
         {
             // get employees from database from database object
             // var employees = _studentprojectEntities.employees.ToList();
-            var employees =  _studentprojectEntities.employees.Select(item => new
+            var employees = _studentprojectEntities.employees.Select(item => new
             {
                 firstname = item.firstname,
                 lastname = item.lastname,

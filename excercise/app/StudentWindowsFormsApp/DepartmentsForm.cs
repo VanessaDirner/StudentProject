@@ -22,12 +22,9 @@ namespace StudentWindowsFormsApp
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.studentprojectDataSet00000000layout.employee);
+
             // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.department);
-            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.assignment' table. You can move, or remove it, as needed.
-            this.assignmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.assignment);
             // load database table and save to a variable, assign variable names to the data and create a list to hold it all
             // var department = _studentprojectEntities.departments.ToList();
             var department = _studentprojectEntities.departments.Select(items => new
