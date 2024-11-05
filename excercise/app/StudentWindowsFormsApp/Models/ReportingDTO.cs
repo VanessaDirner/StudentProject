@@ -10,7 +10,7 @@ namespace StudentWindowsFormsApp.Models
     {
         public List<string> EmployeeNames { get; set; }
 
-        public string Department { get; set; } = null!;
+        public string Department { get; set; } 
 
     }
 }
