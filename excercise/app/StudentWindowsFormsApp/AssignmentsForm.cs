@@ -13,7 +13,7 @@ using StudentWindowsFormsApp.Models;
 
 namespace StudentWindowsFormsApp
 {
-    public partial class AssignmentsForm : Form
+    public partial class AssignmentsForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private readonly studentprojectEntities _studentprojectEntities = new studentprojectEntities();
 

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace StudentWindowsFormsApp
 {
-    public partial class EmployeeForm : Form
+    public partial class EmployeeForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         // database object
         private readonly studentprojectEntities _studentprojectEntities;
@@ -131,10 +131,15 @@ namespace StudentWindowsFormsApp
             
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
         // action when form loads on page
 
 
-   
+
     }
     
 }

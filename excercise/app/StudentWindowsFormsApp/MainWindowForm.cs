@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StudentWindowsFormsApp
 {
-    public partial class MainWindowForm : Form
+    public partial class MainWindowForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public MainWindowForm()
         {

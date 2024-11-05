@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StudentWindowsFormsApp
 {
-    public partial class DepartmentsForm : Form
+    public partial class DepartmentsForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private readonly studentprojectEntities _studentprojectEntities = new studentprojectEntities();
 
@@ -51,7 +51,7 @@ namespace StudentWindowsFormsApp
 
             // send items from form into variables
             string DepartmentName = txt_deptname.Text;
-            string DepartmentAbbreviation = txt_deptabbr.Text;
+            string DepartmentAbbreviation = txtdeptabbr.Text;
 
             //verify details from form before saving details
 
