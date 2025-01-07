@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.tablelayout_toassign = new DevExpress.Utils.Layout.TablePanel();
+            this.txt_deptname_toassign = new DevExpress.XtraEditors.TextEdit();
+            this.lbl_deptname_toassign = new DevExpress.XtraEditors.LabelControl();
             this.btn_addassignment = new DevExpress.XtraEditors.SimpleButton();
             this.lbl_empemail_assign = new DevExpress.XtraEditors.LabelControl();
             this.txt_emp_email = new System.Windows.Forms.TextBox();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_deptname_toassign = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablelayout_toassign)).BeginInit();
             this.tablelayout_toassign.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_deptname_toassign.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_deptname_toassign.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablelayout_toassign
@@ -44,8 +44,8 @@
             this.tablelayout_toassign.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
+            this.tablelayout_toassign.Controls.Add(this.txt_deptname_toassign);
             this.tablelayout_toassign.Controls.Add(this.lbl_deptname_toassign);
-            this.tablelayout_toassign.Controls.Add(this.labelControl1);
             this.tablelayout_toassign.Controls.Add(this.btn_addassignment);
             this.tablelayout_toassign.Controls.Add(this.lbl_empemail_assign);
             this.tablelayout_toassign.Controls.Add(this.txt_emp_email);
@@ -58,6 +58,25 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
             this.tablelayout_toassign.Size = new System.Drawing.Size(1892, 1255);
             this.tablelayout_toassign.TabIndex = 0;
+            // 
+            // txt_deptname_toassign
+            // 
+            this.tablelayout_toassign.SetColumn(this.txt_deptname_toassign, 1);
+            this.txt_deptname_toassign.Location = new System.Drawing.Point(949, 603);
+            this.txt_deptname_toassign.Name = "txt_deptname_toassign";
+            this.tablelayout_toassign.SetRow(this.txt_deptname_toassign, 1);
+            this.txt_deptname_toassign.Size = new System.Drawing.Size(940, 48);
+            this.txt_deptname_toassign.TabIndex = 7;
+            // 
+            // lbl_deptname_toassign
+            // 
+            this.tablelayout_toassign.SetColumn(this.lbl_deptname_toassign, 0);
+            this.lbl_deptname_toassign.Location = new System.Drawing.Point(3, 610);
+            this.lbl_deptname_toassign.Name = "lbl_deptname_toassign";
+            this.tablelayout_toassign.SetRow(this.lbl_deptname_toassign, 1);
+            this.lbl_deptname_toassign.Size = new System.Drawing.Size(218, 33);
+            this.lbl_deptname_toassign.TabIndex = 6;
+            this.lbl_deptname_toassign.Text = "Department Name";
             // 
             // btn_addassignment
             // 
@@ -89,25 +108,6 @@
             this.txt_emp_email.Size = new System.Drawing.Size(940, 40);
             this.txt_emp_email.TabIndex = 3;
             // 
-            // labelControl1
-            // 
-            this.tablelayout_toassign.SetColumn(this.labelControl1, 0);
-            this.labelControl1.Location = new System.Drawing.Point(3, 610);
-            this.labelControl1.Name = "labelControl1";
-            this.tablelayout_toassign.SetRow(this.labelControl1, 1);
-            this.labelControl1.Size = new System.Drawing.Size(218, 33);
-            this.labelControl1.TabIndex = 6;
-            this.labelControl1.Text = "Department Name";
-            // 
-            // lbl_deptname_toassign
-            // 
-            this.tablelayout_toassign.SetColumn(this.lbl_deptname_toassign, 1);
-            this.lbl_deptname_toassign.Location = new System.Drawing.Point(949, 603);
-            this.lbl_deptname_toassign.Name = "lbl_deptname_toassign";
-            this.tablelayout_toassign.SetRow(this.lbl_deptname_toassign, 1);
-            this.lbl_deptname_toassign.Size = new System.Drawing.Size(940, 48);
-            this.lbl_deptname_toassign.TabIndex = 7;
-            // 
             // AddAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -119,7 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablelayout_toassign)).EndInit();
             this.tablelayout_toassign.ResumeLayout(false);
             this.tablelayout_toassign.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_deptname_toassign.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_deptname_toassign.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,7 +130,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_addassignment;
         private DevExpress.XtraEditors.LabelControl lbl_empemail_assign;
         private System.Windows.Forms.TextBox txt_emp_email;
-        private DevExpress.XtraEditors.TextEdit lbl_deptname_toassign;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txt_deptname_toassign;
+        private DevExpress.XtraEditors.LabelControl lbl_deptname_toassign;
     }
 }

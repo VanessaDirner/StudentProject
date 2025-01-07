@@ -95,7 +95,7 @@ namespace StudentWindowsFormsApp
         {
             var employeesform = new EmployeeForm();
             employeesform.Show();
-            this.Hide();
+            this.Hide(); // switch to close somehow later? have to make sure new form doesn't close along with it
         }
 
         private void barBtn_frmdept_toreport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label5 = new System.Windows.Forms.Label();
-            this.viewEmployees = new System.Windows.Forms.DataGridView();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barbtn_addemp = new DevExpress.XtraBars.BarButtonItem();
             this.barbtn_editemp = new DevExpress.XtraBars.BarButtonItem();
@@ -45,9 +44,12 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).BeginInit();
+            this.viewEmployees = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -57,15 +59,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 34);
             this.label5.TabIndex = 11;
-            // 
-            // viewEmployees
-            // 
-            this.viewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewEmployees.Location = new System.Drawing.Point(44, 644);
-            this.viewEmployees.Name = "viewEmployees";
-            this.viewEmployees.RowHeadersWidth = 82;
-            this.viewEmployees.Size = new System.Drawing.Size(1569, 572);
-            this.viewEmployees.TabIndex = 23;
             // 
             // ribbonControl1
             // 
@@ -177,6 +170,24 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
+            // viewEmployees
+            // 
+            this.viewEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewEmployees.Location = new System.Drawing.Point(0, 336);
+            this.viewEmployees.MainView = this.gridView1;
+            this.viewEmployees.MenuManager = this.ribbonControl1;
+            this.viewEmployees.Name = "viewEmployees";
+            this.viewEmployees.Size = new System.Drawing.Size(1649, 897);
+            this.viewEmployees.TabIndex = 26;
+            this.viewEmployees.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.viewEmployees;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
+            // 
             // EmployeeForm
             // 
             this.ClientSize = new System.Drawing.Size(1649, 1298);
@@ -189,9 +200,10 @@
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Manage Employees";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +215,6 @@
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource;
         private System.Windows.Forms.BindingSource studentprojectdbDataSetBindingSource1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView viewEmployees;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
@@ -218,6 +229,8 @@
         private DevExpress.XtraBars.BarButtonItem barBtn_fromemp_todept;
         private DevExpress.XtraBars.BarButtonItem barBtn_frmemp_toreport;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraGrid.GridControl viewEmployees;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
 

@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.viewAssignments = new System.Windows.Forms.DataGridView();
-            this.assignmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deptIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifieddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assignmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentprojectDataSet00000000layout = new StudentWindowsFormsApp.studentprojectDataSet00000000layout();
             this.Assignments = new System.Windows.Forms.Label();
@@ -60,17 +53,7 @@
             // 
             // viewAssignments
             // 
-            this.viewAssignments.AutoGenerateColumns = false;
             this.viewAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewAssignments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.assignmentIDDataGridViewTextBoxColumn,
-            this.personIDDataGridViewTextBoxColumn,
-            this.deptIDDataGridViewTextBoxColumn,
-            this.createdbyDataGridViewTextBoxColumn,
-            this.createdateDataGridViewTextBoxColumn,
-            this.modifiedbyDataGridViewTextBoxColumn,
-            this.modifieddateDataGridViewTextBoxColumn});
-            this.viewAssignments.DataSource = this.assignmentBindingSource;
             this.viewAssignments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewAssignments.Location = new System.Drawing.Point(0, 336);
             this.viewAssignments.Margin = new System.Windows.Forms.Padding(8);
@@ -78,48 +61,6 @@
             this.viewAssignments.RowHeadersWidth = 82;
             this.viewAssignments.Size = new System.Drawing.Size(2358, 892);
             this.viewAssignments.TabIndex = 40;
-            // 
-            // assignmentIDDataGridViewTextBoxColumn
-            // 
-            this.assignmentIDDataGridViewTextBoxColumn.DataPropertyName = "assignmentID";
-            this.assignmentIDDataGridViewTextBoxColumn.HeaderText = "assignmentID";
-            this.assignmentIDDataGridViewTextBoxColumn.Name = "assignmentIDDataGridViewTextBoxColumn";
-            // 
-            // personIDDataGridViewTextBoxColumn
-            // 
-            this.personIDDataGridViewTextBoxColumn.DataPropertyName = "personID";
-            this.personIDDataGridViewTextBoxColumn.HeaderText = "personID";
-            this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
-            // 
-            // deptIDDataGridViewTextBoxColumn
-            // 
-            this.deptIDDataGridViewTextBoxColumn.DataPropertyName = "deptID";
-            this.deptIDDataGridViewTextBoxColumn.HeaderText = "deptID";
-            this.deptIDDataGridViewTextBoxColumn.Name = "deptIDDataGridViewTextBoxColumn";
-            // 
-            // createdbyDataGridViewTextBoxColumn
-            // 
-            this.createdbyDataGridViewTextBoxColumn.DataPropertyName = "createdby";
-            this.createdbyDataGridViewTextBoxColumn.HeaderText = "createdby";
-            this.createdbyDataGridViewTextBoxColumn.Name = "createdbyDataGridViewTextBoxColumn";
-            // 
-            // createdateDataGridViewTextBoxColumn
-            // 
-            this.createdateDataGridViewTextBoxColumn.DataPropertyName = "createdate";
-            this.createdateDataGridViewTextBoxColumn.HeaderText = "createdate";
-            this.createdateDataGridViewTextBoxColumn.Name = "createdateDataGridViewTextBoxColumn";
-            // 
-            // modifiedbyDataGridViewTextBoxColumn
-            // 
-            this.modifiedbyDataGridViewTextBoxColumn.DataPropertyName = "modifiedby";
-            this.modifiedbyDataGridViewTextBoxColumn.HeaderText = "modifiedby";
-            this.modifiedbyDataGridViewTextBoxColumn.Name = "modifiedbyDataGridViewTextBoxColumn";
-            // 
-            // modifieddateDataGridViewTextBoxColumn
-            // 
-            this.modifieddateDataGridViewTextBoxColumn.DataPropertyName = "modifieddate";
-            this.modifieddateDataGridViewTextBoxColumn.HeaderText = "modifieddate";
-            this.modifieddateDataGridViewTextBoxColumn.Name = "modifieddateDataGridViewTextBoxColumn";
             // 
             // assignmentBindingSource
             // 
@@ -278,13 +219,6 @@
         private studentprojectDataSet00000000layout studentprojectDataSet00000000layout;
         private System.Windows.Forms.BindingSource assignmentBindingSource;
         private studentprojectDataSet00000000layoutTableAdapters.assignmentTableAdapter assignmentTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assignmentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deptIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdbyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modifiedbyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modifieddateDataGridViewTextBoxColumn;
         private DevExpress.XtraBars.BarButtonItem btn_frmassign_toemp;
         private DevExpress.XtraBars.BarButtonItem btn_frmdassgn_todept;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;

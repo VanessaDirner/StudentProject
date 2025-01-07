@@ -12,40 +12,28 @@ namespace StudentWindowsFormsApp
 {
     public partial class AddAssignment : Form
     {
+ 
+
+        private readonly studentprojectEntities _studentprojectEntities = new studentprojectEntities();
+
         public AddAssignment()
         {
             InitializeComponent();
+            _studentprojectEntities = new studentprojectEntities();
         }
+
+
+
 
         private void btn_addassignment_Click(object sender, EventArgs e)
         {
-
-        }
-    }
-}
-
-
-
-/*
-        /// <summary>
-        /// assign a person to a department
-        /// </summary>
-        private async void btn_assign_submit_Click(object sender, EventArgs e)
-        {
-            
-
-
-            }
-
-
-        }
- * // set defaults for some variables for checking form
+             // set defaults for some variables for checking form
             bool isvalid = true;
 
             // send items from form into variables
 
-            string employeemail = txt_assign_email.Text;
-            string departmentname = txt_assign_deptname.Text;
+            string employeemail = txt_emp_email.Text;
+            string departmentname = txt_deptname_toassign.Text;
 
             //verify details from form before saving details
 
@@ -65,7 +53,7 @@ namespace StudentWindowsFormsApp
             if (isvalid)
             {
                 // check that department exists and get ID
-                department departmentobject = await _studentprojectEntities.departments.SingleOrDefaultAsync(dept => dept.deptname == departmentname);
+                department departmentobject =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.deptname == departmentname);
                 // throw exception so that ID can't be invalid so that return employee can't be null
                 if (departmentobject == null)
                 {
@@ -74,7 +62,7 @@ namespace StudentWindowsFormsApp
                 }
 
                 // check that employee exists and get ID
-                employee employee = await _studentprojectEntities.employees.SingleOrDefaultAsync(emp => emp.email == employeemail);
+                employee employee =  _studentprojectEntities.employees.SingleOrDefault(emp => emp.email == employeemail);
                 // throw exception so that ID can't be invalid so that return employee can't be null
                 if (employee == null)
                 {
@@ -94,10 +82,10 @@ namespace StudentWindowsFormsApp
                 // check for dept and person ID
 
 
-                List<assignment> doesassignmentexist = await (from row in _studentprojectEntities.assignments
+                List<assignment> doesassignmentexist =  (from row in _studentprojectEntities.assignments
                                                               where row.personID.Equals(personID)
                                                               && row.deptID == deptID
-                                                              select row).ToListAsync();
+                                                              select row).ToList();
 
 
                 // if we get a column back then there's already an assignment
@@ -119,13 +107,41 @@ namespace StudentWindowsFormsApp
 
                     _studentprojectEntities.assignments.Add(createassignmentobject);
 
-                    // save changes to database
-                    await _studentprojectEntities.SaveChangesAsync();
+                    try
+                    {
+                        // save changes to database
+                        _studentprojectEntities.SaveChangesAsync();
+
+                        // show confirmation of adding employee
+                        MessageBox.Show($"Assignment creation successful.\n\r" +
+                            $"Department Name: {departmentname} \n\r" +
+                            $"Employee Email: {employeemail} \n\r" +
+                            $"Date Created: {createassignmentobject.createdate} \n\r" +
+                            $"Created by: {createassignmentobject.createdby} \n\r");
+                    }
+                    catch
+                    {
+                        MessageBox.Show($"Assignment creation unsuccessful. \n\r Please check your input and try again.");
+                    }
+
+
+
 
                 }
-                else
-                    throw new Exception("Employee is already assigned to this department, check for assignment ");
+                else {
+                    MessageBox.Show($"Assignment creation unsuccessful. \n\r Employee is already assigned to this department, check for assignment " );
+                    
+                }
+                    
+
+             
+             
+        }
 
 
-                //TODO reload datagrid
-                */
+
+        }
+    }
+}
+
+
