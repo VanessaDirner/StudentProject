@@ -97,7 +97,7 @@ namespace StudentWindowsFormsApp
 
                     assignment createassignmentobject = new assignment();
 
-
+                    createassignmentobject.assignmentID = Guid.NewGuid();
                     createassignmentobject.personID = personID;
                     createassignmentobject.deptID = deptID;
                     createassignmentobject.createdby = "admin";
