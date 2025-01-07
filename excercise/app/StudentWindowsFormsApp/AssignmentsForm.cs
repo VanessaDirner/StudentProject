@@ -65,110 +65,56 @@ namespace StudentWindowsFormsApp
            */
         }
 
-        private async void btn_assign_submit_Click(object sender, EventArgs e)
+
+        /// <summary>
+        ///  swap to employee or department forms
+        /// </summary>
+        private void btn_frmassign_toemp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // set defaults for some variables for checking form
-            bool isvalid = true;
+            var empform = new EmployeeForm();
+            empform.Show();
+            this.Hide();
+        }
 
-            // send items from form into variables
+        private void btn_frmdassgn_todept_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var deptform = new DepartmentsForm();
+            deptform.Show();
+            this.Hide();
+        }
 
-            string employeemail = txt_assign_email.Text;
-            string departmentname = txt_assign_deptname.Text;
+        /// <summary>
+        /// open modify popup forms
+        /// </summary>
+        private void btn_addassignment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var addassignmentform = new AddAssignment();
+            addassignmentform.Show();
+        }
 
-            //verify details from form before saving details
+        private void btn_editassignment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
 
-            // check if any fields are null
-            // (except for any fields with defaults or non required fields)
-            if ((string.IsNullOrWhiteSpace(employeemail) ||
-                string.IsNullOrWhiteSpace(departmentname)))
-            {
-                isvalid = false;
-                MessageBox.Show("Required fields are empty." +
-                    "Please double check and resubmit request.");
-            }
+        }
 
-
-
-            // if form filled out ok, process form and show confirmation of save
-            if (isvalid)
-            {
-                // check that department exists and get ID
-                department departmentobject = await _studentprojectEntities.departments.SingleOrDefaultAsync(dept => dept.deptname == departmentname);
-                // throw exception so that ID can't be invalid so that return employee can't be null
-                if (departmentobject == null)
-                {
-                    throw new Exception("invalid department to assign to");
-
-                }
-
-                // check that employee exists and get ID
-                employee employee = await _studentprojectEntities.employees.SingleOrDefaultAsync(emp => emp.email == employeemail);
-                // throw exception so that ID can't be invalid so that return employee can't be null
-                if (employee == null)
-                {
-                    throw new Exception("invalid person to assign");
-                }
-                else if (employee.active == false) // inactive people should not be available for selection
-                {
-                    throw new Exception("Cannot assign an inactive employee to department");
-                }
-
-                // if the deptID and personID already exist in an assignment row, then this would be a duplicate request
-
-                Guid deptID = departmentobject.deptID;
-                Guid personID = employee.personID;
-
-
-                // check for dept and person ID
-
-
-                List<assignment> doesassignmentexist = await (from row in _studentprojectEntities.assignments
-                                                              where row.personID.Equals(personID)
-                                                              && row.deptID == deptID
-                                                              select row).ToListAsync();
-
-
-                // if we get a column back then there's already an assignment
-                bool isempty = !doesassignmentexist.Any();
-
-                if ((isempty))
-                {
-                    Console.WriteLine($"{doesassignmentexist} is null ");
-
-                    assignment createassignmentobject = new assignment();
-
-
-                    createassignmentobject.personID = personID;
-                    createassignmentobject.deptID = deptID;
-                    createassignmentobject.createdby = "admin";
-                    createassignmentobject.modifiedby = "admin";
-                    createassignmentobject.createdate = DateTime.Now;
-                    createassignmentobject.modifieddate = DateTime.Now;
-
-                    _studentprojectEntities.assignments.Add(createassignmentobject);
-
-                    // save changes to database
-                    await _studentprojectEntities.SaveChangesAsync();
-
-                }
-                else
-                    throw new Exception("Employee is already assigned to this department, check for assignment ");
-
-
-                //TODO reload datagrid
-
-
-            }
-
-
+        private void btn_deleteassignment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // get row selected or input box with dept name and employee id
+            /// run delete below
+            /// 
         }
 
 
 
 
+
+        /// <summary>
+        ///  delete a person from a department
+        /// </summary>
         private async void Delete()
         {
-           
+
+            /*
 
             // find dept ID based on dept name
             var deptname = txt_assign_deptname.Text;
@@ -180,8 +126,7 @@ namespace StudentWindowsFormsApp
 
             // find assignment id based on employee and dept id
             var assignmentid = await _studentprojectEntities.assignments.FindAsync();
-         
-            /*
+  
 
             assignment assignment = await _studentprojectEntities.assignments.Where(x => _ == employee.personID .);
 
@@ -195,8 +140,6 @@ namespace StudentWindowsFormsApp
             await _studentprojectEntities.SaveChangesAsync();
             */
         }
-
-
 
     }
 

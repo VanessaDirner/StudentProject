@@ -251,6 +251,12 @@
     <Compile Include="AddDepartment.Designer.cs">
       <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmp.Designer.cs">
+      <DependentUpon>AddEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="assignment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -368,6 +374,9 @@
     </Compile>
     <EmbeddedResource Include="AddDepartment.resx">
       <DependentUpon>AddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmp.resx">
+      <DependentUpon>AddEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AssignmentsForm.resx">
       <DependentUpon>AssignmentsForm.cs</DependentUpon>

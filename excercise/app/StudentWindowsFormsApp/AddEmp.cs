@@ -16,5 +16,10 @@ namespace StudentWindowsFormsApp
         {
             InitializeComponent();
         }
+
+        private void btnEmpSubmit_Click(object sender, EventArgs e)
+        {
+            // process form
+        }
     }
 }

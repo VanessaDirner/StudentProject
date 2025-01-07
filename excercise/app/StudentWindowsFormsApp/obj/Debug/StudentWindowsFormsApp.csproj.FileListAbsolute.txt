@@ -371,3 +371,4 @@ C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\Stu
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.exe
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.pdb
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AddDepartment.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AddEmp.resources

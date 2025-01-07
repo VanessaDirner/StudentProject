@@ -96,6 +96,7 @@
             this.btnEmpSubmit.TabIndex = 36;
             this.btnEmpSubmit.Text = "Submit Form";
             this.btnEmpSubmit.UseVisualStyleBackColor = true;
+            this.btnEmpSubmit.Click += new System.EventHandler(this.btnEmpSubmit_Click);
             // 
             // chkbox_activate
             // 
