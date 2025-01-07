@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.txt_deptname_todelete = new System.Windows.Forms.TextBox();
-            this.txt_empassign_todelete = new System.Windows.Forms.TextBox();
-            this.lb_deptname_todelete = new DevExpress.XtraEditors.LabelControl();
             this.lbl_empassign_todelete = new DevExpress.XtraEditors.LabelControl();
+            this.lb_deptname_todelete = new DevExpress.XtraEditors.LabelControl();
             this.btn_delassignment = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_empassign_todelete = new System.Windows.Forms.TextBox();
+            this.txt_deptname_todelete = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,14 +57,32 @@
             this.tablePanel1.Size = new System.Drawing.Size(2096, 1366);
             this.tablePanel1.TabIndex = 0;
             // 
-            // txt_deptname_todelete
+            // lbl_empassign_todelete
             // 
-            this.tablePanel1.SetColumn(this.txt_deptname_todelete, 1);
-            this.txt_deptname_todelete.Location = new System.Drawing.Point(1051, 3);
-            this.txt_deptname_todelete.Name = "txt_deptname_todelete";
-            this.tablePanel1.SetRow(this.txt_deptname_todelete, 0);
-            this.txt_deptname_todelete.Size = new System.Drawing.Size(1042, 40);
-            this.txt_deptname_todelete.TabIndex = 0;
+            this.lbl_empassign_todelete.Location = new System.Drawing.Point(3, 52);
+            this.lbl_empassign_todelete.Name = "lbl_empassign_todelete";
+            this.lbl_empassign_todelete.Size = new System.Drawing.Size(187, 33);
+            this.lbl_empassign_todelete.TabIndex = 4;
+            this.lbl_empassign_todelete.Text = "Employee Email";
+            // 
+            // lb_deptname_todelete
+            // 
+            this.lb_deptname_todelete.Location = new System.Drawing.Point(3, 6);
+            this.lb_deptname_todelete.Name = "lb_deptname_todelete";
+            this.lb_deptname_todelete.Size = new System.Drawing.Size(133, 33);
+            this.lb_deptname_todelete.TabIndex = 3;
+            this.lb_deptname_todelete.Text = "Dept Name";
+            // 
+            // btn_delassignment
+            // 
+            this.tablePanel1.SetColumn(this.btn_delassignment, 1);
+            this.btn_delassignment.Location = new System.Drawing.Point(1051, 700);
+            this.btn_delassignment.Name = "btn_delassignment";
+            this.tablePanel1.SetRow(this.btn_delassignment, 2);
+            this.btn_delassignment.Size = new System.Drawing.Size(1042, 57);
+            this.btn_delassignment.TabIndex = 2;
+            this.btn_delassignment.Text = "Remove Employee from this Department";
+            this.btn_delassignment.Click += new System.EventHandler(this.btn_delassignment_Click);
             // 
             // txt_empassign_todelete
             // 
@@ -75,31 +93,14 @@
             this.txt_empassign_todelete.Size = new System.Drawing.Size(1042, 40);
             this.txt_empassign_todelete.TabIndex = 1;
             // 
-            // lb_deptname_todelete
+            // txt_deptname_todelete
             // 
-            this.lb_deptname_todelete.Location = new System.Drawing.Point(3, 6);
-            this.lb_deptname_todelete.Name = "lb_deptname_todelete";
-            this.lb_deptname_todelete.Size = new System.Drawing.Size(133, 33);
-            this.lb_deptname_todelete.TabIndex = 3;
-            this.lb_deptname_todelete.Text = "Dept Name";
-            // 
-            // lbl_empassign_todelete
-            // 
-            this.lbl_empassign_todelete.Location = new System.Drawing.Point(3, 52);
-            this.lbl_empassign_todelete.Name = "lbl_empassign_todelete";
-            this.lbl_empassign_todelete.Size = new System.Drawing.Size(187, 33);
-            this.lbl_empassign_todelete.TabIndex = 4;
-            this.lbl_empassign_todelete.Text = "Employee Email";
-            // 
-            // btn_delassignment
-            // 
-            this.tablePanel1.SetColumn(this.btn_delassignment, 1);
-            this.btn_delassignment.Location = new System.Drawing.Point(1051, 700);
-            this.btn_delassignment.Name = "btn_delassignment";
-            this.tablePanel1.SetRow(this.btn_delassignment, 2);
-            this.btn_delassignment.Size = new System.Drawing.Size(1042, 57);
-            this.btn_delassignment.TabIndex = 2;
-            this.btn_delassignment.Text = "Delete Assignment";
+            this.tablePanel1.SetColumn(this.txt_deptname_todelete, 1);
+            this.txt_deptname_todelete.Location = new System.Drawing.Point(1051, 3);
+            this.txt_deptname_todelete.Name = "txt_deptname_todelete";
+            this.tablePanel1.SetRow(this.txt_deptname_todelete, 0);
+            this.txt_deptname_todelete.Size = new System.Drawing.Size(1042, 40);
+            this.txt_deptname_todelete.TabIndex = 0;
             // 
             // DeleteAssignment
             // 

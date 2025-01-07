@@ -76,7 +76,7 @@
             this.viewAssignments.Margin = new System.Windows.Forms.Padding(8);
             this.viewAssignments.Name = "viewAssignments";
             this.viewAssignments.RowHeadersWidth = 82;
-            this.viewAssignments.Size = new System.Drawing.Size(1975, 741);
+            this.viewAssignments.Size = new System.Drawing.Size(2358, 892);
             this.viewAssignments.TabIndex = 40;
             // 
             // assignmentIDDataGridViewTextBoxColumn
@@ -161,7 +161,7 @@
             this.ribbonControl1.OptionsMenuMinWidth = 412;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1975, 336);
+            this.ribbonControl1.Size = new System.Drawing.Size(2358, 336);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btn_addassignment
@@ -205,7 +205,7 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.ribbonPage1.Text = "Assignments";
             // 
             // ribbonPageGroup1
             // 
@@ -224,11 +224,11 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 1077);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 1228);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1975, 65);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(2358, 65);
             // 
             // ribbonPage2
             // 
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1975, 1142);
+            this.ClientSize = new System.Drawing.Size(2358, 1293);
             this.Controls.Add(this.viewAssignments);
             this.Controls.Add(this.Assignments);
             this.Controls.Add(this.ribbonStatusBar1);
@@ -252,7 +252,7 @@
             this.Name = "AssignmentsForm";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "ManageAssignments";
+            this.Text = "Manage Assignments";
             this.Load += new System.EventHandler(this.AssignemntsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewAssignments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentBindingSource)).EndInit();

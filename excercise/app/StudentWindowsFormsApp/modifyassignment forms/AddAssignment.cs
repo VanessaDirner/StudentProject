@@ -17,8 +17,10 @@ namespace StudentWindowsFormsApp
             InitializeComponent();
         }
 
+        private void btn_addassignment_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
 
@@ -126,3 +128,4 @@ namespace StudentWindowsFormsApp
 
 
                 //TODO reload datagrid
+                */

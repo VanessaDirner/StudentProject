@@ -359,7 +359,6 @@ C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\de\
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\es\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\ja\DevExpress.Diagram.v20.2.Core.resources.dll
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\bin\Debug\ru\DevExpress.Diagram.v20.2.Core.resources.dll
-C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.csprojResolveAssemblyReference.cache
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AssignmentsForm.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DepartmentsForm.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EmployeeForm.resources
@@ -371,4 +370,12 @@ C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\Stu
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.exe
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.pdb
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AddDepartment.resources
-C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AddEmp.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AddAssignment.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DeleteAssignment.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.csprojResolveAssemblyReference.cache
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EditAssignment.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DeleteDepartment.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EditDepartment.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.AddEmployee.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DeleteEmployee.resources
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EditEmployee.resources

@@ -444,7 +444,7 @@
             this.Name = "DepartmentsForm";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "ManageDepartments";
+            this.Text = "Manage Departments";
             this.Load += new System.EventHandler(this.DepartmentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();

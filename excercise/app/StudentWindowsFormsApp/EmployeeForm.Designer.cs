@@ -143,7 +143,7 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.ribbonPage1.Text = "Employees";
             // 
             // ribbonPageGroup1
             // 
@@ -187,6 +187,7 @@
             this.Name = "EmployeeForm";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
+            this.Text = "Manage Employees";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();

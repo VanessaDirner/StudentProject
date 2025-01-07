@@ -1,6 +1,6 @@
 ﻿namespace StudentWindowsFormsApp
 {
-    partial class AddEmp
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.tblpanel_addemp = new DevExpress.Utils.Layout.TablePanel();
-            this.btnEmpSubmit = new System.Windows.Forms.Button();
+            this.txt_phonenum = new System.Windows.Forms.TextBox();
+            this.lbl_firstname = new System.Windows.Forms.Label();
+            this.btnEmpAddSubmit = new System.Windows.Forms.Button();
             this.chkbox_activate = new System.Windows.Forms.CheckBox();
             this.dateTime_startdate = new System.Windows.Forms.DateTimePicker();
             this.dateTime_enddate = new System.Windows.Forms.DateTimePicker();
@@ -40,9 +42,7 @@
             this.lbl_phone = new System.Windows.Forms.Label();
             this.lb_llastname = new System.Windows.Forms.Label();
             this.txt_lastname = new System.Windows.Forms.TextBox();
-            this.lbl_firstname = new System.Windows.Forms.Label();
             this.txt_firstname = new System.Windows.Forms.TextBox();
-            this.txt_phonenum = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tblpanel_addemp)).BeginInit();
             this.tblpanel_addemp.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tblpanel_addemp.Controls.Add(this.txt_phonenum);
             this.tblpanel_addemp.Controls.Add(this.lbl_firstname);
-            this.tblpanel_addemp.Controls.Add(this.btnEmpSubmit);
+            this.tblpanel_addemp.Controls.Add(this.btnEmpAddSubmit);
             this.tblpanel_addemp.Controls.Add(this.chkbox_activate);
             this.tblpanel_addemp.Controls.Add(this.dateTime_startdate);
             this.tblpanel_addemp.Controls.Add(this.dateTime_enddate);
@@ -83,20 +83,40 @@
             this.tblpanel_addemp.Size = new System.Drawing.Size(2117, 1223);
             this.tblpanel_addemp.TabIndex = 0;
             // 
-            // btnEmpSubmit
+            // txt_phonenum
             // 
-            this.btnEmpSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tblpanel_addemp.SetColumn(this.btnEmpSubmit, 6);
-            this.btnEmpSubmit.ForeColor = System.Drawing.Color.Black;
-            this.btnEmpSubmit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmpSubmit.Location = new System.Drawing.Point(1799, 976);
-            this.btnEmpSubmit.Name = "btnEmpSubmit";
-            this.tblpanel_addemp.SetRow(this.btnEmpSubmit, 4);
-            this.btnEmpSubmit.Size = new System.Drawing.Size(315, 51);
-            this.btnEmpSubmit.TabIndex = 36;
-            this.btnEmpSubmit.Text = "Submit Form";
-            this.btnEmpSubmit.UseVisualStyleBackColor = true;
-            this.btnEmpSubmit.Click += new System.EventHandler(this.btnEmpSubmit_Click);
+            this.tblpanel_addemp.SetColumn(this.txt_phonenum, 6);
+            this.txt_phonenum.Location = new System.Drawing.Point(1799, 46);
+            this.txt_phonenum.Name = "txt_phonenum";
+            this.tblpanel_addemp.SetRow(this.txt_phonenum, 0);
+            this.txt_phonenum.Size = new System.Drawing.Size(315, 40);
+            this.txt_phonenum.TabIndex = 37;
+            // 
+            // lbl_firstname
+            // 
+            this.lbl_firstname.AutoSize = true;
+            this.tblpanel_addemp.SetColumn(this.lbl_firstname, 0);
+            this.lbl_firstname.Location = new System.Drawing.Point(3, 49);
+            this.lbl_firstname.Name = "lbl_firstname";
+            this.tblpanel_addemp.SetRow(this.lbl_firstname, 0);
+            this.lbl_firstname.Size = new System.Drawing.Size(150, 34);
+            this.lbl_firstname.TabIndex = 25;
+            this.lbl_firstname.Text = "First Name";
+            // 
+            // btnEmpAddSubmit
+            // 
+            this.btnEmpAddSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tblpanel_addemp.SetColumn(this.btnEmpAddSubmit, 6);
+            this.btnEmpAddSubmit.ForeColor = System.Drawing.Color.Black;
+            this.btnEmpAddSubmit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmpAddSubmit.Location = new System.Drawing.Point(1799, 976);
+            this.btnEmpAddSubmit.Name = "btnEmpAddSubmit";
+            this.tblpanel_addemp.SetRow(this.btnEmpAddSubmit, 4);
+            this.btnEmpAddSubmit.Size = new System.Drawing.Size(315, 51);
+            this.btnEmpAddSubmit.TabIndex = 36;
+            this.btnEmpAddSubmit.Text = "Submit Form";
+            this.btnEmpAddSubmit.UseVisualStyleBackColor = true;
+            this.btnEmpAddSubmit.Click += new System.EventHandler(this.btnEmpSubmit_Click);
             // 
             // chkbox_activate
             // 
@@ -203,17 +223,6 @@
             this.txt_lastname.Size = new System.Drawing.Size(315, 40);
             this.txt_lastname.TabIndex = 26;
             // 
-            // lbl_firstname
-            // 
-            this.lbl_firstname.AutoSize = true;
-            this.tblpanel_addemp.SetColumn(this.lbl_firstname, 0);
-            this.lbl_firstname.Location = new System.Drawing.Point(3, 49);
-            this.lbl_firstname.Name = "lbl_firstname";
-            this.tblpanel_addemp.SetRow(this.lbl_firstname, 0);
-            this.lbl_firstname.Size = new System.Drawing.Size(150, 34);
-            this.lbl_firstname.TabIndex = 25;
-            this.lbl_firstname.Text = "First Name";
-            // 
             // txt_firstname
             // 
             this.tblpanel_addemp.SetColumn(this.txt_firstname, 2);
@@ -223,22 +232,13 @@
             this.txt_firstname.Size = new System.Drawing.Size(315, 40);
             this.txt_firstname.TabIndex = 24;
             // 
-            // txt_phonenum
-            // 
-            this.tblpanel_addemp.SetColumn(this.txt_phonenum, 6);
-            this.txt_phonenum.Location = new System.Drawing.Point(1799, 46);
-            this.txt_phonenum.Name = "txt_phonenum";
-            this.tblpanel_addemp.SetRow(this.txt_phonenum, 0);
-            this.txt_phonenum.Size = new System.Drawing.Size(315, 40);
-            this.txt_phonenum.TabIndex = 37;
-            // 
-            // AddEmp
+            // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2117, 1223);
             this.Controls.Add(this.tblpanel_addemp);
-            this.Name = "AddEmp";
+            this.Name = "AddEmployee";
             this.Text = "AddEmp";
             ((System.ComponentModel.ISupportInitialize)(this.tblpanel_addemp)).EndInit();
             this.tblpanel_addemp.ResumeLayout(false);
@@ -251,7 +251,7 @@
 
         private DevExpress.Utils.Layout.TablePanel tblpanel_addemp;
         private System.Windows.Forms.Label lbl_firstname;
-        private System.Windows.Forms.Button btnEmpSubmit;
+        private System.Windows.Forms.Button btnEmpAddSubmit;
         private System.Windows.Forms.CheckBox chkbox_activate;
         private System.Windows.Forms.DateTimePicker dateTime_startdate;
         private System.Windows.Forms.DateTimePicker dateTime_enddate;

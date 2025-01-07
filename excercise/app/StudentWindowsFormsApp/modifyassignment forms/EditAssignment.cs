@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace StudentWindowsFormsApp
 {
-    public partial class AddEmp : Form
+    public partial class EditAssignment : Form
     {
-        public AddEmp()
+        public EditAssignment()
         {
             InitializeComponent();
-        }
-
-        private void btnEmpSubmit_Click(object sender, EventArgs e)
-        {
-            // process form
         }
     }
 }

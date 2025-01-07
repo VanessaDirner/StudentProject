@@ -30,8 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_deptName = new System.Windows.Forms.Label();
-            this.txt_deptName = new System.Windows.Forms.TextBox();
             this.lbl_deptabbr = new System.Windows.Forms.Label();
+            this.txt_deptName = new System.Windows.Forms.TextBox();
             this.txt_deptabbrv = new System.Windows.Forms.TextBox();
             this.btn_add_dept_submit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(942, 662);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 697);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lbl_deptName
@@ -66,32 +66,32 @@
             this.lbl_deptName.TabIndex = 21;
             this.lbl_deptName.Text = "Department Name";
             // 
-            // txt_deptName
-            // 
-            this.txt_deptName.Location = new System.Drawing.Point(474, 3);
-            this.txt_deptName.Name = "txt_deptName";
-            this.txt_deptName.Size = new System.Drawing.Size(170, 38);
-            this.txt_deptName.TabIndex = 19;
-            // 
             // lbl_deptabbr
             // 
             this.lbl_deptabbr.AutoSize = true;
-            this.lbl_deptabbr.Location = new System.Drawing.Point(3, 165);
+            this.lbl_deptabbr.Location = new System.Drawing.Point(3, 174);
             this.lbl_deptabbr.Name = "lbl_deptabbr";
             this.lbl_deptabbr.Size = new System.Drawing.Size(330, 32);
             this.lbl_deptabbr.TabIndex = 18;
             this.lbl_deptabbr.Text = "Department Abbreviation";
             // 
+            // txt_deptName
+            // 
+            this.txt_deptName.Location = new System.Drawing.Point(539, 3);
+            this.txt_deptName.Name = "txt_deptName";
+            this.txt_deptName.Size = new System.Drawing.Size(170, 38);
+            this.txt_deptName.TabIndex = 19;
+            // 
             // txt_deptabbrv
             // 
-            this.txt_deptabbrv.Location = new System.Drawing.Point(474, 168);
+            this.txt_deptabbrv.Location = new System.Drawing.Point(539, 177);
             this.txt_deptabbrv.Name = "txt_deptabbrv";
             this.txt_deptabbrv.Size = new System.Drawing.Size(146, 38);
             this.txt_deptabbrv.TabIndex = 17;
             // 
             // btn_add_dept_submit
             // 
-            this.btn_add_dept_submit.Location = new System.Drawing.Point(474, 333);
+            this.btn_add_dept_submit.Location = new System.Drawing.Point(539, 351);
             this.btn_add_dept_submit.Name = "btn_add_dept_submit";
             this.btn_add_dept_submit.Size = new System.Drawing.Size(210, 124);
             this.btn_add_dept_submit.TabIndex = 22;

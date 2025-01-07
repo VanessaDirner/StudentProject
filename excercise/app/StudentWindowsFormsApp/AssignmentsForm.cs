@@ -94,12 +94,14 @@ namespace StudentWindowsFormsApp
 
         private void btn_editassignment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            var editassignmentform = new EditAssignment();
+            editassignmentform.Show();
         }
 
         private void btn_deleteassignment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+            var deleteassignmentform = new DeleteAssignment();
+            deleteassignmentform.Show();
         }
 
 

@@ -80,12 +80,15 @@ namespace StudentWindowsFormsApp
         private void barbtn_deptedit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // open up edit dept popup
+            var editdeptform = new EditDepartment();
+            editdeptform.Show();
         }
 
         private void barbtn_dept_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // open up delete dept popup
-
+            var deletedeptform = new DeleteDepartment();
+            deletedeptform.Show();
         }
 
         private void barBtn_frmdept_toempl_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
