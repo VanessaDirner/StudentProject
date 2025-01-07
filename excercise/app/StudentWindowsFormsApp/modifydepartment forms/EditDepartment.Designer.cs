@@ -1,4 +1,6 @@
-﻿namespace StudentWindowsFormsApp
+﻿using DevExpress.XtraEditors;
+
+namespace StudentWindowsFormsApp
 {
     partial class EditDepartment
     {

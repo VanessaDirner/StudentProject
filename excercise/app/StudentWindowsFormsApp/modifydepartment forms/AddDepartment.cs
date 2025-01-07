@@ -31,10 +31,10 @@ namespace StudentWindowsFormsApp
             bool isvalid = true;
 
             // send items from form into variables
-            string DepartmentName = "a"; //.Text;
-            string DepartmentAbbreviation = "B"; // txtdeptabbr.Text;
+            string DepartmentName = txt_deptName.Text; //.Text;
+            string DepartmentAbbreviation = txt_deptabbrv.Text; // txtdeptabbr.Text;
 
-            //verify details from form before saving details
+            //verify details from form before saving details 
 
             // check if any fields are null
             // (except for any fields with defaults or non required fields)
@@ -77,7 +77,11 @@ namespace StudentWindowsFormsApp
                         $"Date Created: {department.createdate} \n\r" +
                         $"Created by: {department.createdby} \n\r");
 
+                    
+
                     //TODO  reload datagrid with updated info
+
+
 
                 }
                 catch

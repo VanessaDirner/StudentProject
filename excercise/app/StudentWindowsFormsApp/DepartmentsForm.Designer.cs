@@ -64,16 +64,10 @@
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.employeeTableAdapter = new StudentWindowsFormsApp.studentprojectDataSet00000000layoutTableAdapters.employeeTableAdapter();
             this.departmentBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.departmentBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.departmentBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentgridcontrol = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.coldeptID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldeptname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colabbreviation = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcreatedby = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcreatedate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmodifiedby = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmodifieddate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentprojectDataSet00000000layout)).BeginInit();
@@ -89,8 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource2)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentgridcontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,111 +326,39 @@
             this.departmentBindingSource5.DataMember = "department";
             this.departmentBindingSource5.DataSource = this.studentprojectDataSet00000000layout;
             // 
-            // gridControl1
+            // departmentBindingSource7
             // 
-            this.gridControl1.DataSource = this.departmentBindingSource6;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
-            this.gridControl1.Location = new System.Drawing.Point(500, 384);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(15, 16, 15, 16);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(2341, 1586);
-            this.gridControl1.TabIndex = 57;
-            this.gridControl1.UseEmbeddedNavigator = true;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.departmentBindingSource7.DataMember = "department";
+            this.departmentBindingSource7.DataSource = this.studentprojectDataSet00000000layout;
             // 
             // departmentBindingSource6
             // 
             this.departmentBindingSource6.DataMember = "department";
             this.departmentBindingSource6.DataSource = this.studentprojectDataSet00000000layout;
             // 
+            // departmentgridcontrol
+            // 
+            this.departmentgridcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.departmentgridcontrol.Location = new System.Drawing.Point(500, 384);
+            this.departmentgridcontrol.MainView = this.gridView1;
+            this.departmentgridcontrol.MenuManager = this.ribbonControl1;
+            this.departmentgridcontrol.Name = "departmentgridcontrol";
+            this.departmentgridcontrol.Size = new System.Drawing.Size(2341, 1586);
+            this.departmentgridcontrol.TabIndex = 60;
+            this.departmentgridcontrol.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.coldeptID,
-            this.coldeptname,
-            this.colabbreviation,
-            this.colcreatedby,
-            this.colcreatedate,
-            this.colmodifiedby,
-            this.colmodifieddate});
-            this.gridView1.DetailHeight = 924;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.departmentgridcontrol;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
-            // 
-            // coldeptID
-            // 
-            this.coldeptID.FieldName = "deptID";
-            this.coldeptID.MinWidth = 100;
-            this.coldeptID.Name = "coldeptID";
-            this.coldeptID.Visible = true;
-            this.coldeptID.VisibleIndex = 0;
-            this.coldeptID.Width = 375;
-            // 
-            // coldeptname
-            // 
-            this.coldeptname.FieldName = "deptname";
-            this.coldeptname.MinWidth = 100;
-            this.coldeptname.Name = "coldeptname";
-            this.coldeptname.Visible = true;
-            this.coldeptname.VisibleIndex = 1;
-            this.coldeptname.Width = 375;
-            // 
-            // colabbreviation
-            // 
-            this.colabbreviation.FieldName = "abbreviation";
-            this.colabbreviation.MinWidth = 100;
-            this.colabbreviation.Name = "colabbreviation";
-            this.colabbreviation.Visible = true;
-            this.colabbreviation.VisibleIndex = 2;
-            this.colabbreviation.Width = 375;
-            // 
-            // colcreatedby
-            // 
-            this.colcreatedby.FieldName = "createdby";
-            this.colcreatedby.MinWidth = 100;
-            this.colcreatedby.Name = "colcreatedby";
-            this.colcreatedby.Visible = true;
-            this.colcreatedby.VisibleIndex = 3;
-            this.colcreatedby.Width = 375;
-            // 
-            // colcreatedate
-            // 
-            this.colcreatedate.FieldName = "createdate";
-            this.colcreatedate.MinWidth = 100;
-            this.colcreatedate.Name = "colcreatedate";
-            this.colcreatedate.Visible = true;
-            this.colcreatedate.VisibleIndex = 4;
-            this.colcreatedate.Width = 375;
-            // 
-            // colmodifiedby
-            // 
-            this.colmodifiedby.FieldName = "modifiedby";
-            this.colmodifiedby.MinWidth = 100;
-            this.colmodifiedby.Name = "colmodifiedby";
-            this.colmodifiedby.Visible = true;
-            this.colmodifiedby.VisibleIndex = 5;
-            this.colmodifiedby.Width = 375;
-            // 
-            // colmodifieddate
-            // 
-            this.colmodifieddate.FieldName = "modifieddate";
-            this.colmodifieddate.MinWidth = 100;
-            this.colmodifieddate.Name = "colmodifieddate";
-            this.colmodifieddate.Visible = true;
-            this.colmodifieddate.VisibleIndex = 6;
-            this.colmodifieddate.Width = 375;
             // 
             // DepartmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2841, 2035);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.departmentgridcontrol);
             this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.ribbonStatusBar1);
@@ -462,8 +385,9 @@
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentgridcontrol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -501,19 +425,13 @@
         private studentprojectDataSet00000000layoutTableAdapters.employeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.BindingSource fKassignmendeptI4316F928BindingSource;
         private System.Windows.Forms.BindingSource departmentBindingSource5;
-        private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.BindingSource departmentBindingSource6;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn coldeptID;
-        private DevExpress.XtraGrid.Columns.GridColumn coldeptname;
-        private DevExpress.XtraGrid.Columns.GridColumn colabbreviation;
-        private DevExpress.XtraGrid.Columns.GridColumn colcreatedby;
-        private DevExpress.XtraGrid.Columns.GridColumn colcreatedate;
-        private DevExpress.XtraGrid.Columns.GridColumn colmodifiedby;
-        private DevExpress.XtraGrid.Columns.GridColumn colmodifieddate;
         private DevExpress.XtraBars.BarButtonItem barbtn_dept_delete;
         private DevExpress.XtraBars.BarButtonItem barBtn_frmdept_toempl;
         private DevExpress.XtraBars.BarButtonItem barBtn_frmdept_toreport;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private System.Windows.Forms.BindingSource departmentBindingSource7;
+        private DevExpress.XtraGrid.GridControl departmentgridcontrol;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

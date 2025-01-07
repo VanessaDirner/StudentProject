@@ -36,13 +36,13 @@ namespace StudentWindowsFormsApp
                 createdby = items.createdby,
                 modifiedby = items.modifiedby
             }).ToList();
-
+             
 
             // maybe todo resize grid for data, or change it's background
 
 
             // set the viewDepartments object's datasource to the variable we just created
-           // viewDepartments.DataSource = department;
+            departmentgridcontrol.DataSource = department;
         }
 
         
