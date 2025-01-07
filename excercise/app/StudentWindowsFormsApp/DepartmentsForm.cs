@@ -24,7 +24,7 @@ namespace StudentWindowsFormsApp
         {
 
             // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.department);
+            //this.departmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.department);
             // load database table and save to a variable, assign variable names to the data and create a list to hold it all
             // var department = _studentprojectEntities.departments.ToList();
             var department = _studentprojectEntities.departments.Select(items => new
@@ -45,79 +45,8 @@ namespace StudentWindowsFormsApp
            // viewDepartments.DataSource = department;
         }
 
+        
 
-        private void btnDeptSubmit_Click(object sender, EventArgs e)
-        {
-            // TODO handle creating department on click
-            // set defaults for some variables for checking form
-            bool isvalid = true;
-
-            // send items from form into variables
-            string DepartmentName = "a"; //.Text;
-            string DepartmentAbbreviation = "B"; // txtdeptabbr.Text;
-
-            //verify details from form before saving details
-
-            // check if any fields are null
-            // (except for any fields with defaults or non required fields)
-            if ((string.IsNullOrWhiteSpace(DepartmentName) ||
-                string.IsNullOrWhiteSpace(DepartmentAbbreviation) ) )                             
-            {
-                isvalid = false;
-                MessageBox.Show("Required fields are empty." +
-                    "Please double check and resubmit request.");
-            }
-
-
-
-            // if form filled out ok, process form and show confirmation of save
-            if (isvalid)
-            {
-
-                // create employee object
-                var department = new department();
-
-                // assign variables from form to database object equivalents
-                department.deptID = Guid.NewGuid();
-                department.deptname = DepartmentName;
-                department.abbreviation = DepartmentAbbreviation;
-                department.createdate = DateTime.Now;
-                department.modifieddate = DateTime.Now;
-                department.createdby = "admin";
-                department.modifiedby = "admin";
-
-                // send details to database
-                _studentprojectEntities.departments.Add(department);
-
-                try
-                {
-                    // save changes to database
-                    _studentprojectEntities.SaveChanges();
-
-                    // show confirmation of adding employee
-                    MessageBox.Show($"Department creation successful.\n\r" +
-                        $"Department Name: {DepartmentName} \n\r" +
-                        $"Department Abbreviation: {DepartmentAbbreviation} \n\r" +
-                        $"Date Created: {department.createdate} \n\r" +
-                        $"Created by: {department.createdby} \n\r");
-
-                    //TODO  reload datagrid with updated info
-                    
-                }
-                catch
-                {
-                    // if save is unsuccesful, show failure message
-                    MessageBox.Show($"Department creation unsuccesful.\n\r" +
-                        $"Please modify your request and try again," +
-                        $" or contact an administrator.");
-                }
-
-                //TODO reload datagrid
-
-            }
-
-
-        }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
@@ -137,6 +66,40 @@ namespace StudentWindowsFormsApp
         {
             // ex. 
            // gridView1.SetRowCellValue(e.RowHandle, "modifieddate", DateTime.Now.Date);
+        }
+
+        private void btn_departments_add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // open up add new dept popup
+            var myadddeptform = new AddDepartment();
+            myadddeptform.Show();
+
+
+        }
+
+        private void barbtn_deptedit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // open up edit dept popup
+        }
+
+        private void barbtn_dept_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // open up delete dept popup
+
+        }
+
+        private void barBtn_frmdept_toempl_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var employeesform = new EmployeeForm();
+            employeesform.Show();
+            this.Hide();
+        }
+
+        private void barBtn_frmdept_toreport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var assignmentsform = new AssignmentsForm();
+            assignmentsform.Show();
+            this.Hide();
         }
 
         // add handler to add or delete row on click

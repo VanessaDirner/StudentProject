@@ -131,10 +131,38 @@ namespace StudentWindowsFormsApp
             
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barBtn_fromemp_todept_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var deptform = new DepartmentsForm();
+            deptform.Show();
+            this.Hide();
+        }
+
+        private void barBtn_frmemp_toreport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var reportform = new AssignmentsForm();
+            reportform.Show();
+            this.Hide();
+        }
+
+        private void barbtn_addemp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var adddeptform = new AddDepartment();
+            adddeptform.Show();
+          
+        }
+
+        private void barbtn_editemp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
+
+        private void barBtn_deleteemp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+
 
         // action when form loads on page
 

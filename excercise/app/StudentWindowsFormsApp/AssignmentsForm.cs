@@ -26,6 +26,8 @@ namespace StudentWindowsFormsApp
 
         private void AssignemntsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.assignment' table. You can move, or remove it, as needed.
+            this.assignmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.assignment);
             var employeestable = _studentprojectEntities.employees;
             var assignmenttable = _studentprojectEntities.assignments;
             var departmentstable = _studentprojectEntities.departments;

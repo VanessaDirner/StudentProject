@@ -245,6 +245,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.Designer.cs">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="assignment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -360,6 +366,9 @@
     <Compile Include="Views\studentprojectEntitiesView.designer.cs">
       <DependentUpon>studentprojectEntitiesView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDepartment.resx">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AssignmentsForm.resx">
       <DependentUpon>AssignmentsForm.cs</DependentUpon>
     </EmbeddedResource>
