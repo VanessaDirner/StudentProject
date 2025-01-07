@@ -99,47 +99,14 @@ namespace StudentWindowsFormsApp
 
         private void btn_deleteassignment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // get row selected or input box with dept name and employee id
-            /// run delete below
-            /// 
+          
         }
 
 
 
 
 
-        /// <summary>
-        ///  delete a person from a department
-        /// </summary>
-        private async void Delete()
-        {
 
-            /*
-
-            // find dept ID based on dept name
-            var deptname = txt_assign_deptname.Text;
-            department department = await _studentprojectEntities.departments.FindAsync(deptname);
-
-            // find employee id based on email
-            var employee_email = txt_assign_email.Text;
-            employee employee = await _studentprojectEntities.employees.FindAsync(employee_email);
-
-            // find assignment id based on employee and dept id
-            var assignmentid = await _studentprojectEntities.assignments.FindAsync();
-  
-
-            assignment assignment = await _studentprojectEntities.assignments.Where(x => _ == employee.personID .);
-
-            if (assignment == null)
-            {
-                throw new Exception("invalid assignment ID");
-            }
-            
-            _studentprojectEntities.assignments.Remove(assignment);
-
-            await _studentprojectEntities.SaveChangesAsync();
-            */
-        }
 
     }
 
