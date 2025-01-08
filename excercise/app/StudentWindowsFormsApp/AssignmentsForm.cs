@@ -26,8 +26,6 @@ namespace StudentWindowsFormsApp
 
         private void AssignemntsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.assignment' table. You can move, or remove it, as needed.
-           // this.assignmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.assignment);
             var employeestable = _studentprojectEntities.employees;
             var assignmenttable = _studentprojectEntities.assignments;
             var departmentstable = _studentprojectEntities.departments;
@@ -50,34 +48,66 @@ namespace StudentWindowsFormsApp
                 assignment.modifiedby
             }).ToList();
 
-            viewAssignments.DataSource = assignments;
-
-            //viewAssignments.DataSource = allassignments;
-
-            /*
-            equivalent database query to get details
-            select employee.email, employee.firstname, employee.lastname, department.deptname, department.abbreviation
-            from employee
-            join assignment
-            on employee.personID = assignment.personID
-            join department
-            on department.deptID = assignment.deptID;
-           */
            
-            List<assignment> report = from assignment in _studentprojectEntities.assignments
+            var report = (from assignment in _studentprojectEntities.assignments
+                          join employees in _studentprojectEntities.employees
+                          on assignment.personID equals employees.personID
+                          join departments in _studentprojectEntities.departments
+                          on assignment.deptID equals departments.deptID
+                          group new { employees, departments } by departments.deptname into g
+                          select new
+                          {
+                              EmployeeNames = g.Select(x => x.employees.firstname + " " + x.employees.lastname).ToList(),
+                              Department = g.Key,
+                              email = g.Select(x => x.employees.email)
+                          }).ToList();
+            /*
+           var result = from employee in _studentprojectEntities.employees
+                        join assignment in _studentprojectEntities.assignments
+                        on employee.personID equals assignment.personID
+                        join department in _studentprojectEntities.departments
+                        on department.deptID equals assignment.deptID
+                        select new
+                        {
+                            employee.email,
+                            employee.firstname,
+                            employee.lastname,
+                            department.deptname,
+                            department.abbreviation
+                        };
 
-                                      join employees in _studentprojectEntities.employees
-                                     on assignment.personID equals employees.personID
+           var report =  from assignment in _studentprojectEntities.assignments
+                         join employees in _studentprojectEntities.employees
+                         on assignment.personID equals employees.personID
+                         join departments in _studentprojectEntities.departments
+                         on assignment.deptID equals departments.deptID
+                         group new { employees, departments } by departments.deptname into g
+                         select new
+                         {
+                             employee.email,
+                             employee.firstname,
+                             employee.lastname,
+                             department.deptname,
+                             department.abbreviation
+                         };
 
-                                      join departments in _studentprojectEntities.departments
-                                      on assignment.deptID equals departments.deptID
 
-                                      group new { employees, departments } by departments.deptname into g
-                                      select new
-                                      {
-                                          EmployeeNames = g.Select(x => x.employees.firstname + " " + x.employees.lastname).ToList(),
-                                          Department = g.Key
-                                      }.ToList();
+
+
+           /*
+           equivalent database query to get details
+           select employee.email, employee.firstname, employee.lastname, department.deptname, department.abbreviation
+           from employee
+           join assignment
+           on employee.personID = assignment.personID
+           join department
+           on department.deptID = assignment.deptID;
+          */
+
+
+
+
+            viewAssignments.DataSource = report;
         }
 
 
