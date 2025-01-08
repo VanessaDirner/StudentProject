@@ -33,6 +33,7 @@ namespace StudentWindowsFormsApp
             string firstname = txt_firstname.Text;
             string lastname = txt_lastname.Text;
             string email = txt_email.Text;
+            int phonenumber = int.Parse(txt_phonenum.Text);
             DateTime startdate = dateTime_startdate.Value;
             DateTime enddate = dateTime_enddate.Value;
             bool activate = chkbox_activate.Checked;
@@ -66,8 +67,10 @@ namespace StudentWindowsFormsApp
                 employee.firstname = firstname;
                 employee.lastname = lastname;
                 employee.email = email;
+                employee.phonenumber = phonenumber;
                 employee.startdate = startdate;
                 employee.enddate = enddate;
+                employee.active = activate;
                 employee.createdate = DateTime.Now;
                 employee.modifieddate = DateTime.Now;
                 employee.createdby = "admin";
