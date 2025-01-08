@@ -35,6 +35,7 @@ namespace StudentWindowsFormsApp
             string firstname = txt_editfirstname.Text;
             string lastname = txt_editlastname.Text;
             string email = txt_editemail.Text;
+            int phonenumber = int.Parse(txt_editphonenum.Text);
             DateTime startdate = dateTime_editstartdate.Value;
             DateTime enddate = dateTime_editenddate.Value;
             bool activate = chkbox_editactivate.Checked;
@@ -73,6 +74,7 @@ namespace StudentWindowsFormsApp
                     $"email: {email} \n\r" +
                     $"start date: {startdate}\n\r " +
                     $"end date: {enddate} \n\r" +
+                    $"phone number: {phonenumber} \n\r" +
                     $"account activated: {activate} \n\r");
 
             }
