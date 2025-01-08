@@ -36,7 +36,7 @@ namespace StudentWindowsFormsApp
                 createdby = items.createdby,
                 modifiedby = items.modifiedby
             }).ToList();
-             
+
 
             // maybe todo resize grid for data, or change it's background
 

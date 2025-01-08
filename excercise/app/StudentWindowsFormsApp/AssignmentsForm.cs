@@ -63,6 +63,21 @@ namespace StudentWindowsFormsApp
             join department
             on department.deptID = assignment.deptID;
            */
+           
+            List<assignment> report = from assignment in _studentprojectEntities.assignments
+
+                                      join employees in _studentprojectEntities.employees
+                                     on assignment.personID equals employees.personID
+
+                                      join departments in _studentprojectEntities.departments
+                                      on assignment.deptID equals departments.deptID
+
+                                      group new { employees, departments } by departments.deptname into g
+                                      select new
+                                      {
+                                          EmployeeNames = g.Select(x => x.employees.firstname + " " + x.employees.lastname).ToList(),
+                                          Department = g.Key
+                                      }.ToList();
         }
 
 
