@@ -46,6 +46,26 @@ namespace StudentWindowsFormsApp
                     "Please double check and resubmit request.");
             }
 
+            // if deptname or deptabbreviation is not empty (match found)
+            // if departmentname or department abbreviation not unique, set valid to false, show message
+            department doesdeptnameexist =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.deptname == DepartmentName);
+            department doesdeptabbrexist = _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == DepartmentAbbreviation);
+
+            if (doesdeptnameexist != null && doesdeptabbrexist != null) {
+                if (DepartmentName == doesdeptnameexist.deptname)
+                {
+                    isvalid = false;
+                    MessageBox.Show("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
+                }
+                if (DepartmentAbbreviation == doesdeptabbrexist.abbreviation)
+                {
+                    isvalid = false;
+                    MessageBox.Show("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
+                }
+            }
+          
+
+
             // if form filled out ok, process form and show confirmation of save
             if (isvalid)
             {

@@ -45,6 +45,26 @@ namespace StudentWindowsFormsApp
                     "Please double check and resubmit request.");
             }
 
+            /*
+            department? departmentobject = await _db_context.departments.FindAsync(modifydepartmentDTO.DeptID);
+            // throw exception so that ID can't be invalid so that return employee can't be null
+            if (modifydepartmentDTO.DeptID == null)
+            {
+                throw new Exception("invalid department ID, please check that the department exists.");
+            }
+            // check if the department name and abbreviation name already exists
+            department? doesdeptnameexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.deptname == modifydepartmentDTO.DeptName);
+            if (modifydepartmentDTO.DeptName == doesdeptnameexist.deptname)
+            {
+                throw new Exception("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
+            }
+            department? doesdeptabbrexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.abbreviation == modifydepartmentDTO.Abbreviation);
+            if (modifydepartmentDTO.Abbreviation == doesdeptabbrexist.abbreviation)
+            {
+                throw new Exception("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
+            }*/
+
+
             // if form filled out ok, process form and show confirmation of save
             if (isvalid)
             {

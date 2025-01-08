@@ -81,8 +81,7 @@
             this.btn_deletedept.Size = new System.Drawing.Size(916, 57);
             this.btn_deletedept.TabIndex = 2;
             this.btn_deletedept.Text = "Delete Department";
-            this.btn_deletedept.Click += new System.EventHandler(this.btn_deletedept_Click);
-            // 
+           // 
             // DeleteDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
