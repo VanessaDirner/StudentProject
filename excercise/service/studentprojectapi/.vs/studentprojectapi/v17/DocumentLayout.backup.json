@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "Services\\PersonService.cs",
               "ToolTip": "C:\\PCLDev\\temp\\StudentProject\\excercise\\service\\studentprojectapi\\Services\\PersonService.cs",
               "RelativeToolTip": "Services\\PersonService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAGQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwE4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-14T20:10:21.124Z",
               "IsPinned": true,
@@ -44,8 +44,7 @@
               "RelativeToolTip": "Controllers\\PersonController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAYwEMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:20:42.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T17:20:42.266Z"
             }
           ]
         }

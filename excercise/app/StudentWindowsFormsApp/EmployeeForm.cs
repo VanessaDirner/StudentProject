@@ -77,7 +77,7 @@ namespace StudentWindowsFormsApp
 
         private void barBtn_deleteemp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var deldeptform = new DeleteDepartment();
+            var deldeptform = new DeleteEmployee();
             deldeptform.Show();
         }
 

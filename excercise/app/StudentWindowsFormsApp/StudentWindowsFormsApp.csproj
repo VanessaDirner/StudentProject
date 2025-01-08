@@ -292,11 +292,11 @@
     <Compile Include="department.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="modifyassignment forms\EditAssignment.cs">
+    <Compile Include="modifyassignment forms\todelete_EditAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modifyassignment forms\EditAssignment.Designer.cs">
-      <DependentUpon>EditAssignment.cs</DependentUpon>
+    <Compile Include="modifyassignment forms\todelete_EditAssignment.Designer.cs">
+      <DependentUpon>todelete_EditAssignment.cs</DependentUpon>
     </Compile>
     <Compile Include="modifydepartment forms\EditDepartment.cs">
       <SubType>Form</SubType>
@@ -418,8 +418,8 @@
     <EmbeddedResource Include="modifyassignment forms\AddAssignment.resx">
       <DependentUpon>AddAssignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modifyassignment forms\EditAssignment.resx">
-      <DependentUpon>EditAssignment.cs</DependentUpon>
+    <EmbeddedResource Include="modifyassignment forms\todelete_EditAssignment.resx">
+      <DependentUpon>todelete_EditAssignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modifydepartment forms\AddDepartment.resx">
       <DependentUpon>AddDepartment.cs</DependentUpon>
