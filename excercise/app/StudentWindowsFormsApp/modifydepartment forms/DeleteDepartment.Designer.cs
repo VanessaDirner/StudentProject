@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.txt_deptname_todelete = new System.Windows.Forms.TextBox();
-            this.lbl_deptname_todelete = new DevExpress.XtraEditors.LabelControl();
             this.btn_deletedept = new DevExpress.XtraEditors.SimpleButton();
+            this.lbl_deptname_todelete = new DevExpress.XtraEditors.LabelControl();
+            this.txt_deptname_todelete = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,14 +53,16 @@
             this.tablePanel1.Size = new System.Drawing.Size(1666, 1148);
             this.tablePanel1.TabIndex = 0;
             // 
-            // txt_deptname_todelete
+            // btn_deletedept
             // 
-            this.tablePanel1.SetColumn(this.txt_deptname_todelete, 1);
-            this.txt_deptname_todelete.Location = new System.Drawing.Point(747, 135);
-            this.txt_deptname_todelete.Name = "txt_deptname_todelete";
-            this.tablePanel1.SetRow(this.txt_deptname_todelete, 0);
-            this.txt_deptname_todelete.Size = new System.Drawing.Size(916, 40);
-            this.txt_deptname_todelete.TabIndex = 0;
+            this.tablePanel1.SetColumn(this.btn_deletedept, 1);
+            this.btn_deletedept.Location = new System.Drawing.Point(747, 700);
+            this.btn_deletedept.Name = "btn_deletedept";
+            this.tablePanel1.SetRow(this.btn_deletedept, 1);
+            this.btn_deletedept.Size = new System.Drawing.Size(916, 57);
+            this.btn_deletedept.TabIndex = 2;
+            this.btn_deletedept.Text = "Delete Department";
+            this.btn_deletedept.Click += new System.EventHandler(this.btn_deletedept_Click);
             // 
             // lbl_deptname_todelete
             // 
@@ -72,16 +74,15 @@
             this.lbl_deptname_todelete.TabIndex = 1;
             this.lbl_deptname_todelete.Text = "Department Name";
             // 
-            // btn_deletedept
+            // txt_deptname_todelete
             // 
-            this.tablePanel1.SetColumn(this.btn_deletedept, 1);
-            this.btn_deletedept.Location = new System.Drawing.Point(747, 700);
-            this.btn_deletedept.Name = "btn_deletedept";
-            this.tablePanel1.SetRow(this.btn_deletedept, 1);
-            this.btn_deletedept.Size = new System.Drawing.Size(916, 57);
-            this.btn_deletedept.TabIndex = 2;
-            this.btn_deletedept.Text = "Delete Department";
-           // 
+            this.tablePanel1.SetColumn(this.txt_deptname_todelete, 1);
+            this.txt_deptname_todelete.Location = new System.Drawing.Point(747, 135);
+            this.txt_deptname_todelete.Name = "txt_deptname_todelete";
+            this.tablePanel1.SetRow(this.txt_deptname_todelete, 0);
+            this.txt_deptname_todelete.Size = new System.Drawing.Size(916, 40);
+            this.txt_deptname_todelete.TabIndex = 0;
+            // 
             // DeleteDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);

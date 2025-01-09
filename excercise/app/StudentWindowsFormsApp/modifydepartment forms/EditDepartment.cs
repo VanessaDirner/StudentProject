@@ -45,39 +45,45 @@ namespace StudentWindowsFormsApp
                     "Please double check and resubmit request.");
             }
 
-            /*
-            department? departmentobject = await _db_context.departments.FindAsync(modifydepartmentDTO.DeptID);
-            // throw exception so that ID can't be invalid so that return employee can't be null
-            if (modifydepartmentDTO.DeptID == null)
-            {
-                throw new Exception("invalid department ID, please check that the department exists.");
-            }
+         
             // check if the department name and abbreviation name already exists
-            department? doesdeptnameexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.deptname == modifydepartmentDTO.DeptName);
+            department departmentname = _studentprojectEntities.departments.SingleOrDefault(x => x.deptname == DepartmentName);
+            department departmentabbrv = _studentprojectEntities.departments.SingleOrDefault(x => x.abbreviation == DepartmentAbbreviation);
+
+            /*
+
+            // throw exception so that ID can't be invalid so that return department can't be null ????
+            if (departmentabbrv.abbreviation != DepartmentAbbreviation)
+            {
+                MessageBox.Show("invalid department ID, please check that the department exists.");
+            }
+
+          
+
             if (modifydepartmentDTO.DeptName == doesdeptnameexist.deptname)
             {
-                throw new Exception("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
+                MessageBox.Show("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
             }
-            department? doesdeptabbrexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.abbreviation == modifydepartmentDTO.Abbreviation);
+            department doesdeptabbrexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.abbreviation == modifydepartmentDTO.Abbreviation);
             if (modifydepartmentDTO.Abbreviation == doesdeptabbrexist.abbreviation)
             {
-                throw new Exception("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
-            }*/
-
+                 MessageBox.Show("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
+            }
+            */
 
             // if form filled out ok, process form and show confirmation of save
             if (isvalid)
             {
 
-                // create employee object
-                var department = new department();
+                // create department object
+                department department = _studentprojectEntities.departments.SingleOrDefault(x => x.deptname == DepartmentName);
 
                 // assign variables from form to database object equivalents
                 department.deptname = DepartmentName;
                 department.abbreviation = DepartmentAbbreviation;
-                department.createdate = DateTime.Now;
+               // department.createdate = DateTime.Now;
                 department.modifieddate = DateTime.Now;
-                department.createdby = "admin";
+               // department.createdby = "admin";
                 department.modifiedby = "admin";
 
 
@@ -86,7 +92,7 @@ namespace StudentWindowsFormsApp
 
 
                     // send details to database
-                    //_studentprojectEntities.departments.
+                   // _studentprojectEntities.departments.
 
 
                     // save changes to database

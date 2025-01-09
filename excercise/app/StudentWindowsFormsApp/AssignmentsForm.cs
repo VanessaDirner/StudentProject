@@ -19,7 +19,7 @@ namespace StudentWindowsFormsApp
 
 
         public AssignmentsForm()
-        {
+        { 
             InitializeComponent();
             _studentprojectEntities = new studentprojectEntities();
         }
@@ -31,24 +31,15 @@ namespace StudentWindowsFormsApp
             var departmentstable = _studentprojectEntities.departments;
 
             var allassignments = (from employee in _studentprojectEntities.employees
+
                                   join assignment in _studentprojectEntities.assignments
                                   on employee.personID equals assignment.personID
-                                  // join department in _ on equals
-                                  select new { employee.email }).ToList();
 
+                                  join department in _studentprojectEntities.departments
+                                  on assignment.deptID equals department.deptID
 
-            var assignments = _studentprojectEntities.assignments.Select(assignment => new
-            {
-                assignment.assignmentID,
-                employeeid = assignment.personID,
-                departmentid = assignment.deptID,
-                datecreated = assignment.createdate,
-                assignment.modifieddate,
-                assignment.createdby,
-                assignment.modifiedby
-            }).ToList();
-
-           
+                                  select new { employee.email, employee.firstname, employee.lastname }).ToList();
+           /*
             var report = (from assignment in _studentprojectEntities.assignments
                           join employees in _studentprojectEntities.employees
                           on assignment.personID equals employees.personID
@@ -61,39 +52,9 @@ namespace StudentWindowsFormsApp
                               Department = g.Key,
                               email = g.Select(x => x.employees.email)
                           }).ToList();
-            /*
-           var result = from employee in _studentprojectEntities.employees
-                        join assignment in _studentprojectEntities.assignments
-                        on employee.personID equals assignment.personID
-                        join department in _studentprojectEntities.departments
-                        on department.deptID equals assignment.deptID
-                        select new
-                        {
-                            employee.email,
-                            employee.firstname,
-                            employee.lastname,
-                            department.deptname,
-                            department.abbreviation
-                        };
+    
 
-           var report =  from assignment in _studentprojectEntities.assignments
-                         join employees in _studentprojectEntities.employees
-                         on assignment.personID equals employees.personID
-                         join departments in _studentprojectEntities.departments
-                         on assignment.deptID equals departments.deptID
-                         group new { employees, departments } by departments.deptname into g
-                         select new
-                         {
-                             employee.email,
-                             employee.firstname,
-                             employee.lastname,
-                             department.deptname,
-                             department.abbreviation
-                         };
-
-
-
-
+            */
            /*
            equivalent database query to get details
            select employee.email, employee.firstname, employee.lastname, department.deptname, department.abbreviation
@@ -107,7 +68,7 @@ namespace StudentWindowsFormsApp
 
 
 
-            viewAssignments.DataSource = report;
+            viewAssignments.DataSource = allassignments;
         }
 
 

@@ -27,8 +27,8 @@ namespace StudentWindowsFormsApp
         {
             bool isvalid = true;
 
-
-            department department = _studentprojectEntities.departments.Find(txt_deptname_todelete.Text);
+           string depttodelete = txt_deptname_todelete.Text;
+            department department = _studentprojectEntities.departments.SingleOrDefault(x => x.deptname == depttodelete);
 
             if (department == null)
             {
@@ -57,5 +57,7 @@ namespace StudentWindowsFormsApp
 
             }
         }
+
+     
     }
 }
