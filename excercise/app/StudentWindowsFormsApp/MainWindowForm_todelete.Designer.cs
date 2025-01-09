@@ -1,6 +1,6 @@
 ﻿namespace StudentWindowsFormsApp
 {
-    partial class MainWindowForm
+    partial class MainWindowForm_todelete
     {
         /// <summary>
         /// Required designer variable.

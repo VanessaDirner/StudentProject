@@ -319,11 +319,11 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindowForm.cs">
+    <Compile Include="MainWindowForm_todelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindowForm.Designer.cs">
-      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    <Compile Include="MainWindowForm_todelete.Designer.cs">
+      <DependentUpon>MainWindowForm_todelete.cs</DependentUpon>
     </Compile>
     <Compile Include="AssignmentsForm.cs">
       <SubType>Form</SubType>
@@ -441,8 +441,8 @@
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindowForm.resx">
-      <DependentUpon>MainWindowForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainWindowForm_todelete.resx">
+      <DependentUpon>MainWindowForm_todelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modifyemployee forms\DeleteEmployee.resx">
       <DependentUpon>DeleteEmployee.cs</DependentUpon>

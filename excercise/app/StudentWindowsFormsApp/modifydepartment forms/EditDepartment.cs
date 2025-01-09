@@ -50,8 +50,7 @@ namespace StudentWindowsFormsApp
             department departmentname = _studentprojectEntities.departments.SingleOrDefault(x => x.deptname == DepartmentName);
             department departmentabbrv = _studentprojectEntities.departments.SingleOrDefault(x => x.abbreviation == DepartmentAbbreviation);
 
-            /*
-
+      
             // throw exception so that ID can't be invalid so that return department can't be null ????
             if (departmentabbrv.abbreviation != DepartmentAbbreviation)
             {
@@ -60,16 +59,17 @@ namespace StudentWindowsFormsApp
 
           
 
-            if (modifydepartmentDTO.DeptName == doesdeptnameexist.deptname)
+            if (departmentname.deptname == DepartmentName)
             {
                 MessageBox.Show("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
             }
-            department doesdeptabbrexist = await _db_context.departments.SingleOrDefaultAsync(dept => dept.abbreviation == modifydepartmentDTO.Abbreviation);
-            if (modifydepartmentDTO.Abbreviation == doesdeptabbrexist.abbreviation)
+
+            department doesdeptabbrexist =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == departmentabbrv.abbreviation);
+            if (departmentabbrv.abbreviation == doesdeptabbrexist.abbreviation)
             {
                  MessageBox.Show("Abbreviation already assigned to a department. Please pick a unique department abbreviation, or modify the existing department.");
             }
-            */
+           
 
             // if form filled out ok, process form and show confirmation of save
             if (isvalid)
@@ -79,7 +79,7 @@ namespace StudentWindowsFormsApp
                 department department = _studentprojectEntities.departments.SingleOrDefault(x => x.deptname == DepartmentName);
 
                 // assign variables from form to database object equivalents
-                department.deptname = DepartmentName;
+               department.deptname = DepartmentName;
                 department.abbreviation = DepartmentAbbreviation;
                // department.createdate = DateTime.Now;
                 department.modifieddate = DateTime.Now;

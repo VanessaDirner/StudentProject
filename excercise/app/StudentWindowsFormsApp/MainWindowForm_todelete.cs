@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudentWindowsFormsApp
 {
-    public partial class MainWindowForm : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class MainWindowForm_todelete : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public MainWindowForm()
+        public MainWindowForm_todelete()
         {
             InitializeComponent();
         }

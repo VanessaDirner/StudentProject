@@ -36,23 +36,8 @@ namespace StudentWindowsFormsApp
                                   join department in _studentprojectEntities.departments
                                   on assignment.deptID equals department.deptID
 
-                                  select new { employee.email, employee.firstname, employee.lastname, department.abbreviation }).ToList();
-           /*
-            var report = (from assignment in _studentprojectEntities.assignments
-                          join employees in _studentprojectEntities.employees
-                          on assignment.personID equals employees.personID
-                          join departments in _studentprojectEntities.departments
-                          on assignment.deptID equals departments.deptID
-                          group new { employees, departments } by departments.deptname into g
-                          select new
-                          {
-                              EmployeeNames = g.Select(x => x.employees.firstname + " " + x.employees.lastname).ToList(),
-                              Department = g.Key,
-                              email = g.Select(x => x.employees.email)
-                          }).ToList();
-    
-
-            */
+                                  select new { employee.email, employee.firstname, employee.lastname, department.abbreviation, department.deptname }).ToList();
+          
            /*
            equivalent database query to get details
            select employee.email, employee.firstname, employee.lastname, department.deptname, department.abbreviation

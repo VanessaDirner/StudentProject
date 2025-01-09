@@ -369,7 +369,6 @@ C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\Stu
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DeleteAssignment.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DepartmentsForm.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EmployeeForm.resources
-C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.MainWindowForm.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.DeleteEmployee.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.EditEmployee.resources
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.Properties.Resources.resources
@@ -379,3 +378,4 @@ C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\Stu
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.exe
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.pdb
 C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.csprojResolveAssemblyReference.cache
+C:\PCLDev\temp\StudentProject\excercise\app\StudentWindowsFormsApp\obj\Debug\StudentWindowsFormsApp.MainWindowForm_todelete.resources
