@@ -35,14 +35,15 @@ namespace StudentWindowsFormsApp
             var employee_email = txt_empassign_todelete.Text;
             employee employee =  _studentprojectEntities.employees.FirstOrDefault(s => s.email == employee_email);
             MessageBox.Show($"{employee.personID}");
-            // find assignment id based on employee and dept id
-            var assignmentid =  _studentprojectEntities.assignments.SingleOrDefault(x => x.deptID == department.deptID && x.employee.personID == employee.personID);
 
-            // find assignment base on person id ?? // when to use a .where ?
+            // find assignment id based on employee and dept id
+            assignment assignmentid =  _studentprojectEntities.assignments.Where(x => x.deptID == department.deptID && x.employee.personID == employee.personID).FirstOrDefault();
+            MessageBox.Show($"{assignmentid}");
+            // find assignment based on person id ?? // when to use a .where ?
             //STUCK HERE - how to get assignment, by IDs
-            assignment assignment =  _studentprojectEntities.assignments.SingleOrDefault(x => x.personID == employee.personID);
+            //assignment assignment =  _studentprojectEntities.assignments.SingleOrDefault(x => x.personID == employee.personID);
                 
-            if (assignment == null)
+            if (assignmentid == null)
             {
                 isvalid = false;
                 MessageBox.Show("No assignment found of this employee to this department.");
@@ -52,7 +53,7 @@ namespace StudentWindowsFormsApp
             {
                 try
                 {
-                    _studentprojectEntities.assignments.Remove(assignment);
+                    _studentprojectEntities.assignments.Remove(assignmentid);
 
                     _studentprojectEntities.SaveChangesAsync();
 
@@ -64,9 +65,6 @@ namespace StudentWindowsFormsApp
                 }
         }
               
-
-          
-
 
         }
 

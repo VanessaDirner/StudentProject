@@ -65,6 +65,18 @@ namespace StudentWindowsFormsApp
                 isvalid = false;
                 MessageBox.Show("Phone number contains non numeric characters. Please verify the phone number and try again.");
             }
+            // if employee is inactive, must activate first
+           /* else if (employeeobject.active == false)
+            {
+                // if any other fields are changed, is not valid
+                if ()
+                {
+
+                    isvalid = false;
+                    MessageBox.Show("This employee is inactive.")
+                }
+
+            }*/
             //todo
             //map manually instead of with mapper 
 
