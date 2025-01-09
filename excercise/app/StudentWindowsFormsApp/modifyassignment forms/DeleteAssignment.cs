@@ -39,10 +39,7 @@ namespace StudentWindowsFormsApp
             // find assignment id based on employee and dept id
             assignment assignmentid =  _studentprojectEntities.assignments.Where(x => x.deptID == department.deptID && x.employee.personID == employee.personID).FirstOrDefault();
             MessageBox.Show($"{assignmentid}");
-            // find assignment based on person id ?? // when to use a .where ?
-            //STUCK HERE - how to get assignment, by IDs
-            //assignment assignment =  _studentprojectEntities.assignments.SingleOrDefault(x => x.personID == employee.personID);
-                
+          
             if (assignmentid == null)
             {
                 isvalid = false;

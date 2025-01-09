@@ -9,8 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Data.Helpers;
-using StudentWindowsFormsApp.Models;
-
 namespace StudentWindowsFormsApp
 {
     public partial class AssignmentsForm : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -38,7 +36,7 @@ namespace StudentWindowsFormsApp
                                   join department in _studentprojectEntities.departments
                                   on assignment.deptID equals department.deptID
 
-                                  select new { employee.email, employee.firstname, employee.lastname }).ToList();
+                                  select new { employee.email, employee.firstname, employee.lastname, department.abbreviation }).ToList();
            /*
             var report = (from assignment in _studentprojectEntities.assignments
                           join employees in _studentprojectEntities.employees
