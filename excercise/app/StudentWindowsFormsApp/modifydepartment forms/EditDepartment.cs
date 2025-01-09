@@ -57,12 +57,17 @@ namespace StudentWindowsFormsApp
                 MessageBox.Show("invalid department ID, please check that the department exists.");
             }
 
-          
-
-            if (departmentname.deptname == DepartmentName)
+            if (departmentname.deptname != null)
             {
-                MessageBox.Show("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
+
+                if (departmentname.deptname == DepartmentName)
+                {
+                    MessageBox.Show("DeptName already assigned to a department. Please pick a unique department name, or modify the existing department.");
+                }
             }
+
+          
+           
 
             department doesdeptabbrexist =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == departmentabbrv.abbreviation);
             if (departmentabbrv.abbreviation == doesdeptabbrexist.abbreviation)
