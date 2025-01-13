@@ -32,8 +32,9 @@ namespace StudentWindowsFormsApp
         }
 
         // create sqlconnection object
-        private static void OpenSQLConnection(string connectionString)
+        private static DataTable OpenSQLConnection(string connectionString)
         {
+            DataTable dt = new DataTable();
             // create the sqlcommand object by passing the stored procedure name and connection object as parameters
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -55,16 +56,16 @@ namespace StudentWindowsFormsApp
                     //sqldatareader requires active and open connection
                     SqlDataReader sdr = cmd.ExecuteReader();
 
-                    while (sdr.Read())
+                    while (!sdr.IsClosed)
                     {
+
                       
-                        //
-                        Console.WriteLine(sdr["PersonID"]);
+                        //Console.WriteLine(sdr["PersonID"]);
 
                         // put contents of read into DataTable
-                        DataTable dt = new DataTable();
                         dt.Load(sdr);
-                        //return dt;
+                       
+                       
                     }
                 }
                 catch (Exception ex)
@@ -72,7 +73,7 @@ namespace StudentWindowsFormsApp
                     MessageBox.Show($"Error on read of db {ex.Message}");
                     connection.Close();
                 }
-             
+                return dt;
             }
         }
 
@@ -88,7 +89,7 @@ namespace StudentWindowsFormsApp
 
             string s = GetConnectionString();
 
-             OpenSQLConnection(s);
+            DataTable dt =  OpenSQLConnection(s);
 
             // get employees from database from database object
             // var employees = _studentprojectEntities.employees.ToList();
@@ -108,7 +109,7 @@ namespace StudentWindowsFormsApp
                 active = item.active
             }).ToList();
 
-            viewEmployees.DataSource = employees;
+            viewEmployees.DataSource = dt;
 
         }
 
