@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace StudentWindowsFormsApp
 {
     public partial class AddDepartment : Form
     {
        
-
         private readonly studentprojectEntities _studentprojectEntities = new studentprojectEntities();
 
         public AddDepartment()
@@ -21,6 +21,63 @@ namespace StudentWindowsFormsApp
             InitializeComponent();
             _studentprojectEntities = new studentprojectEntities();
         }
+
+
+        // store connection string
+        static private string GetConnectionString()
+        {
+            return @"Data Source=localhost\SQLEXPRESS;Initial Catalog=studentproject;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        }
+
+        // create sqlconnection object
+        private static DataTable OpenSQLConnection(string connectionString, string command)
+        {
+            DataTable dt = new DataTable();
+            // create the sqlcommand object by passing the stored procedure name and connection object as parameters
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand()
+                    {
+                        // specifiy command type as stored procedure
+                        CommandType = CommandType.StoredProcedure,
+                        Connection = connection,
+                        CommandText = command // get text command from 
+                    };
+
+                    //open connection
+                    connection.Open();
+
+                     SqlParameter param = new SqlParameter
+                     {
+                            ParameterName = "@TableName", // parameter name defined in stored procedure
+                            SqlDbType = SqlDbType.VarChar, // data type of parameter
+                            Value = "Departments"
+                     };
+               
+
+
+                    // execute the command - the stored procedure
+
+                    //sqldatareader requires active and open connection
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    while (!sdr.IsClosed)
+                    {
+                        // put contents of read into DataTable
+                        dt.Load(sdr);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error on read of db {ex.Message}");
+                    connection.Close();
+                }
+                return dt;
+            }
+        }
+
 
 
         private void btn_add_dept_submit_Click(object sender, EventArgs e)
@@ -49,9 +106,17 @@ namespace StudentWindowsFormsApp
             // if deptname or deptabbreviation is not empty (match found)
             // if departmentname or department abbreviation not unique, set valid to false, show message
             department doesdeptnameexist =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.deptname == DepartmentName);
-            department doesdeptabbrexist = _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == DepartmentAbbreviation);
+            string s = GetConnectionString();
+            DataTable dtdoesdeptnameexist = OpenSQLConnection(s, DepartmentName);
 
-            if (doesdeptnameexist != null && doesdeptabbrexist != null) {
+
+
+            department doesdeptabbrexist = _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == DepartmentAbbreviation);
+            string a = GetConnectionString();
+            DataTable dtdoesdeptabbrexist = OpenSQLConnection(s, DepartmentAbbreviation);
+
+
+            if (dtdoesdeptnameexist != null && dtdoesdeptabbrexist != null) {
                 if (DepartmentName == doesdeptnameexist.deptname)
                 {
                     isvalid = false;

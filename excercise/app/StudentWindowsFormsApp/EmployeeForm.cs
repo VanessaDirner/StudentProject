@@ -15,14 +15,10 @@ namespace StudentWindowsFormsApp
 {
     public partial class EmployeeForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        // database object
-        private readonly studentprojectEntities _studentprojectEntities;
 
         public EmployeeForm()
         {
             InitializeComponent();
-            // initialize the database object
-            _studentprojectEntities = new studentprojectEntities();
         }
 
         // store connection string?
@@ -58,31 +54,20 @@ namespace StudentWindowsFormsApp
 
                     while (!sdr.IsClosed)
                     {
-
-                      
-                        //Console.WriteLine(sdr["PersonID"]);
-
                         // put contents of read into DataTable
                         dt.Load(sdr);
-                       
-                       
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error on read of db {ex.Message}");
-                    connection.Close();
-                }
-                return dt;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error on read of db {ex.Message}");
+                        connection.Close();
+                    }
+                    return dt;
             }
         }
 
-       /* public DataTable GetEmployees(employee e)
-        {
-            DataTable employeeTable;
 
-            return employeeTable;
-        }*/
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
@@ -93,22 +78,6 @@ namespace StudentWindowsFormsApp
 
             // get employees from database from database object
             // var employees = _studentprojectEntities.employees.ToList();
-
-
-            var employees = _studentprojectEntities.employees.Select(item => new
-            {
-                firstname = item.firstname,
-                lastname = item.lastname,
-                email = item.email,
-                startdate = item.startdate,
-                enddate = item.enddate,
-                createdby = item.createdby,
-                modifiedby = item.modifiedby,
-                phone = item.phonenumber,
-                id = item.personID,
-                active = item.active
-            }).ToList();
-
             viewEmployees.DataSource = dt;
 
         }

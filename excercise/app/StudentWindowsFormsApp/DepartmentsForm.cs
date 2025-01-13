@@ -7,59 +7,87 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace StudentWindowsFormsApp
 {
     public partial class DepartmentsForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private readonly studentprojectEntities _studentprojectEntities = new studentprojectEntities();
 
         public DepartmentsForm()
         {
             InitializeComponent();
-            _studentprojectEntities = new studentprojectEntities();
+        }
+
+
+        // store connection string?
+        static private string GetConnectionString()
+        {
+            return @"Data Source=localhost\SQLEXPRESS;Initial Catalog=studentproject;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        }
+
+        // create sqlconnection object
+        private static DataTable OpenSQLConnection(string connectionString, string cmdtext)
+        {
+            DataTable dt = new DataTable();
+            // create the sqlcommand object by passing the stored procedure name and connection object as parameters
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand()
+                    {
+                        // specifiy command type as stored procedure
+                        CommandType = CommandType.Text,
+                        Connection = connection,
+                        CommandText = cmdtext
+                    };
+
+              
+                    //open connection
+                    connection.Open();
+
+                    // execute the command - the sql query
+
+                    //sqldatareader requires active and open connection
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    while (!sdr.IsClosed)
+                    {
+                        // put contents of read into DataTable
+                        dt.Load(sdr);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error on read of db {ex.Message}");
+                    connection.Close();
+                }
+                return dt;
+            }
         }
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
         {
+            string s = GetConnectionString();
+            string query = "SELECT * FROM department;";
 
-            // TODO: This line of code loads data into the 'studentprojectDataSet00000000layout.department' table. You can move, or remove it, as needed.
-            //this.departmentTableAdapter.Fill(this.studentprojectDataSet00000000layout.department);
-            // load database table and save to a variable, assign variable names to the data and create a list to hold it all
-            // var department = _studentprojectEntities.departments.ToList();
-            var department = _studentprojectEntities.departments.Select(items => new
-            {
-                DeptName = items.deptname,
-                deptabbr = items.abbreviation,
-                datecreated = items.createdate,
-                datemodified = items.modifieddate,
-                createdby = items.createdby,
-                modifiedby = items.modifiedby
-            }).ToList();
+            DataTable dt = OpenSQLConnection(s, query);
+
+            // get employees from database from database object
+            // var employees = _studentprojectEntities.employees.ToList();
+            
 
 
             // maybe todo resize grid for data, or change it's background
 
 
             // set the viewDepartments object's datasource to the variable we just created
-            departmentgridcontrol.DataSource = department;
+            departmentgridcontrol.DataSource = dt;
         }
 
         
 
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.departmentTableAdapter.FillBy(this.studentprojectDataSet00000000layout.department);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         // handle adding newrow to db using the grid iew, give default data
         private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
@@ -73,8 +101,7 @@ namespace StudentWindowsFormsApp
             // open up add new dept popup
             var myadddeptform = new AddDepartment();
             myadddeptform.Show();
-
-
+            
         }
 
         private void barbtn_deptedit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -315,8 +315,7 @@
             this.fillByToolStripButton.Name = "fillByToolStripButton";
             this.fillByToolStripButton.Size = new System.Drawing.Size(90, 45);
             this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
+             // 
             // employeeTableAdapter
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
