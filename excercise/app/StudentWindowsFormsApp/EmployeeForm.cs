@@ -57,8 +57,14 @@ namespace StudentWindowsFormsApp
 
                     while (sdr.Read())
                     {
+                      
                         //
-                        Console.WriteLine(sdr);
+                        Console.WriteLine(sdr["PersonID"]);
+
+                        // put contents of read into DataTable
+                        DataTable dt = new DataTable();
+                        dt.Load(sdr);
+                        //return dt;
                     }
                 }
                 catch (Exception ex)
@@ -70,13 +76,12 @@ namespace StudentWindowsFormsApp
             }
         }
 
-        public DataTable GetEmployees(employee e)
+       /* public DataTable GetEmployees(employee e)
         {
             DataTable employeeTable;
 
-
             return employeeTable;
-        }
+        }*/
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
@@ -84,15 +89,6 @@ namespace StudentWindowsFormsApp
             string s = GetConnectionString();
 
              OpenSQLConnection(s);
-
-
-            SqlCommand cmd = new SqlCommand();
-            //cmd.Parameters.Add()
-            cmd.CommandText = "SelectAllEmployees";
-          
-           
-            cmd.ExecuteNonQuery();
-            
 
             // get employees from database from database object
             // var employees = _studentprojectEntities.employees.ToList();
@@ -112,7 +108,7 @@ namespace StudentWindowsFormsApp
                 active = item.active
             }).ToList();
 
-            viewEmployees.DataSource = cmd;
+            viewEmployees.DataSource = employees;
 
         }
 
