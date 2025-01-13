@@ -25,18 +25,57 @@ namespace StudentWindowsFormsApp
             _studentprojectEntities = new studentprojectEntities();
         }
 
+        // store connection string?
         static private string GetConnectionString()
         {
             return @"Data Source=localhost\SQLEXPRESS;Initial Catalog=studentproject;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         }
 
+        // create sqlconnection object
         private static void OpenSQLConnection(string connectionString)
         {
+            // create the sqlcommand object by passing the stored procedure name and connection object as parameters
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SelectAllEmployees", connection)
+                    {
+                        // specifiy command type as stored procedure
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    //open connection
+                    connection.Open();
+                    Console.WriteLine("ServerVersion: {0}", connection.ServerVersion);
+                    Console.WriteLine("State: {0}", connection.State);
+
+                    // execute the command - the stored procedure
+
+                    //sqldatareader requires active and open connection
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    while (sdr.Read())
+                    {
+                        //
+                        Console.WriteLine(sdr);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error on read of db {ex.Message}");
+                    connection.Close();
+                }
+             
             }
+        }
+
+        public DataTable GetEmployees(employee e)
+        {
+            DataTable employeeTable;
+
+
+            return employeeTable;
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
@@ -44,13 +83,16 @@ namespace StudentWindowsFormsApp
 
             string s = GetConnectionString();
 
-            OpenSQLConnection(s);
+             OpenSQLConnection(s);
 
 
             SqlCommand cmd = new SqlCommand();
             //cmd.Parameters.Add()
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SelectAllEmployees";
+          
+           
             cmd.ExecuteNonQuery();
+            
 
             // get employees from database from database object
             // var employees = _studentprojectEntities.employees.ToList();
