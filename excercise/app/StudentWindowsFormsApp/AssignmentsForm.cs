@@ -24,9 +24,9 @@ namespace StudentWindowsFormsApp
 
         private void AssignemntsForm_Load(object sender, EventArgs e)
         {
-            var employeestable = _studentprojectEntities.employees;
-            var assignmenttable = _studentprojectEntities.assignments;
-            var departmentstable = _studentprojectEntities.departments;
+            //var employeestable = _studentprojectEntities.employees;
+            //var assignmenttable = _studentprojectEntities.assignments;
+            //var departmentstable = _studentprojectEntities.departments;
 
             var allassignments = (from employee in _studentprojectEntities.employees
 

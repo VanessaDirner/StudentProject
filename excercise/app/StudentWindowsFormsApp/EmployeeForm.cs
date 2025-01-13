@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +25,37 @@ namespace StudentWindowsFormsApp
             _studentprojectEntities = new studentprojectEntities();
         }
 
+        static private string GetConnectionString()
+        {
+            return @"Data Source=localhost\SQLEXPRESS;Initial Catalog=studentproject;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        }
+
+        private static void OpenSQLConnection(string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                
+            }
+        }
+
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
+
+            string s = GetConnectionString();
+
+            OpenSQLConnection(s);
+
+
+            SqlCommand cmd = new SqlCommand();
+            //cmd.Parameters.Add()
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+
             // get employees from database from database object
             // var employees = _studentprojectEntities.employees.ToList();
+
+
             var employees = _studentprojectEntities.employees.Select(item => new
             {
                 firstname = item.firstname,
@@ -42,7 +70,7 @@ namespace StudentWindowsFormsApp
                 active = item.active
             }).ToList();
 
-            viewEmployees.DataSource = employees;
+            viewEmployees.DataSource = cmd;
 
         }
 
