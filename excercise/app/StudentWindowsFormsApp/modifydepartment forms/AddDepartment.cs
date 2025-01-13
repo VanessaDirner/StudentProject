@@ -30,7 +30,7 @@ namespace StudentWindowsFormsApp
         }
 
         // create sqlconnection object
-        private static DataTable OpenSQLConnection(string connectionString, string command)
+        private static DataTable OpenSQLConnection(string connectionString, string value, bool storedprocedure)
         {
             DataTable dt = new DataTable();
             // create the sqlcommand object by passing the stored procedure name and connection object as parameters
@@ -38,28 +38,47 @@ namespace StudentWindowsFormsApp
             {
                 try
                 {
+                    CommandType type = new CommandType();
+
+                    if (storedprocedure == true)
+                    {
+                         type = CommandType.StoredProcedure;
+
+                    }
+                    else if (storedprocedure == false) {
+                         type = CommandType.Text;
+                    }
+
                     SqlCommand cmd = new SqlCommand()
                     {
                         // specifiy command type as stored procedure
-                        CommandType = CommandType.StoredProcedure,
+
+                        CommandType = type,
                         Connection = connection,
-                        CommandText = command // get text command from 
+                        CommandText = "GetRowfromDeptTablebyName" // supply stored procedure name  // or?? get text command from // specify when calling the opensqlconnection function
                     };
 
+                  
+
+                    // set sqlparameter
+                     SqlParameter param = new SqlParameter
+                     {
+                            ParameterName = "@DepartmentName", // parameter name defined in stored procedure
+                            SqlDbType = SqlDbType.VarChar, // data type of parameter
+                            Value = value, // value passes to the parameter
+                            Direction = ParameterDirection.Input // specify parameter as input
+                            
+                     };
+
+                    // add parameter to the sqlcommand object
+                    cmd.Parameters.Add(param);
+
+
+               
                     //open connection
                     connection.Open();
 
-                     SqlParameter param = new SqlParameter
-                     {
-                            ParameterName = "@TableName", // parameter name defined in stored procedure
-                            SqlDbType = SqlDbType.VarChar, // data type of parameter
-                            Value = "Departments"
-                     };
-               
-
-
                     // execute the command - the stored procedure
-
                     //sqldatareader requires active and open connection
                     SqlDataReader sdr = cmd.ExecuteReader();
 
@@ -107,16 +126,16 @@ namespace StudentWindowsFormsApp
             // if departmentname or department abbreviation not unique, set valid to false, show message
             department doesdeptnameexist =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.deptname == DepartmentName);
             string s = GetConnectionString();
-            DataTable dtdoesdeptnameexist = OpenSQLConnection(s, DepartmentName);
-
+            DataTable dtdoesdeptnameexist = OpenSQLConnection(s, DepartmentName, true);
+            MessageBox.Show($"{dtdoesdeptnameexist} is the value of dtdoesdeptnameexist");
 
 
             department doesdeptabbrexist = _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == DepartmentAbbreviation);
             string a = GetConnectionString();
-            DataTable dtdoesdeptabbrexist = OpenSQLConnection(s, DepartmentAbbreviation);
+          //  DataTable dtdoesdeptabbrexist = OpenSQLConnection(s, DepartmentAbbreviation, true);
 
 
-            if (dtdoesdeptnameexist != null && dtdoesdeptabbrexist != null) {
+            if (doesdeptnameexist != null && doesdeptabbrexist != null) {
                 if (DepartmentName == doesdeptnameexist.deptname)
                 {
                     isvalid = false;
