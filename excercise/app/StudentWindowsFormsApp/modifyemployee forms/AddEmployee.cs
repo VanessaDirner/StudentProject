@@ -26,17 +26,40 @@ namespace StudentWindowsFormsApp
             _studentprojectEntities = new studentprojectEntities();
         }
 
+        private void AddEmployeetoDB(string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+              
+                    connection.Open();
+                    string query = "addemployee";
 
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@personID", Guid.NewGuid());
+                        command.Parameters.AddWithValue("@firstname", txt_firstname.Text);
+                        command.Parameters.AddWithValue("@lastname", txt_lastname.Text);
+                        command.Parameters.AddWithValue("@email", txt_email.Text);
+                        command.Parameters.AddWithValue("@phonenumber", txt_phonenum.Text);
+                        command.Parameters.AddWithValue("@startdate", dateTime_startdate.Value);
+                        command.Parameters.AddWithValue("@enddate", dateTime_enddate.Value);
+                        command.Parameters.AddWithValue("@activate", chkbox_activate.Checked);
+                        command.Parameters.AddWithValue("@createdby", "admin");
+                        command.Parameters.AddWithValue("@createdate", DateTime.Now);
+
+                        command.ExecuteNonQuery();
+
+                    }
+              
+            }
+    }
 
         private void btnEmpSubmit_Click(object sender, EventArgs e)
         {
 
-                //
-   
-
-        // process form
-        // set defaults for some variables for checking form
-        bool isvalid = true;
+            // process form
+            // set defaults for some variables for checking form
+            bool isvalid = true;
 
             // send items from form into variables
             string firstname = txt_firstname.Text;
@@ -67,32 +90,10 @@ namespace StudentWindowsFormsApp
             // if form filled out ok, process form and show confirmation of save
             if (isvalid)
             {
-
-                // create employee object
-                var employee = new employee();
-
-                // assign variables from form to database object equivalents
-                employee.personID = Guid.NewGuid();
-                employee.firstname = firstname;
-                employee.lastname = lastname;
-                employee.email = email;
-                employee.phonenumber = phonenumber;
-                employee.startdate = startdate;
-                employee.enddate = enddate;
-                employee.active = activate;
-                employee.createdate = DateTime.Now;
-                employee.modifieddate = DateTime.Now;
-                employee.createdby = "admin";
-                employee.modifiedby = "admin";
-
-                // send details to database
-                _studentprojectEntities.employees.Add(employee);
-
+                
                 try
                 {
-                    // save changes to database
-                    _studentprojectEntities.SaveChanges();
-
+                    AddEmployeetoDB(connectionString);
                     // show confirmation of adding employee
                     MessageBox.Show($"Employee creation successful.\n\r" +
                         $"first name: {firstname} \n\r" +
@@ -135,7 +136,7 @@ namespace StudentWindowsFormsApp
                             {
                                 if (reader.Read())
                                 {
-                                    MessageBox.Show($"Found employee: {reader["firstname"]}");
+                                    MessageBox.Show($"Found employee: {reader["firstname"]}. Full details of employee: {reader["email"]},{reader["lastname"]}");
                                 }
                                 else
                                 {
