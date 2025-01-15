@@ -127,11 +127,12 @@ namespace StudentWindowsFormsApp
             department doesdeptnameexist =  _studentprojectEntities.departments.SingleOrDefault(dept => dept.deptname == DepartmentName);
             string s = GetConnectionString();
             DataTable dtdoesdeptnameexist = OpenSQLConnection(s, DepartmentName, true);
+            // this below is showing up as blank //
             MessageBox.Show($"{dtdoesdeptnameexist} is the value of dtdoesdeptnameexist");
 
 
             department doesdeptabbrexist = _studentprojectEntities.departments.SingleOrDefault(dept => dept.abbreviation == DepartmentAbbreviation);
-            string a = GetConnectionString();
+           /// string a = GetConnectionString();
           //  DataTable dtdoesdeptabbrexist = OpenSQLConnection(s, DepartmentAbbreviation, true);
 
 

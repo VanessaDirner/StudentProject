@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace StudentWindowsFormsApp
 {
@@ -15,6 +16,8 @@ namespace StudentWindowsFormsApp
 
         // database object
         private readonly studentprojectEntities _studentprojectEntities;
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=studentproject;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
 
         public AddEmployee()
         {
@@ -23,11 +26,17 @@ namespace StudentWindowsFormsApp
             _studentprojectEntities = new studentprojectEntities();
         }
 
+
+
         private void btnEmpSubmit_Click(object sender, EventArgs e)
         {
-            // process form
-            // set defaults for some variables for checking form
-            bool isvalid = true;
+
+                //
+   
+
+        // process form
+        // set defaults for some variables for checking form
+        bool isvalid = true;
 
             // send items from form into variables
             string firstname = txt_firstname.Text;
@@ -107,6 +116,39 @@ namespace StudentWindowsFormsApp
                 //TODO reload datagrid
 
 
+                //trying Taekwan's code
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+
+                        connection.Open();
+                        string query = $"FindEmployee";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                           
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.AddWithValue("@email", email);
+
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    MessageBox.Show($"Found employee: {reader["firstname"]}");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Person not found!");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Database connection failed: " + ex.Message);
+                    }
+                }
 
 
             }
