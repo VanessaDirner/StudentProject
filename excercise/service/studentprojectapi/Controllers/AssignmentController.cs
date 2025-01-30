@@ -30,7 +30,7 @@ namespace studentprojectapi.Controllers
             return Ok(returnassignments);
         }
 
-        [HttpPost("Add")]
+        [HttpPost]
         public async Task<ActionResult> AddAssignment([FromBody] AssignmentDTO assignmentDTO)
         {
             await _assignmentServices.AddAssignmentsAsync(assignmentDTO);
@@ -38,7 +38,7 @@ namespace studentprojectapi.Controllers
             return Ok();
         }
         
-        [HttpDelete("Delete")]
+        [HttpDelete]
            public async Task<ActionResult> DeleteAssignment([FromBody] DeleteAssignmentDTO deleteassignmentDTO)
                {
                     await _assignmentServices.DeleteAssignmentAsync(deleteassignmentDTO);

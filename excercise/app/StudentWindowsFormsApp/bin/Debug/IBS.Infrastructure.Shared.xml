@@ -1,0 +1,885 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IBS.Infrastructure.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:IBS.Infrastructure.Shared.Attributes.ReadOnlyMember">
+            <summary>
+            Field will not be written to but requires setter property
+            </summary>
+        </member>
+        <member name="T:IBS.Infrastructure.Shared.Constants.EndpointConstants">
+            <summary>
+            Constants used for service endpoint inferrence
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_DEFAULT_HTTP">
+            <summary>
+            Default Http Port
+            </summary>      
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_DEFAULT_NETTCP">
+            <summary>
+            Default NetTcp Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_DEFAULT_HTTP_UAT">
+            <summary>
+            Default UAT Http Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_DEFAULT_NETTCP_UAT">
+            <summary>
+            Default UAT NetTcp Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_DEFAULT_HTTP_DEV">
+            <summary>
+            Default Development Http Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_DEFAULT_NETTCP_DEV">
+            <summary>
+            Default Development NetTcp Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_INFRASTRUCTURE_HTTP">
+            <summary>
+            Default Infrastructure Http Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_INFRASTRUCTURE_NETTCP">
+            <summary>
+            Default Infrastructure NetTcp Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_INFRASTRUCTURE_ADMIN_HTTP">
+            <summary>
+            Default Infrastructure Admin Http Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.PORT_INFRASTRUCTURE_ADMIN_NETTCP">
+            <summary>
+            Default Infrastructure Admin NetTcp Port
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULT_PRODUCTION">
+            <summary>
+            Default configuration detail for the Production Host
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULT_DEVELOPMENT">
+            <summary>
+            Default configuration detail for the Development Host
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULT_UAT">
+            <summary>
+            Default configuration detail for the UAT Host
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULTS">
+            <summary>
+            List of default configuration hosts
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULT_ADMIN">
+            <summary>
+            Default configuration detail for the Admin Host
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULT_ADMIN_DEV">
+            <summary>
+            Default configuration detail for the Admin Host
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULT_ADMIN_LOCALHOST">
+            <summary>
+            Default configuration detail for the Admin Host
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.EndpointConstants.HOST_CONFIG_DEFAULTS_ADMIN">
+            <summary>
+            List of default configuration hosts
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.ServiceConstants.HOST_SERVER_DEFAULT">
+            <summary>
+            Default server to connect
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.ServiceConstants.HOST_SITE">
+            <summary>
+            Default site
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.ServiceConstants.DEFAULT_ENDPOINT_DISCOVERY_TYPE">
+            <summary>
+            Default discovery type
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.ServiceConstants.DEFAULT_RELEASE_ENVIRONMENT">
+            <summary>
+            Default Release Environment
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.ServiceConstants.DEFAULT_CONNECTION_ENVIRONMENT">
+            <summary>
+            Default Connection Environment
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Constants.ServiceConstants.VALID_BINDING_SCHEMES">
+            <summary>
+            Valid endpoint binding schemes
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Contract.Data.BaseConnection.ExtensionData">
+            <summary>
+            The property holds data from future versions of the class for backward compatibility.
+            </summary>        
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Contract.Data.ConfigConnection.EnvironmentInstance">
+            <summary>
+            AKA => ConnectionInstance
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Contract.Data.ResultBase`1.ExtensionData">
+            <summary>
+            The property holds data from future versions of the class for backward compatibility.
+            </summary>        
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Contract.Data.Endpoint.ExtensionData">
+            <summary>
+            The property holds data from future versions of the class for backward compatibility.
+            </summary>        
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetConnection(System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String,System.String)">
+            <summary>
+            First connection string, defaults to production, which matches the provided criteria
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <param name="EnvironmentInstance"></param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="DBInstance"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetConnectionBy(System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String)">
+            <summary>
+            First connection string, which matches the provided criteria
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>                
+            <param name="ConnectionEnvironment"></param>
+            <param name="ConnectionInstance"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetProductionConnection(System.String,System.String)">
+            <summary>
+            First PRODUCTION connection string, which matches the provided criteria
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetUATConnection(System.String,System.String)">
+            <summary>
+            First UAT connection string, which matches the provided criteria
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDevelopmentConnection(System.String,System.String)">
+            <summary>
+            First DEVELOPMENT connection string, which matches the provided criteria 
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetApplicationOnlyConnection(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.String)">
+            <summary>
+            First connection string, defaults to Production, which matches the provided application name and is not associated to a project
+            </summary>
+            <param name="DomainApp"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <param name="DBInstance"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetApplicationOnlyConnectionBy(System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String)">
+            <summary>
+            First connection string, defaults to Production, which matches the provided application name and is not associated to a project
+            </summary>
+            <param name="DomainApp"></param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="ConnectionInstance"></param>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetAll">
+            <summary>
+            All connections
+            </summary>
+            <returns>ConfigConnection[]</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetBy(System.String,System.String,System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String,System.String,System.String)">
+            <summary>
+            Get connections based on provided criteria
+            </summary>
+            <param name="ProjectNumber"></param>
+            <param name="ProjectDisplayValue"></param>
+            <param name="ProjectCode"></param>
+            <param name="DomainApp"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="EnvironmentInstance"></param>
+            <param name="DBInstance"></param>
+            <returns>ConfigConnection[]</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetAllBy(System.String,System.String,System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String,System.String)">
+            <summary>
+            Get connections based on provided criteria
+            </summary>
+            <param name="ProjectNumber"></param>
+            <param name="ProjectDisplayValue"></param>
+            <param name="ProjectCode"></param>
+            <param name="DomainApp"></param>        
+            <param name="ConnectionEnvironment"></param>
+            <param name="ConnectionInstance"></param>
+            <param name="DistrictCode"></param>
+            <returns>ConfigConnection[]</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetByProject(System.String,System.String)">
+            <summary>
+            Get all connections for a Project # and application (optional)
+            </summary>
+            <param name="ProjectNumber"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetByProjectDisplay(System.String,System.String)">
+            <summary>
+            Get all connections for a project display value and application (optional)
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetByProjectCode(System.String,System.String)">
+            <summary>
+            Get all applications for a Project Code and application (optional)
+            </summary>
+            <param name="ProjectCode"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetByApplication(System.String)">
+            <summary>
+            Get all application connections
+            </summary>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetAllByGroup(System.String)">
+            <summary>
+            Get all connections by GroupCode (optional)
+            </summary>
+            <param name="GroupCode">If emtpy, all group code connections will be returned</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetByGroup(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String)">
+            <summary>
+            Get all connections by a GroupCode and other optional criteria
+            </summary>
+            <param name="GroupCode"></param>
+            <param name="DBReleaseEnvironment">DEPRICATED</param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetByGroupCode(System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String)">
+            <summary>
+            Get all connections by a GroupCode and other optional criteria
+            </summary>
+            <param name="GroupCode"></param>        
+            <param name="ConnectionEnvironment"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetApplicationOnlyConnections(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Get all application connections which are not associated to a project
+            </summary>
+            <param name="DomainApp"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetApplicationOnlyConnectionsBy(System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment)">
+            <summary>
+            Get all application connections which are not associated to a project
+            </summary>
+            <param name="DomainApp"></param>
+            <param name="ConnectionEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetAllDetail">
+            <summary>
+            Get all connections w/ detail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailBy(System.String,System.String,System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String,System.String,System.String)">
+            <summary>
+            Get all connections w/ detail based on provided criteria
+            </summary>
+            <param name="ProjectNumber"></param>
+            <param name="ProjectDisplayValue"></param>
+            <param name="ProjectCode"></param>
+            <param name="DomainApp"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="EnvironmentInstance"></param>
+            <param name="DBInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetAllDetailBy(System.String,System.String,System.String,System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String,System.String)">
+            <summary>
+            Get all connections w/ detail based on provided criteria
+            </summary>
+            <param name="ProjectNumber"></param>
+            <param name="ProjectDisplayValue"></param>
+            <param name="ProjectCode"></param>
+            <param name="DomainApp"></param>        
+            <param name="ConnectionEnvironment"></param>
+            <param name="ConnectionInstance"></param>
+            <param name="DistrictCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailByProject(System.String,System.String)">
+            <summary>
+            Get all connections w/ detail by ProjectNumber and application (optional)
+            </summary>
+            <param name="ProjectNumber"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailByProjectDisplay(System.String,System.String)">
+            <summary>
+            Get all connections w/ detail by ProjectDisplayValue and application (optional)
+            </summary>
+            <param name="ProjectDisplayValue"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailByProjectCode(System.String,System.String)">
+            <summary>
+            Get all connections w/ detail by ProjectCode and application (optional)
+            </summary>
+            <param name="ProjectCode"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailByApplication(System.String)">
+            <summary>
+            Get all connections w/ detail by Application
+            </summary>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetAllDetailByGroup(System.String)">
+            <summary>
+            Get all connections w/ detail by GroupCode (optional)
+            </summary>
+            <param name="GroupCode">If empty, all group connections will be returned</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailByGroup(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String)">
+            <summary>
+            Get all connections w/ detail by GroupCode and optional criteria
+            </summary>
+            <param name="GroupCode"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailByGroupCode(System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment,System.String)">
+            <summary>
+            Get all connections w/ detail by GroupCode and optional criteria
+            </summary>
+            <param name="GroupCode"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <param name="ConnectionEnvironment"></param>
+            <param name="DomainApp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailApplicationOnlyConnections(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Get all connections w/ detail by Application, which are not associated to a project
+            </summary>
+            <param name="DomainApp"></param>
+            <param name="DBReleaseEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Contract.IConnectionManager.GetDetailApplicationOnlyConnectionsBy(System.String,IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment)">
+            <summary>
+            Get all connections w/ detail by Application, which are not associated to a project
+            </summary>
+            <param name="DomainApp"></param>
+            <param name="ConnectionEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.AssemblyExtensions.ToCallingAssembly">
+            <summary>
+            Attempt to get the calling assembly
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.AssemblyExtensions.ToCallingProcess">
+            <summary>
+            Attempt to get the calling process
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.InternalAPIExtensions.InvokeOneWayAPI(System.Uri)">
+            <summary>
+            Call a WCF Rest API (synchronous)
+            Server Name Alternates: 
+             -- LOCAL_SERVER > uses local server or default server
+             -- FALLBACK_SERVER > uses fallback server or default server
+             (Sample) http://LOCAL_SERVER:8099/DevTest/MyService.svc/rest/GetAll
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="uri"></param>        
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.InternalAPIExtensions.InvokeOneWayAPI(System.Uri,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Call a WCF Rest API (synchronous)
+            Server Name Alternates: 
+             -- LOCAL_SERVER > uses local server or default server
+             -- FALLBACK_SERVER > uses fallback server or default server
+             (Sample) http://LOCAL_SERVER:8099/DevTest/MyService.svc/rest/GetAll
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="uri"></param>        
+            <param name="HostEnvironment">If set to UAT or Development, default configuration will be used for service host</param>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.InternalAPIExtensions.ToURIWithServerPort(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Inject server and port and return URI
+            replaces: {SERVER}:{PORT} variables
+            </summary>
+            <param name="uriPath"></param>
+            <param name="server"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.MessageHeaderExtensions.TryParseService(System.Uri)">
+            <summary>
+            Attempts to parse the service call (method) name from the uri
+            </summary>
+            <param name="_uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.MessageHeaderExtensions.TryParseServiceCall(System.String)">
+            <summary>
+            Attempts to parse the service name from the uri
+            </summary>
+            <param name="_uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.MessageHeaderExtensions.CanLogServiceAccess(System.ServiceModel.Channels.MessageHeaders)">
+            <summary>
+            Attmpt to identify if the target of the message is a logging service
+            </summary>
+            <param name="_headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.MessageHeaderExtensions.CanLogServiceAccessFromAPI(System.ServiceModel.Channels.MessageHeaders)">
+            <summary>
+            Attmpt to identify if the target of the message is a logging service
+            </summary>
+            <param name="_headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.MessageHeaderExtensions.TryParseServiceCallFromAPI(System.Uri)">
+            <summary>
+            Attempts to parse the service name from the uri
+            </summary>
+            <param name="_uri"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader">
+            <summary>
+            Information header object passed with each service call
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.ReleaseEnvironment">
+            <summary>
+            Service Environment
+            Default: Production
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.ConnectionEnvironment">
+            <summary>
+            Connection Environment used for connection 
+            Default: InferFromRelease
+            NOTE: if left as InferFromRelease, the service will infer the ReleaseEnvironment as default ConnectionEnvironment
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.ReleaseInstance">
+            <summary>
+            If multiple instances of the same (Project, ReleaseEnvironment, DomainApp) exists
+            A ReleaseInstance can be used to further refine the results
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.DBInstance">
+            <summary>
+            Maps to connection instance
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.ConnectionInstance">
+            <summary>
+            If multiple instances of the same (Project / DomainApp) exists
+            A ConnectionInstance can be used to further refine the results
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.ProjectNumber">
+            <summary>
+            Project # can be passed in each service header rather than passing in each service call.
+            NOTE: does not automate header when calling from ServiceReference or Rest API call
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.UserName">
+            <summary>
+            Defaulted to sending user
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.Machine">
+            <summary>
+            Defaulted to sending user's machine
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.CallingAssembly">
+            <summary>
+            Defaulted to assembly which invokes service call
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.CallingProcess">
+            <summary>
+            Defaulted to process which invokes service call
+            </summary>
+        </member>
+        <member name="P:IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader.ExtensionData">
+            <summary>
+            The property holds data from future versions of the class for backward compatibility.
+            </summary>        
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Interceptors.IBSMessageInterceptor.GetIBSHeader">
+            <summary>
+            Creates an instance of the IBS header to send
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Interceptors.Model.IBSHeaderContext.ResetContext">
+            <summary>
+            Resets header info context to defaults
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToBindingScheme(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType)">
+            <summary>
+            Convert endpoint binding type to binding scheme
+            </summary>
+            <param name="bindingType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.IsNetTcp(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType)">
+            <summary>
+            Check to see if net tcp binding is selected
+            </summary>
+            <param name="bindingType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.IsMSMQ(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType)">
+            <summary>
+            Check to see if net msmq binding is selected
+            </summary>
+            <param name="bindingType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.InferEndpointBinding(System.Uri)">
+            <summary>
+            Convert Endpoint URI to Binding
+            </summary>
+            <param name="endpointURI"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.InferEndpointBindingType(System.Uri)">
+            <summary>
+            Convert Endpoint URI to EndpointBindingType
+            </summary>
+            <param name="endpointURI"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.CheckPort(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.Int32,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            If port is not set, returns default binding port number
+            </summary>
+            <param name="bindingType"></param>
+            <param name="port">Port override</param>
+            <param name="_HostEnvironment">Will use default ports for DEV and UAT environments</param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ParseServiceName(System.String)">
+            <summary>
+            Parses a fully qualified service name replacing the IBS.Manager.
+            </summary>
+            <param name="ServiceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ParseDomainServicePathToSvcPath(System.String,System.Boolean)">
+            <summary>
+            Parses a fully qualified service name removing the IBS.XXXXX.
+            Any Infrastructure Contracts will be displayed as Infrastructure.[ServiceContractName]
+            </summary>
+            <param name="ServiceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ParseLastElementFromNamespace(System.String)">
+            <summary>
+            Get the last element from a service contract namespace
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.GetDescriptionNoPeriods(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType)">
+            <summary>
+            Get the description property of an EndpointBindingType
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToEnum``1(System.String)">
+            <summary>
+            Convert a string to an ENUM type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToDefaultHostConfig(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Get the inferred/default host config information associated a release environment
+            </summary>
+            <param name="_environment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToDefaultEnvironmentServer(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            If server is null or empty, will return default server based on environment
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToDefaultAdminHostConfig(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Get the inferred/default admin host config information associated a release environment
+            </summary>
+            <param name="_environment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToDefaultAdminEnvironmentServer(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            If server is null or empty, will return default admin server based on environment
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.IsDevelopmentOrUAT(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Checks to see if current environment is development or UAT
+            </summary>
+            <param name="_environment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToHostPath(System.String)">
+            <summary>
+            If server is null or empty, will return default server based on environment
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToSiteName">
+            <summary>
+            If server is null or empty, will return default server based on environment
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.ToActualSiteName">
+            <summary>
+            returns host environment site name
+            </summary>
+            <param name="Server"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.TryInferReleaseEnvironment(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Attempt to infer the current release environment
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.TryMapToProjectConnectionEnvironment(IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Map a ReleaseEnvironment to a ProjectConnectionEnvironment
+            </summary>
+            <param name="rEnv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.ServiceExtensions.TryMapToReleaseEnvironment(IBS.Infrastructure.Shared.ENUMs.ProjectConnectionEnvironment)">
+            <summary>
+            Map a ProjectConnectionEnvironment to a ReleaseEnvironment
+            </summary>
+            <param name="pcEnv"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IBS.Infrastructure.Shared.Helper.AddressHelper">
+            <summary>
+            Assists with creation of endpoint uri based on built in defaults
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.AddressHelper.InferAddressByConvention(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,System.String,System.Int32,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Create an endpoint address by convention
+            NOTE: No validation checks are included to see if server/port are valid
+            </summary>
+            <param name="bindingType"></param>
+            <param name="serviceDomainContractName"></param>
+            <param name="hostServer"></param>
+            <param name="port"></param>
+            <param name="HostEnvironment"></param>
+            <returns>Uri</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.AddressHelper.InferAddressByConvention``1(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.String,System.Int32,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment)">
+            <summary>
+            Create an endpoint address by convention
+            NOTE: No validation checks are included to see if server/port are valid
+            </summary>
+            <typeparam name="I"></typeparam>
+            <param name="bindingType"></param>
+            <param name="hostServer"></param>
+            <param name="port"></param>
+            <param name="HostEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.AddressHelper.InferAddressFromEndpoint(IBS.Infrastructure.Shared.Contract.Data.Endpoint)">
+            <summary>
+            Create an endpoint address by convention
+            NOTE: No validation checks are included to see if server/port are valid
+            </summary>
+            <param name="bindingType"></param>
+            <param name="serviceContract"></param>
+            <param name="hostServer"></param>
+            <param name="port"></param>
+            <returns>Uri</returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.BindingHelper.ProxyBinding_NetTcp(System.Boolean)">
+            <summary>
+            Create a NetTcpBinding with default settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.BindingHelper.ProxyBinding_NetMSMQ">
+            <summary>
+            Create a NetMsmqBinding with default settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.BindingHelper.ProxyBinding_WS(System.Boolean)">
+            <summary>
+            Create a WSHttpBinding with default settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.BindingHelper.ProxyBinding_Basic(System.Boolean)">
+            <summary>
+            Create a BasicHttpBinding with default settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.BindingHelper.ProxyBinding_WebHttp(System.Boolean)">
+            <summary>
+            Create a BasicHttpBinding with default settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Helper.BindingHelper.SEND_RECIEVE_TIMEOUT">
+            <summary>
+            Timeout added to binding Send/Receive
+            </summary>
+        </member>
+        <member name="F:IBS.Infrastructure.Shared.Helper.BindingHelper.OPEN_CLOSE_TIMEOUT">
+            <summary>
+            Timeout added to binding Open/Close 
+            </summary>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.BindingHelper.CreateBinding(IBS.Infrastructure.Shared.ENUMs.EndpointBindingType,System.Boolean)">
+            <summary>
+            Create a binding based on binding endpoint type with default settings
+            </summary>
+            <param name="_bindingType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.ContractHelper.TryGetServiceContractNamespace``1">
+            <summary>
+            Get the namespace attribute from a class file
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Helper.ContractHelper.TryGetServiceContractName``1">
+            <summary>
+            Attempts to get the service contract name from the service contract
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Logging.LoggingFunctions.LogServiceAccess(System.String,System.String,IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader)">
+            <summary>
+            Logs access of service to central logging database
+            </summary>
+            <param name="memberName"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Logging.LoggingFunctions.LogServiceAccessAPI(System.String,System.String,IBS.Infrastructure.Shared.Interceptors.Contract.IBSHeader)">
+            <summary>
+            Logs access of service to central logging database
+            </summary>
+            <param name="memberName"></param>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Logging.LoggingFunctions.CreateLoggingUriPath(System.String,IBS.Infrastructure.Shared.ENUMs.ReleaseEnvironment,System.Boolean)">
+            <summary>
+            Create a logging uri rest base path
+            </summary>
+            <param name="uriPath"></param>
+            <param name="isLocalHost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IBS.Infrastructure.Shared.Logging.LoggingFunctions.GetUserName(System.ServiceModel.ServiceSecurityContext)">
+            <summary>
+            Get the current user from the Primary Identity
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

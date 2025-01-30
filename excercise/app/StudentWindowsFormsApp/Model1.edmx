@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="studentprojectdbtablesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="assignment">
+          <Key>
+            <PropertyRef Name="assignmentID" />
+          </Key>
+          <Property Name="assignmentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="personID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="deptID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="createdate" Type="date" Nullable="false" />
+          <Property Name="modifiedby" Type="varchar" MaxLength="25" />
+          <Property Name="modifieddate" Type="date" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="deptID" />
+          </Key>
+          <Property Name="deptID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="deptname" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="abbreviation" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="createdate" Type="date" Nullable="false" />
+          <Property Name="modifiedby" Type="varchar" MaxLength="25" />
+          <Property Name="modifieddate" Type="date" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="personID" />
+          </Key>
+          <Property Name="personID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="lastname" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="phonenumber" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="startdate" Type="date" />
+          <Property Name="enddate" Type="date" />
+          <Property Name="active" Type="bit" />
+          <Property Name="createdby" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="createdate" Type="date" Nullable="false" />
+          <Property Name="modifiedby" Type="varchar" MaxLength="25" />
+          <Property Name="modifieddate" Type="date" />
+        </EntityType>
+        <Association Name="FK__assignmen__deptI__4316F928">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="deptID" />
+            </Principal>
+            <Dependent Role="assignment">
+              <PropertyRef Name="deptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__assignmen__perso__4222D4EF">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="personID" />
+            </Principal>
+            <Dependent Role="assignment">
+              <PropertyRef Name="personID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="studentprojectdbtablesModelStoreContainer">
+          <EntitySet Name="assignment" EntityType="Self.assignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__assignmen__deptI__4316F928" Association="Self.FK__assignmen__deptI__4316F928">
+            <End Role="department" EntitySet="department" />
+            <End Role="assignment" EntitySet="assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__assignmen__perso__4222D4EF" Association="Self.FK__assignmen__perso__4222D4EF">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="assignment" EntitySet="assignment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="studentprojectdbtablesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="assignment">
+          <Key>
+            <PropertyRef Name="assignmentID" />
+          </Key>
+          <Property Name="assignmentID" Type="Guid" Nullable="false" />
+          <Property Name="personID" Type="Guid" Nullable="false" />
+          <Property Name="deptID" Type="Guid" Nullable="false" />
+          <Property Name="createdby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="modifiedby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="modifieddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="department" Relationship="Self.FK__assignmen__deptI__4316F928" FromRole="assignment" ToRole="department" />
+          <NavigationProperty Name="employee" Relationship="Self.FK__assignmen__perso__4222D4EF" FromRole="assignment" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="deptID" />
+          </Key>
+          <Property Name="deptID" Type="Guid" Nullable="false" />
+          <Property Name="deptname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="abbreviation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="modifiedby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="modifieddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="assignments" Relationship="Self.FK__assignmen__deptI__4316F928" FromRole="department" ToRole="assignment" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="personID" />
+          </Key>
+          <Property Name="personID" Type="Guid" Nullable="false" />
+          <Property Name="firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phonenumber" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="startdate" Type="DateTime" Precision="0" />
+          <Property Name="enddate" Type="DateTime" Precision="0" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="createdby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="modifiedby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="modifieddate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="assignments" Relationship="Self.FK__assignmen__perso__4222D4EF" FromRole="employee" ToRole="assignment" />
+        </EntityType>
+        <Association Name="FK__assignmen__deptI__4316F928">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="deptID" />
+            </Principal>
+            <Dependent Role="assignment">
+              <PropertyRef Name="deptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__assignmen__perso__4222D4EF">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="personID" />
+            </Principal>
+            <Dependent Role="assignment">
+              <PropertyRef Name="personID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="studentprojectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="assignments" EntityType="Self.assignment" />
+          <EntitySet Name="departments" EntityType="Self.department" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <AssociationSet Name="FK__assignmen__deptI__4316F928" Association="Self.FK__assignmen__deptI__4316F928">
+            <End Role="department" EntitySet="departments" />
+            <End Role="assignment" EntitySet="assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__assignmen__perso__4222D4EF" Association="Self.FK__assignmen__perso__4222D4EF">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="assignment" EntitySet="assignments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="studentprojectdbtablesModelStoreContainer" CdmEntityContainer="studentprojectEntities">
+          <EntitySetMapping Name="assignments">
+            <EntityTypeMapping TypeName="studentprojectdbtablesModel.assignment">
+              <MappingFragment StoreEntitySet="assignment">
+                <ScalarProperty Name="assignmentID" ColumnName="assignmentID" />
+                <ScalarProperty Name="personID" ColumnName="personID" />
+                <ScalarProperty Name="deptID" ColumnName="deptID" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departments">
+            <EntityTypeMapping TypeName="studentprojectdbtablesModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="deptID" ColumnName="deptID" />
+                <ScalarProperty Name="deptname" ColumnName="deptname" />
+                <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="studentprojectdbtablesModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="personID" ColumnName="personID" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

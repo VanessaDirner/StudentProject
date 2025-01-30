@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="studentprojectdbtablesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="assignment">
+    <Key>
+      <PropertyRef Name="assignmentID" />
+    </Key>
+    <Property Name="assignmentID" Type="Guid" Nullable="false" />
+    <Property Name="personID" Type="Guid" Nullable="false" />
+    <Property Name="deptID" Type="Guid" Nullable="false" />
+    <Property Name="createdby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="modifiedby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="department" Relationship="Self.FK__assignmen__deptI__4316F928" FromRole="assignment" ToRole="department" />
+    <NavigationProperty Name="employee" Relationship="Self.FK__assignmen__perso__4222D4EF" FromRole="assignment" ToRole="employee" />
+  </EntityType>
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="deptID" />
+    </Key>
+    <Property Name="deptID" Type="Guid" Nullable="false" />
+    <Property Name="deptname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="abbreviation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="modifiedby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="assignments" Relationship="Self.FK__assignmen__deptI__4316F928" FromRole="department" ToRole="assignment" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="personID" />
+    </Key>
+    <Property Name="personID" Type="Guid" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phonenumber" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="startdate" Type="DateTime" Precision="0" />
+    <Property Name="enddate" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="createdby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="modifiedby" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="modifieddate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="assignments" Relationship="Self.FK__assignmen__perso__4222D4EF" FromRole="employee" ToRole="assignment" />
+  </EntityType>
+  <Association Name="FK__assignmen__deptI__4316F928">
+    <End Role="department" Type="Self.department" Multiplicity="1" />
+    <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department">
+        <PropertyRef Name="deptID" />
+      </Principal>
+      <Dependent Role="assignment">
+        <PropertyRef Name="deptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__assignmen__perso__4222D4EF">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="assignment" Type="Self.assignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="personID" />
+      </Principal>
+      <Dependent Role="assignment">
+        <PropertyRef Name="personID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="studentprojectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="assignments" EntityType="Self.assignment" />
+    <EntitySet Name="departments" EntityType="Self.department" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <AssociationSet Name="FK__assignmen__deptI__4316F928" Association="Self.FK__assignmen__deptI__4316F928">
+      <End Role="department" EntitySet="departments" />
+      <End Role="assignment" EntitySet="assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__assignmen__perso__4222D4EF" Association="Self.FK__assignmen__perso__4222D4EF">
+      <End Role="employee" EntitySet="employees" />
+      <End Role="assignment" EntitySet="assignments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
